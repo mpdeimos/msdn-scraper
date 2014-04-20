@@ -1,8 +1,10 @@
-package com.mpdeimos.msdnscraper.rules;
+package com.mpdeimos.msdnscraper.rules.fxcop;
+
+import com.mpdeimos.msdnscraper.rule.RuleDetails;
 import com.mpdeimos.webscraper.Scrape;
 import com.mpdeimos.webscraper.conversion.ChildTextSummarizer;
 
-public class RuleDetails
+public class ManagedRuleDetails extends RuleDetails
 {
 	@Scrape("#mainBody .introduction tr:has(td:first-child:contains(TypeName)) td:nth-child(2)")
 	public String typeName;
@@ -15,33 +17,35 @@ public class RuleDetails
 
 	@Scrape(
 			value = "#mainBody > div:has(.LW_CollapsibleArea_TitleDiv:contains(Cause)) > .sectionblock",
-			converter = ChildTextSummarizer.class, lenient = true)
+			converter = ChildTextSummarizer.class,
+			lenient = true)
 	@ChildTextSummarizer.Option(exclude = { "div" })
 	public String cause;
 
 	@Scrape(
 			value = "#mainBody > div:has(.LW_CollapsibleArea_TitleDiv:contains(Rule Description)) > .sectionblock",
-			converter = ChildTextSummarizer.class, lenient = true)
+			converter = ChildTextSummarizer.class,
+			lenient = true)
 	@ChildTextSummarizer.Option(exclude = { "div" })
 	public String description;
 
 	@Scrape(
 			value = "#mainBody > div:has(.LW_CollapsibleArea_TitleDiv:contains(How To Fix Violations)) > .sectionblock",
-			converter = ChildTextSummarizer.class, lenient = true)
+			converter = ChildTextSummarizer.class,
+			lenient = true)
 	@ChildTextSummarizer.Option(exclude = { "div" })
 	public String hotToFix;
 
 	@Scrape(
 			value = "#mainBody > div:has(.LW_CollapsibleArea_TitleDiv:contains(When to Suppress Warnings)) > .sectionblock",
-			converter = ChildTextSummarizer.class, lenient = true)
+			converter = ChildTextSummarizer.class,
+			lenient = true)
 	@ChildTextSummarizer.Option(exclude = { "div" })
 	public String whenToSuppress;
 
-	public final String url;
-
-	public RuleDetails(String url)
+	/** Constructor. */
+	public ManagedRuleDetails(String url)
 	{
-		this.url = url;
+		super(url);
 	}
-
 }
