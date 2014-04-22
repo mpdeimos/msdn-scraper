@@ -1,11 +1,14 @@
 package com.mpdeimos.msdnscraper.rule;
 
+import com.mpdeimos.webscraper.ScraperSource;
+import com.mpdeimos.webscraper.ScraperSource.ScraperSourceProvider;
+
 /**
  * Describes a site containing rule details.
  * 
  * @author mpdeimos
  */
-public abstract class RuleDetails
+public abstract class RuleDetails implements ScraperSourceProvider
 {
 	/** The URL of the details site. */
 	private final String url;
@@ -16,9 +19,10 @@ public abstract class RuleDetails
 		this.url = url;
 	}
 
-	/** @see #url */
-	public String getUrl()
+	/** {@inheritDoc} */
+	@Override
+	public ScraperSource getSource()
 	{
-		return this.url;
+		return ScraperSource.fromUrl(this.url);
 	}
 }

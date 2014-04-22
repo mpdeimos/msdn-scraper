@@ -28,7 +28,7 @@ public class RuleResolverTest
 		assertResolvedData("fxcop-rules.json", new FxCopRuleResolver());
 	}
 
-	// @Test
+	@Test
 	public void testSpCopRules() throws ScraperException
 	{
 		assertResolvedData("spcop-rules.json", new SpCopRuleResolver());

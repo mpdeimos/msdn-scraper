@@ -1,5 +1,8 @@
 package com.mpdeimos.msdnscraper.rule;
 
+import com.mpdeimos.webscraper.ScraperSource;
+import com.mpdeimos.webscraper.ScraperSource.ScraperSourceProvider;
+
 import java.util.Collection;
 
 /**
@@ -7,7 +10,7 @@ import java.util.Collection;
  * 
  * @author mpdeimos
  */
-public abstract class RuleOverview
+public abstract class RuleOverview implements ScraperSourceProvider
 {
 	/** The url of the rule overview page. */
 	private final String url;
@@ -18,10 +21,11 @@ public abstract class RuleOverview
 		this.url = url;
 	}
 
-	/** @see #url */
-	public String getUrl()
+	/** {@inheritDoc} */
+	@Override
+	public ScraperSource getSource()
 	{
-		return this.url;
+		return ScraperSource.fromUrl(this.url);
 	}
 
 	/** @return A collection of rules described by this overview site. */
