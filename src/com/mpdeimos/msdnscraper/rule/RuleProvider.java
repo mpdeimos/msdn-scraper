@@ -1,22 +1,19 @@
 package com.mpdeimos.msdnscraper.rule;
 
 import com.mpdeimos.webscraper.ScraperSource;
-import com.mpdeimos.webscraper.ScraperSource.ScraperSourceProvider;
-
-import java.util.Collection;
 
 /**
  * Describes a website containing an overview of rules.
  * 
  * @author mpdeimos
  */
-public abstract class RuleOverview implements ScraperSourceProvider
+public abstract class RuleProvider implements IRuleProvider
 {
 	/** The url of the rule overview page. */
 	private final String url;
 
 	/** Constructor. */
-	public RuleOverview(String url)
+	public RuleProvider(String url)
 	{
 		this.url = url;
 	}
@@ -27,7 +24,4 @@ public abstract class RuleOverview implements ScraperSourceProvider
 	{
 		return ScraperSource.fromUrl(this.url);
 	}
-
-	/** @return A collection of rules described by this overview site. */
-	public abstract Collection<? extends Rule> getRules();
 }

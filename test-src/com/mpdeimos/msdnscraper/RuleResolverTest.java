@@ -1,8 +1,10 @@
 package com.mpdeimos.msdnscraper;
 
+import com.mpdeimos.msdnscraper.rule.Rule;
 import com.mpdeimos.msdnscraper.rule.RuleResolver;
 import com.mpdeimos.msdnscraper.rules.fxcop.FxCopRuleResolver;
 import com.mpdeimos.msdnscraper.rules.spcop.SpCopRuleResolver;
+import com.mpdeimos.msdnscraper.rules.warnings.WarningResolver;
 import com.mpdeimos.webscraper.ScraperException;
 
 import java.io.IOException;
@@ -25,22 +27,35 @@ public class RuleResolverTest
 	@Test
 	public void testFxCopManagedRules() throws ScraperException
 	{
-		assertResolvedData("fxcop-rules.json", new FxCopRuleResolver());
+		assertResolvedData("fxcop-rules", new FxCopRuleResolver());
 	}
 
 	@Test
 	public void testSpCopRules() throws ScraperException
 	{
-		assertResolvedData("spcop-rules.json", new SpCopRuleResolver());
+		assertResolvedData("spcop-rules", new SpCopRuleResolver());
+	}
+
+	@Test
+	public void testCompilerWarnings() throws ScraperException
+	{
+		assertResolvedData("compiler-warnings", new WarningResolver());
 	}
 
 	private void assertResolvedData(String rulesFile, RuleResolver resolver)
 			throws ScraperException
 	{
-		String expected = readRulesFile(rulesFile);
 		Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-		Assert.assertEquals(readRulesFile(rulesFile),
-				gson.toJson(resolver.resolve()));
+		Rule[] rules = resolver.resolve();
+		Assert.assertEquals(readRulesFile(rulesFile + ".json"),
+				gson.toJson(rules));
+
+		for (int i = 0; i < rules.length; i++)
+		{
+			rules[i] = new Rule.SerializedRule(rules[i]);
+		}
+		Assert.assertEquals(readRulesFile(rulesFile + ".simple.json"),
+				gson.toJson(rules));
 	}
 
 	/** Reads a rules file and fails of reading is not possible. */

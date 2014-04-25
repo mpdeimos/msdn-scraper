@@ -1,14 +1,14 @@
 package com.mpdeimos.msdnscraper.rules.fxcop;
 
 import com.mpdeimos.msdnscraper.rule.Rule;
-import com.mpdeimos.msdnscraper.rule.RuleOverview;
+import com.mpdeimos.msdnscraper.rule.RuleProvider;
 import com.mpdeimos.webscraper.Scrape;
 import com.mpdeimos.webscraper.conversion.DeepScrapeConverter;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ManagedRuleOverview extends RuleOverview
+public class ManagedRuleOverview extends RuleProvider
 {
 	@Scrape(value = "#mainBody .tableSection tr:has(td)",
 			converter = DeepScrapeConverter.class)

@@ -1,0 +1,1242 @@
+[
+  {
+    "id": "CS0108",
+    "message": "\u0027member1\u0027 hides inherited member \u0027member2\u0027. Use the new keyword if hiding was intended.",
+    "description": "A variable was declared with the same name as a variable in a base class. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.\nThe following sample generates CS0108:",
+    "category": "level 2",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/3s8070fc.aspx"
+  },
+  {
+    "id": "CS1570",
+    "message": "XML comment on \u0027construct\u0027 has badly formed XML — \u0027reason\u0027",
+    "description": "When using /doc, any comments in the source code must be in XML. Any error with your XML markup will generate CS1570. For example:\nIf you are passing a string to a cref, such as in an \u003cexception\u003e tag, the string must be enclosed in double quotation marks. If you are using a tag, such as \u003cseealso\u003e, which does not have a closing tag, you must specify a forward slash before the closing angle bracket. If you need to use a greater-than or less-than symbol in the text of description, you need to represent them with \u0026gt; or \u0026lt;. The file or path attribute on an \u003cinclude\u003e tag was missing or improperly formed.\nThe following sample generates CS1570:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/c20zzdxx(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS2002",
+    "message": "Source file \u0027file\u0027 specified multiple times",
+    "description": "A source file name was passed to the compiler more than once. You can only specify a file once to the compiler to build an output file.\nThis warning cannot be suppressed by the /nowarn option.\nThe following sample generates CS2002:\nTo generate the error, compile the example with the command line:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/1126ws4s(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1572",
+    "message": "XML comment on \u0027construct\u0027 has a param tag for \u0027parameter\u0027, but there is no parameter by that name",
+    "description": "When using the /doc compiler option, a comment was specified for a parameter that does not exist for the method. Change the value passed to the name attribute or remove one of the comment lines.\nThe following sample generates CS1572:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/hba91y19(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0109",
+    "message": "The member \u0027member\u0027 does not hide an inherited member. The new keyword is not required",
+    "description": "A class declaration included the new keyword even though the declaration does not override an existing declaration in a base class. You can delete the new keyword.\nThe following sample generates CS0109:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/css4y2c4(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0414",
+    "message": "The private field \u0027field\u0027 is assigned but its value is never used",
+    "description": "This warning can occur in several scenarios in which the compiler can verify that a variable is never referenced:\nA private field is assigned a constant value but is never subsequently read. The unnecessary assignment could effect performance. Consider removing the field. A private or internal static field is assigned a constant value only in the initializer. Consider changing the field to a const. A private or internal field is assigned constant values and only used in blocks that are excluded by #ifdef directives. Consider putting the field inside the #ifdef block. A private or internal field is assigned constant values in multiple locations but not otherwise accessed. If you do not need the field, consider removing it. Otherwise, use it in some appropriate way.\nIn other situations, or where the suggested workaround is not acceptable, use #pragma 0414.\nThe following sample shows one way in which CS0414 will be generated:\nNote   If the variable i is declared as protected or public, no error will be generated because the compiler cannot know whether a derived class might use it or some other client code might instantiate the class and reference the variable",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/z62k595w(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1571",
+    "message": "XML comment on \u0027construct\u0027 has a duplicate param tag for \u0027parameter\u0027",
+    "description": "When using the /doc compiler option, multiple comments were found for the same method parameter. Remove one of the duplicate lines.\nThe following sample generates CS1571:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/a5c6cbk0(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1607",
+    "message": "Assembly generation -- reason",
+    "description": "A warning was generated from the assembly-creation phase of the compilation.\nIf you are building a 64-bit application on a 32-bit operating system, you must ensure that 64-bit versions of all referenced assemblies are installed on the target operating system.\nAll x86-specific common language runtime (CLR) assemblies have 64-bit counterparts (every CLR assembly will exist on all operating systems). Therefore, you can safely ignore CS1607 for CLR assemblies.\nYou can ignore this warning if you encounter it when you create a AssemblyInformationalVersionAttribute. The informational version is a string that attaches additional version information to an assembly; this information is not used at run time. Although you can specify any text, a warning message appears on compilation if the string is not in the format that is used by the assembly version number, or if it is in that format but contains wildcard characters. This warning is harmless.\nFor more information, see Al.exe Tool Errors and Warnings.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/4a0640cd.aspx"
+  },
+  {
+    "id": "CS0183",
+    "message": "The given expression is always of the provided (\u0027type\u0027) type",
+    "description": "If a conditional statement always evaluates to true, then you do not need a conditional statement. This warning occurs when you try to evaluate a type using the is operator. If the evaluation is a value type, then the check is unnecessary.\nThe following sample generates CS0183:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/sb7782xb(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0184",
+    "message": "The given expression is never of the provided (\u0027type\u0027) type",
+    "description": "The expression can never be true because the variable you are testing is neither declared as type nor derived from type.\nThe following sample generates CS0184:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/230kb9yt(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0419",
+    "message": "Ambiguous reference in cref attribute: \u0027Method Name1\u0027. Assuming \u0027Method Name2\u0027, but could have also matched other overloads including \u0027Method Name3\u0027.",
+    "description": "In an XML documentation comment in the code, a reference could not be resolved. This could occur if the method is overloaded, or if two different identifiers with the same name are found. To resolve the warning, use a qualified name to disambiguate the reference, or include the specific overload in parentheses.\nThe following sample generates CS0419.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bk0314f1(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1957",
+    "message": "Member \u0027name\u0027 overrides \u0027method\u0027. There are multiple override candidates at run-time. It is implementation dependent which method will be called.",
+    "description": "Method parameters that vary only by whether they are ref or out cannot be differentiated at run-time.",
+    "category": "Level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bb882562(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1956",
+    "message": "Member \u0027name\u0027 implements interface member \u0027name\u0027 in type \u0027type\u0027. There are multiple matches for the interface member at run-time. It is implementation dependent which method will be called.",
+    "description": "This warning can be generated when two interface methods are differentiated only by whether a particular parameter is marked with ref or with out. It is best to change your code to avoid this warning because it is not obvious or guaranteed which method is called at runtime.\nAlthough C# distinguishes between out and ref, the CLR sees them as the same. When deciding which method implements the interface, the CLR just picks one.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/bb882526.aspx"
+  },
+  {
+    "id": "CS0105",
+    "message": "The using directive for \u0027namespace\u0027 appeared previously in this namespace",
+    "description": "A namespace, which should only be declared once, was declared more than once; remove all duplicate namespace declarations.\nThe following sample generates CS0105:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/467z4ya9(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0628",
+    "message": "\u0027member\u0027 : new protected member declared in sealed class",
+    "description": "A sealed class cannot introduce a protected member because no other class will be able to inherit from the sealed class and use the protected member.\nThe following sample generates CS0628:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/7x8ekes3(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0626",
+    "message": "Method, operator, or accessor \u0027method\u0027 is marked external and has no attributes on it. Consider adding a DllImport attribute to specify the external implementation",
+    "description": "A method marked extern should also be marked with an attribute, for example, the DllImport attribute.\nThe attribute specifies where the method is implemented. At run time, the program will need this information.\nThe following sample generates CS0626:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/5d6ww5ft(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1573",
+    "message": "Parameter \u0027parameter\u0027 has no matching param tag in the XML comment for \u0027parameter\u0027 (but other parameters do)",
+    "description": "When using the /doc compiler option, a comment was specified for some but not all parameters in a method. You may have forgotten to enter a comment for these parameters.\nThe following sample generates CS1573:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/01248w2b(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1574",
+    "message": "XML comment on \u0027construct\u0027 has syntactically incorrect cref attribute \u0027name\u0027",
+    "description": "A string passed to a cref tag, for example, within an \u003cexception\u003e tag, referred to a member that is not available within the current build environment. The string that you pass to a cref tag must be the syntactically correct name of a member or field.\nFor more information, see Recommended Tags for Documentation Comments.\nThe following sample generates CS1574:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/26x4hk2a(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0824",
+    "message": "Constructor \u0027name\u0027 is marked external.",
+    "description": "A constructor may be marked as extern. However, the compiler cannot verify that the constructor actually exists. Therefore the warning is generated.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bb384213(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1616",
+    "message": "Option \u0027option\u0027 overrides attribute \u0027attribute\u0027 given in a source file or added module",
+    "description": "This warning occurs if the assembly attributes AssemblyKeyFileAttribute or AssemblyKeyNameAttribute found in source conflict with the /keyfile or /keycontainer command line option or key file name or key container specified in the Project Properties.\nFor the example below, assume you have a key file named cs1616.snk. This file could be generated with the command line:\nThe following sample generates CS1616:",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/0b104xt8.aspx"
+  },
+  {
+    "id": "CS0422",
+    "message": "The /incremental option is no longer supported",
+    "description": "Incremental compilation (/incr or /incremental) is not supported in Visual C# 2005.",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/khdex241(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0420",
+    "message": "\u0027identifier\u0027: a reference to a volatile field will not be treated as volatile",
+    "description": "A volatile field should not normally be passed using a ref or out parameter, since it will not be treated as volatile within the scope of the function. There are exceptions to this, such as when calling an interlocked API. As with any warning, you may use the #pragma warning to disable this warning in those rare cases where you are intentionally using a volatile field as a reference parameter.\nThe following sample generates CS0420:",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/4bw5ewxy.aspx"
+  },
+  {
+    "id": "CS0809",
+    "message": "Obsolete member \u0027memberA\u0027 overrides non-obsolete member \u0027memberB\u0027.",
+    "description": "Typically, a member that is marked as obsolete should not override a member that is not marked as obsolete. This warning is generated in Visual Studio 2008 but not in Visual Studio 2005.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bb397626(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1058",
+    "message": "A previous catch clause already catches all exceptions. All exceptions thrown will be wrapped in a System.Runtime.CompilerServices.RuntimeWrappedException",
+    "description": "This attribute causes CS1058 if a catch() block has no specified exception type after a catch (System.Exception e) block. The warning advises that the catch() block will not catch any exceptions.\nA catch() block after a catch (System.Exception e) block can catch non-CLS exceptions if the RuntimeCompatibilityAttribute is set to false in the AssemblyInfo.cs file: [assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows \u003d false)]. If this attribute is not set explicitly to false, all thrown non-CLS exceptions are wrapped as Exceptions and the catch (System.Exception e) block catches them. For more information, see How to: Catch a non-CLS Exception.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228623.aspx"
+  },
+  {
+    "id": "CS0429",
+    "message": "Unreachable expression code detected",
+    "description": "This error occurs whenever part of an expression in your code is unreachable. In the following example, the condition false \u0026\u0026 myTest() meets this criteria because the myTest() method will never get evaluated due to the fact that the left side of the \u0026\u0026 operation is always false. As soon as the \u0026\u0026 operator evaluates the false statement as false, it stops the evaluation, and will never evaluate the right side.",
+    "category": "level 4",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/2ch1a3w5.aspx"
+  },
+  {
+    "id": "CS1610",
+    "message": "Unable to delete temporary file \u0027file\u0027 used for default Win32 resource -- resource",
+    "description": "When using the /win32res compiler option and when your %TEMP% directory does not have DELETE permission, this warning indicates that the compiler could not delete a temporary file that it created.\nMake sure that you have read/write/delete permissions for the %TEMP% directory.\nIf necessary, you can manually delete these files and there will be no harm to C# or any of your programs.",
+    "category": "level 4",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/z4aytccf.aspx"
+  },
+  {
+    "id": "CS0618",
+    "message": "\u0027member\u0027 is obsolete: \u0027text\u0027",
+    "description": "A class member was marked with the Obsolete attribute, such that a warning will be issued when the class member is referenced. For more information, see Common Attributes (C# and Visual Basic).\nThe following sample generates CS0618:",
+    "category": "level 2",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/x5ye6x1e.aspx"
+  },
+  {
+    "id": "CS0612",
+    "message": "\u0027member\u0027 is obsolete",
+    "description": "The class designer marked a member with the Obsolete attribute. This means that the member might not be supported in a future version of the class.\nThe following sample shows how accessing an obsolete member generates CS0612:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/h0h063ka(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0028",
+    "message": "\u0027function declaration\u0027 has the wrong signature to be an entry point",
+    "description": "The method declaration for Main was invalid: it was declared with an invalid signature. Main must be declared as static and it must return either int or void. For more information, see Main() and Command-Line Arguments (C# Programming Guide).\nThe following sample generates CS0028:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/cdt084ch(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS2029",
+    "message": "Invalid value for \u0027/define\u0027; \u0027identifier\u0027 is not a valid identifier",
+    "description": "This warning occurs if the value that is used in the /define option has some invalid characters.\nThis warning cannot be suppressed by the /nowarn option.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/878y1894(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0693",
+    "message": "Type parameter \u0027type parameter\u0027 has the same name as the type parameter from outer type \u0027type\u0027",
+    "description": "This error occurs when you have a generic member such as a method inside a generic class. Since the method\u0027s type parameter is not necessarily the same as the class\u0027s type parameter, you cannot give them both the same name. For more information, see Generic Methods (C# Programming Guide).\nTo avoid this situation, use a different name for one of the type parameters.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/0ah54ze5(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0435",
+    "message": "The namespace \u0027namespace\u0027 in \u0027assembly\u0027 conflicts with the imported type \u0027type\u0027 in \u0027assembly\u0027. Using the namespace defined in \u0027assembly\u0027..",
+    "description": "This warning is issued when a namespace in a source file (file_2) conflicts with an imported type in file_1. The compiler uses the one in the source file.\nThe following example generates CS0435:\nCompile this file first:\nThen, compile this file:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/5ab42kzf(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0436",
+    "message": "The type \u0027type\u0027 in \u0027assembly\u0027 conflicts with the imported type \u0027type2\u0027 in \u0027assembly\u0027. Using the type defined in \u0027assembly\u0027.",
+    "description": "This warning is issued when a type in a source file (file_2) conflicts with an imported type in file _1. The compiler uses the one in the source file.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/h6ys1ykk(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0437",
+    "message": "The type \u0027type\u0027 in \u0027assembly2\u0027 conflicts with the imported namespace \u0027namespace\u0027 in \u0027fassembly1\u0027. Using the type defined in \u0027assembly\u0027.",
+    "description": "This warning is issued when a type in a source file, file_2, conflicts with an imported namespace in file _1. The compiler uses the type in the source file.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/88ccb8we(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0649",
+    "message": "Field \u0027field\u0027 is never assigned to, and will always have its default value \u0027value\u0027",
+    "description": "The compiler detected an uninitialized private or internal field declaration that is never assigned a value.\nThe following sample generates CS0649:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/03b5270t(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS2023",
+    "message": "Ignoring /noconfig option because it was specified in a response file",
+    "description": "The /noconfig compiler option was specified in a response file, which is not allowed.\nThis warning cannot be suppressed by the /nowarn option.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/94kdy54b(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1762",
+    "message": "A reference was created to embedded interop assembly \u0027\u003cassembly1\u003e\u0027 because of an indirect reference to that assembly from assembly \u0027\u003cassembly2\u003e\u0027. Consider changing the \u0027Embed Interop Types\u0027 property on either assembly.",
+    "description": "You have added a reference to an assembly (assembly1) that has the Embed Interop Types property set to True. This instructs the compiler to embed interop type information from that assembly. However, the compiler cannot embed interop type information from that assembly because another assembly that you have referenced (assembly2) also references that assembly (assembly1) and has the Embed Interop Types property set to False.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ff183282.aspx"
+  },
+  {
+    "id": "CS0642",
+    "message": "Possible mistaken empty statement",
+    "description": "A semicolon after a conditional statement may cause your code to execute differently than intended.\nYou can use /nowarn compiler option or #pragmas warning to disable this warning; see /nowarn (Suppress Specified Warnings) (C# Compiler Options) or #pragma warning (C# Reference) for more information.\nThe following sample generates CS0642:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/9x19t380(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0440",
+    "message": "Defining an alias named \u0027global\u0027 is ill-advised since \u0027global::\u0027 always references the global namespace and not an alias",
+    "description": "This warning is issued when you define an alias named global.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/2sc5e2bk(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0197",
+    "message": "Passing \u0027argument\u0027 as ref or out or taking its address may cause a runtime exception because it is a field of a marshal-by-reference class",
+    "description": "Any class that derives, directly or indirectly, from MarshalByRefObject is a marshal-by-reference class. Such a class can be marshaled by reference across process and machine boundaries. Thus, instances of this class could be proxies to remote objects. You cannot pass a field of a proxy object as ref or out. So, you cannot pass fields of such a class as ref or out, unless the instance is this, which can not be a proxy object.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/y545659k(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0444",
+    "message": "Predefined type \u0027type name 1\u0027 was not found in \u0027System namespace 1\u0027 but was found in \u0027System namespace 2\u0027",
+    "description": "A predefined object such as Int32 was not found where the compiler expected to find it, but instead found it in \u0027System namespace 2\u0027.\nThe error could indicate that the .NET Framework is installed incorrectly. To fix this, reinstall the .NET Framework.\nIf you are writing your own base class libraries, you might also encounter this error. In this case, to resolve the error, rebuild mscorlib.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/fy00112z(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS2014",
+    "message": "Compiler option \u0027old option\u0027 is obsolete, please use \u0027new option\u0027 instead",
+    "description": "The form of the compiler option is deprecated. See C# Compiler Options for more information.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/82c1hsb6(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0219",
+    "message": "The variable \u0027variable\u0027 is assigned but its value is never used",
+    "description": "The compiler issues a level-three warning, when you declare and assign a variable, but do not use it.\nThe following sample generates CS0219:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/4kycwe2x(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0114",
+    "message": "\u0027function1\u0027 hides inherited member \u0027function2\u0027. To make the current method override that implementation, add the override keyword. Otherwise add the new keyword.",
+    "description": "A declaration in a class conflicts with a declaration in a base class such that the base class member will be hidden.\nFor more information, see base.\nThe following sample generates CS0114:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/04xcc4t1(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS4014",
+    "message": "Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the \u0027await\u0027 operator to the result of the call.",
+    "description": "The current method calls an async method that returns a Task or a Task\u003cTResult\u003e and doesn’t apply the await operator to the result. The call to the async method starts an asynchronous task. However, because no await operator is applied, the program continues without waiting for the task to complete. In most cases, that behavior isn\u0027t what you expect. Usually other aspects of the calling method depend on the results of the call or, minimally, the called method is expected to complete before you return from the method that contains the call.\nAn equally important issue is what happens to exceptions that are raised in the called async method. An exception that\u0027s raised in a method that returns a Task or Task\u003cTResult\u003e is stored in the returned task. If you don\u0027t await the task or explicitly check for exceptions, the exception is lost. If you await the task, its exception is rethrown.\nAs a best practice, you should always await the call.\nYou should consider suppressing the warning only if you\u0027re sure that you don\u0027t want to wait for the asynchronous call to complete and that the called method won\u0027t raise any exceptions. In that case, you can suppress the warning by assigning the task result of the call to a variable.\nThe following example shows how to cause the warning, how to suppress it, and how to await the call.\nIn the example, if you choose Call #1 or Call #2, the unawaited async method (CalledMethodAsync) finishes after both its caller (CallingMethodAsync) and the caller\u0027s caller (startButton_Click) are complete. The last line in the following output shows you when the called method finishes. Entry to and exit from the event handler that calls CallingMethodAsync in the full example are marked in the output.\nYou can also suppress compiler warnings by using #pragma warning (C# Reference) directives.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/hh873131.aspx"
+  },
+  {
+    "id": "CS1030",
+    "message": "#warning: \u0027text\u0027",
+    "description": "Displays the text of a warning defined with the #warning directive.\nThe following sample shows how to create a user-defined warning:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ckcykyd4(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1203",
+    "message": "The feature \u0027feature\u0027 is deprecated. Please use \u0027feature\u0027 instead\u0027.",
+    "description": "The feature \u0027invalid feature\u0027 is deprecated. Please use \u0027valid feature\u0027 instead\u0027.\nThe feature you are attempting to use is now deprecated. Update your code to use the valid feature instead.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/sa329f6w(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0728",
+    "message": "Possibly incorrect assignment to local \u0027variable\u0027 which is the argument to a using or lock statement. The Dispose call or unlocking will happen on the original value of the local.",
+    "description": "There are several scenarios where using or lock blocks will result in a temporary leak of resources. Here is one example:\nthisType f \u003d null;\nusing (f)\n{\nf \u003d new thisType();\n...\n}\nIn this case, the original value, such as null, of the variable thisType will be disposed of when the using block finishes executing, but the thisType object created inside the block will not be, although it will eventually get garbage collected.\nTo resolve this error, use the following form:\nusing (thisType f \u003d new thisType())\n{\n...\n}\nIn this case, the newly allocated thisType object will be disposed of.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/zhdyhfk6(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1200",
+    "message": "The feature \u0027invalid feature\u0027 is deprecated. Please use \u0027valid feature\u0027 instead\u0027.",
+    "description": "The feature you are attempting to use is now deprecated. Update your code to use the valid feature instead.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/2kksw0yc(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1202",
+    "message": "The feature \u0027invalid feature\u0027 is deprecated. Please use \u0027valid feature\u0027 instead\u0027.",
+    "description": "The feature you are attempting to use is now deprecated. Update your code to use the valid feature instead.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/8exwattt(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1201",
+    "message": "The feature \u0027invalid feature\u0027 is deprecated. Please use \u0027valid feature\u0027 instead.",
+    "description": "The feature you are attempting to use is now deprecated. Update your code to use the valid feature instead.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/986d3z31(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1645",
+    "message": "Feature \u0027feature\u0027 is not part of the standardized ISO C# language specification, and may not be accepted by other compilers",
+    "description": "The feature you are using is not part of the ISO standard. Code using this feature may not compile on other compilers.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/sa4zat99(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3019",
+    "message": "CLS compliance checking will not be performed on \u0027type\u0027 because it is not visible from outside this assembly.",
+    "description": "This warning occurs when a type or a member that has the CLSCompliantAttribute attribute is not visible from another assembly. To resolve this error, remove the attribute on any classes or members that are not visible from the other assembly, or make the type or members visible. For more information on CLS Compliance, see Writing CLS-Compliant Code.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/wdw76d07(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3018",
+    "message": "\u0027type\u0027 cannot be marked as CLS-Compliant because it is a member of non CLS-compliant type \u0027type\u0027",
+    "description": "This warning occurs if a nested class with the CLSCompliant attribute set to true is declared as a member of a class declared with the CLSCompliant attribute set to false. This is not allowed, since a nested class cannot be CLS-compliant if it is a member of an outer class that is not CLS-compliant. To resolve this warning, remove the CLSCompliant attribute from the nested class, or change it from true to false. For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/wc2xs63e(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3015",
+    "message": "\u0027method signature\u0027 has no accessible constructors which use only CLS-compliant types",
+    "description": "To be compliant with the Common Language Specification (CLS), the argument list of an attribute class cannot contain an array. For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/98sh3ht4(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3014",
+    "message": "\u0027member\u0027 does not need a CLSCompliant attribute because the assembly does not have a CLSCompliant attribute",
+    "description": "In a source code file where compliance with the Common Language Specification (CLS) was not specified, a construct in the file was marked as being CLS compliant. This is not allowed. To resolve this warning, add an assembly level CLS compliant attribute to the file (in the following example, uncomment the line that contains the assembly level attribute). For more information about CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/6cdf1ff7(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3017",
+    "message": "You cannot specify the CLSCompliant attribute on a module that differs from the CLSCompliant attribute on the assembly",
+    "description": "This warning occurs if you have a assembly CLSCompliant attribute that conflicts with a module CLSCompliant attribute. An assembly that is CLS compliant cannot contain modules that are not CLS compliant. To resolve this warning, make sure the assembly and module CLSCompliant attributes are either both true or both false, or remove one of the attributes. For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/zs3e1t6x(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3016",
+    "message": "Arrays as attribute arguments is not CLS-compliant",
+    "description": "It is not compliant with the Common Language Specification (CLS) to pass an array to an attribute. For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/h9f682z5(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3010",
+    "message": "\u0027member\u0027: CLS-compliant interfaces must have only CLS-compliant members",
+    "description": "In an assembly marked with [assembly:CLCSompliant(true)], an interface contains a member marked with [CLCSompliant(false)]. Remove one of the Common Language Specification (CLS) compliance attributes. For more information about CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/byxw3c8b(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0282",
+    "message": "There is no defined ordering between fields in multiple declarations of partial class or struct \u0027type\u0027. To specify an ordering, all instance fields must be in the same declaration.",
+    "description": "To resolve this error, put all member variables in a single partial class definition.\nA common way to get this error is by having a partial struct defined in more than one place, with some of the member variables in one definition, and some in another.\nThe following code generates CS0282.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/e7ay985h(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3011",
+    "message": "\u0027member\u0027: only CLS-compliant members can be abstract",
+    "description": "A class member cannot be both abstract and non-compliant with the Common Language Specification (CLS). The CLS specifies that all class members shall be implemented. For more information about CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/1s03bd86(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0665",
+    "message": "Assignment in conditional expression is always constant; did you mean to use \u003d\u003d instead of \u003d ?",
+    "description": "A conditional expression used the \u003d operator and not the \u003d\u003d operator.\nThe following sample generates CS0665:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/c1sde1ax(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1700",
+    "message": "Assembly reference Assembly Name is invalid and cannot be resolved",
+    "description": "This warning indicates that an attribute, such as InternalsVisibleToAttribute, was not specified correctly.\nFor more information, see Friend Assemblies (C# and Visual Basic).",
+    "category": "level 3",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ac36c25f.aspx"
+  },
+  {
+    "id": "CS3012",
+    "message": "You cannot specify the CLSCompliant attribute on a module that differs from the CLSCompliant attribute on the assembly",
+    "description": "In order for a module to be compliant with the Common Language Specification (CLS) through [module:System.CLCSompliant(true)], it must be built with the /target:module compiler option. For more information on the CLS, see Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/s9c0tx3z(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1701",
+    "message": "Assuming assembly reference \"Assembly Name #1\" matches \"Assembly Name #2\", you may need to supply runtime policy",
+    "description": "The two assemblies differ in release and/or version number. For unification to occur, you must specify directives in the application\u0027s .config file, and you must provide the correct strong name of an assembly, as demonstrated in the following example code.",
+    "category": "level 2",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/2h4x8b08.aspx"
+  },
+  {
+    "id": "CS3013",
+    "message": "Added modules must be marked with the CLSCompliant attribute to match the assembly",
+    "description": "A module that was compiled with the /target:module compiler option was added to a compilation with /addmodule. However, the module\u0027s compliance with the Common Language Specification (CLS) does not agree with the CLS state of the current compilation.\nCLS compliance is indicated with the module attribute. For example, [module:CLSCompliant(true)] indicates that the module is CLS compliant, and [module:CLSCompliant(false)] indicates that the module is not CLS compliant. The default is [module:CLSCompliant(false)]. For more information on the CLS, see Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/7ad93zys(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1911",
+    "message": "Access to member \u0027name\u0027 through a \u0027base\u0027 keyword from an anonymous method, lambda expression, query expression, or iterator results in unverifiable code. Consider moving the access into a helper method on the containing type.",
+    "description": "Calling virtual functions with the base keyword inside the method body of an iterator or anonymous methods will result in unverifiable code. Unverifiable code will fail to run in a partial trust environment.\nOne resolution for CS1911 is to move the virtual function call to a helper function.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228459(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0661",
+    "message": "\u0027class\u0027 defines operator \u003d\u003d or operator !\u003d but does not override Object.GetHashCode()",
+    "description": "The compiler detected the user-defined equality or inequality operator, but no override for the GetHashCode function. A user-defined equality or inequality operator implies that you also want to override the GetHashCode function.\nThe following sample generates CS0661:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/xsf9f0ex(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0660",
+    "message": "Updated: September 2008",
+    "description": "The compiler detected the user-defined equality or inequality operator, but no override for the Equals function. A user-defined equality or inequality operator implies that you also want to override the Equals function. For more information, see Equality Comparisons (C# Programming Guide).\nThe following sample generates CS0660:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/4wtxwb6k(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0280",
+    "message": "\u0027type\u0027 does not implement the \u0027pattern name\u0027 pattern. \u0027method name\u0027 has the wrong signature.",
+    "description": "Two statements in C#, foreach and using, rely on predefined patterns, \"collection\" and \"resource\" respectively. This warning occurs when the compiler cannot match one of these statements to its pattern due to a method\u0027s incorrect signature. For example, the \"collection\" pattern requires that there be a method called MoveNext which takes no parameters and returns a boolean. Your code might contain a MoveNext method that has a parameter or perhaps returns an object.\nThe \"resource\" pattern and using provide another example. The \"resource\" pattern requires the Dispose method; if you define a property with the same name, you will get this warning.\nTo resolve this warning, ensure that the method signatures in your type match the signatures of the corresponding methods in the pattern, and ensure that you have no properties with the same name as a method required by the pattern.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/a9k87wd8(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1707",
+    "message": "Delegate \u0027DelegateName\u0027 bound to \u0027MethodName1\u0027 instead of \u0027MethodName2\u0027 because of new language rules",
+    "description": "C# 2.0 implements new rules for binding a delegate to a method. Additional information is considered that was not looked at in the past. This warning indicates that the delegate is now bound to a different overload of the method than it was previously bound to. You may wish to verify that the delegate really should be bound to \u0027MethodName1\u0027 instead of \u0027MethodName2\u0027.\nFor a description of how the compiler determines which method to bind a delegate to, see Covariance and Contravariance in Delegates (C# Programming Guide).",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/zfd7f9sw(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1709",
+    "message": "Filename specified for preprocessor directive is empty",
+    "description": "You have specified a preprocessor directive that includes a file name, but that file is empty. To resolve this warning, put the needed content into the file.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/k2chx6ds(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1702",
+    "message": "Assuming assembly reference \"Assembly Name #1\" matches \"Assembly Name #2\", you may need to supply runtime policy",
+    "description": "The two assembly references have differing build and/or revision numbers, so will not automatically unify. You may need to supply run-time policy to force unification by using directives in the application .config file.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/wc57zasf(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0067",
+    "message": "The event \u0027event\u0027 is never used",
+    "description": "An event was declared but never used in the class in which it was declared.\nThe following sample generates CS0067:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/858x0ycc(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1668",
+    "message": "Invalid search path \u0027path\u0027 specified in \u0027path string\u0027 -- \u0027system error message\u0027",
+    "description": "The path supplied to /lib at the command line was not valid, or a path in the LIB environment variable is invalid. Check the path used to verify that it exists and can be accessed. The error message in single quotation marks is the error returned from the operating system.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/tcbs315h(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0472",
+    "message": "The result of the expression is always \u0027value1\u0027 since a value of type \u0027value2\u0027 is never equal to \u0027null\u0027 of type \u0027value3\u0027",
+    "description": "The compiler should warn if you use an operator with a constant null value.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228621(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3009",
+    "message": "\u0027type\u0027: base type \u0027type\u0027 is not CLS-compliant",
+    "description": "A base type was marked as not having to be compliant with the Common Language Specification (CLS) in an assembly that was marked as being CLS compliant. Either remove the attribute that specifies the assembly is CLS compliant or remove the attribute that indicates the type is not CLS compliant. For more information on CLS Compliance, see Writing CLS-Compliant Code and Language Independence and Language-Independent Components.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/tdd79w48.aspx"
+  },
+  {
+    "id": "CS0279",
+    "message": "\u0027type name\u0027 does not implement the \u0027pattern name\u0027 pattern. \u0027method name\u0027 is either static or not public.",
+    "description": "There are several statements in C# that rely on defined patterns, such as foreach and using. For example, foreach relies on the collection class implementing the enumerable pattern. This error occurs when the compiler is unable to make the match due to a method being declared static or not public. Methods in patterns are required to be instances of classes, and to be public.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bz2286x8(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3008",
+    "message": "Identifier \u0027identifier\u0027 differing only in case is not CLS-compliant",
+    "description": "A public, protected, or protected internal identifier breaks compliance with the Common Language Specification (CLS) if it begins with an underscore character (_).For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/x8ak87y5(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1658",
+    "message": "\u0027warning text\u0027. See also error \u0027error code\u0027",
+    "description": "The compiler emits this warning when it overrides an error with a warning. For information about the problem, refer to the error mentioned. To find the appropriate error from within the Visual Studio IDE, use the index. For example, if the text above reads \"See also error \u0027CS1037\u0027,\" look for CS1037 in the index.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ft0k10fs.aspx"
+  },
+  {
+    "id": "CS3007",
+    "message": "Overloaded method \u0027method\u0027 differing only by unnamed array types is not CLS-compliant",
+    "description": "This error occurs if you have an overloaded method that takes a jagged array and the only difference between the method signatures is the element type of the array. To avoid this error, consider using a rectangular array rather than a jagged array; use an additional parameter to disambiguate the function call; rename one or more of the overloaded methods; or, if CLS Compliance is not needed, remove the CLSCompliantAttribute attribute. For more information on CLS Compliance, see Language Independence and Language-Independent Components.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/3w1d36e0.aspx"
+  },
+  {
+    "id": "CS3006",
+    "message": "Overloaded method \u0027method\u0027 differing only in ref or out, or in array rank, is not CLS-compliant",
+    "description": "A method does not cannot be overloaded based on the ref or out parameter and still comply with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/8k2kbc25(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0278",
+    "message": "\u0027type\u0027 does not implement the \u0027pattern name\u0027 pattern. \u0027method name\u0027 is ambiguous with \u0027method name\u0027.",
+    "description": "There are several statements in C# that rely on defined patterns, such as foreach and using. For example, foreach relies on the collection class implementing the \"enumerable\" pattern.\nCS0278 can occur if the compiler is unable to make the match due to ambiguities. For example, the \"enumerable\" pattern requires that there be a method called MoveNext, and your code might contain two methods called MoveNext. The compiler will attempt to find an interface to use, but it is recommended that you determine and resolve the cause of the ambiguity.\nFor more information, see How to: Access a Collection Class with foreach (C# Programming Guide).",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bzwss033(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3005",
+    "message": "Identifier \u0027identifier\u0027 differing only in case is not CLS-compliant",
+    "description": "A public, protected, or protected internal identifier, which differs from another public, protected, or protected internal identifier only in the case of one or more letters, is not compliant with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/7xyxa3xs(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3004",
+    "message": "Mixed and decomposed Unicode characters are not CLS-compliant",
+    "description": "Only composed UNICODE characters are allowed in public, protected, or protected internal identifiers in order to be compliant with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/y5x1xeee(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3003",
+    "message": "Type of \u0027variable\u0027 is not CLS-compliant",
+    "description": "A public, protected, or protected internal variable must be of a type that is compliant with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Language Independence and Language-Independent Components.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ax5w23a6.aspx"
+  },
+  {
+    "id": "CS1711",
+    "message": "XML comment on \u0027type\u0027 has a typeparam tag for \u0027parameter\u0027, but there is no type parameter by that name",
+    "description": "The documentation of a generic type includes a tag for the type parameter that has the wrong name.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/296yeetb(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3001",
+    "message": "Argument type \u0027type\u0027 is not CLS-compliant",
+    "description": "A public, protected, or protected internal method must accept a parameter whose type is compliant with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/hf9d6580(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1712",
+    "message": "Type parameter \u0027type parameter\u0027 has no matching typeparam tag in the XML comment on \u0027type\u0027 (but other type parameters do)",
+    "description": "The documentation of a generic type is missing a typeparam tag. For more information, see \u003ctypeparam\u003e (C# Programming Guide).",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/t8zca749(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3002",
+    "message": "Return type of \u0027method\u0027 is not CLS-compliant",
+    "description": "A public, protected, or protected internal method must return a value whose type is compliant with the Common Language Specification (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code and Common Language Specification.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/53kxks54(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1710",
+    "message": "XML comment on \u0027type\u0027 has a duplicate typeparam tag for \u0027parameter\u0027",
+    "description": "The documentation of a generic type includes a duplicate tag for the type parameter.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/k5ya7w1x(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3000",
+    "message": "Methods with variable arguments are not CLS-compliant",
+    "description": "The arguments used in the method expose features that are not in the Common Language Specifications (CLS). For more information on CLS Compliance, see Writing CLS-Compliant Code.\nThe following example generates the warning CS3000.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228294(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0652",
+    "message": "Comparison to integral constant is useless; the constant is outside the range of type \u0027type\u0027",
+    "description": "The compiler detected a comparison between a constant and a variable where the constant is out of the range of the variable.\nThe following sample generates CS0652:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/hy48x9zb(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1717",
+    "message": "Assignment made to same variable; did you mean to assign something else?",
+    "description": "This warning occurs when you assign a variable to itself, such as a \u003d a.\nSeveral common mistakes can generate this warning:\nWriting a \u003d a as the condition of an if statement, such as if (a \u003d a). You probably meant to say if (a \u003d\u003d a), which is always true, so you could write this more concisely as if (true). Mistyping. You probably meant to say a \u003d b. In a constructor where the parameter has the same name as the field, not using the this keyword: you probably meant to say this.a \u003d a.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/a1kzfw0z(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1718",
+    "message": "Comparison made to same variable; did you mean to compare something else?",
+    "description": "If you meant to compare to something else, then you should simply correct the statement.\nBut another possibility is that you were testing for true or false, and were doing so by statements such as if (a \u003d\u003d a) (true) or if (a \u003c a) (false). It is better to simply say if (true) or if (false). There are two reasons for this:\nIt is simpler: it is always clearer to simply say what you mean. It helps avoid confusion: a new feature of C# 2.0 is nullable value types, which are analogous to the value null in Transact-SQL, the programming language used by SQL Server. Developers familiar with Transact-SQL might be concerned about the effect of nullable types on expressions such as if (a \u003d\u003d a), because of the use of ternary logic in Transact-SQL. If you use true or false, you avoid this possible confusion.",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/78kc05h3(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0658",
+    "message": "\u0027attribute modifier\u0027 is not a recognized attribute location. All attributes in this block will be ignored.",
+    "description": "An invalid attribute modifier was specified. See Attribute Targets for more information.\nThe following sample generates CS0658:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/4ky08ezz(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0657",
+    "message": "\u0027attribute modifier\u0027 is not a valid attribute location for this declaration. Valid attribute locations for this declaration are \u0027locations\u0027. All attributes in this block will be ignored.",
+    "description": "The compiler found an attribute modifier in an invalid location. See Attribute Targets for more information.\nThe following sample generates CS0657:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/c6hdfbk4(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0659",
+    "message": "\u0027class\u0027 overrides Object.Equals(object o) but does not override Object.GetHashCode()",
+    "description": "The compiler detected an override of the Equals function but no override for GetHashCode. An override of Equals implies that you also want to override GetHashCode.\nFor more information, see\nHashtable. Guidelines for Implementing Equals and the Equality Operator (\u003d\u003d) Implementing the Equals Method GetHashCode\nThe following sample generates CS0659:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/xxhbfytk(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0169",
+    "message": "The private field \u0027class member\u0027 is never used",
+    "description": "A private variable was declared but never referenced. A common way to generate this warning is when you declare a private member of a class and do not use it.\nThe following sample generates CS0169:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/x7sk421w(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1698",
+    "message": "Circular assembly reference \u0027AssemblyName1\u0027 does not match the output assembly name \u0027AssemblyName2\u0027. Try adding a reference to \u0027AssemblyName1\u0027 or changing the output assembly name to match.",
+    "description": "CS1698 occurs when an assembly reference is incorrect. This can happen if a referenced assembly is recompiled. To resolve, do not replace an assembly that itself is a dependency of an assembly you are referencing.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/d8367225(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1699",
+    "message": "Use command line option \"compiler_option\" or appropriate project settings instead of \"attribute_name\"",
+    "description": "In order to sign an assembly, it is necessary to specify a key file. Prior to Microsoft Visual C# 2005, you specified the key file using CLR attributes in source code. These attributes are now deprecated.\nBeginning in Microsoft Visual C# 2005, you should use the Signing Page of the Project Designer or the Assembly Linker to specify the key file.\nThe Signing Page of the Project Designer is the preferred method; for more information, see Signing Page, Project Designer and Managing Assembly and Manifest Signing.\nThe How to: Sign an Assembly with a Strong Name uses the following compiler options:\n/keyfile (C# Compiler Options) instead of the AssemblyKeyFileAttribute attribute. /keycontainer (C# Compiler Options) instead ofAssemblyKeyNameAttribute. /delaysign (C# Compiler Options) instead of AssemblyDelaySignAttribute.\nThese attributes have been deprecated for the following reasons:\nThere were security issues due to the attributes being embedded in the binary files produced by the compiler. Everyone who had your binary also had the keys stored in it. There were usability issues due to the fact that the path specified in the attributes was relative to the current working directory, which could change in the integrated development environment (IDE), or to the output directory. Thus, most times the key file is likely to be ..\\\\..\\\\mykey.snk. Attributes also make it more difficult for the project system to properly sign satellite assemblies. When you use the compiler options instead of these attributes, you can use a fully qualified path and file name for the key without anything being embedded in the output file; the project system and source code control system can properly manipulate that full path when projects are moved around; the project system can maintain a project-relative path to the key file, and still pass a full path to the compiler; other build programs can more easily sign outputs by passing the proper path directly to the compiler instead of generating a source file with the correct attributes. Using attributes with friend assemblies can hamper compiler efficiency. When you use attributes, the compiler does not know what the key is when it has to decide whether or not to grant friendship and so it has to guess. At the end of compilation, the compiler is able to verify the guess once it finally knows the key. When the key file is specified with a compiler option, the compiler can immediately decide whether to grant friendship.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/xh3fc3x0.aspx"
+  },
+  {
+    "id": "CS1694",
+    "message": "Invalid filename specified for preprocessor directive. Filename is too long or not a valid filename.",
+    "description": "This warning occurs when using the #pragma checksum preprocessor directive. The file name specified is longer than 256 characters. To resolve this warning, use a shorter file name.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/3a8c4zx8(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1695",
+    "message": "Invalid #pragma checksum syntax; should be #pragma checksum \"filename\" \"{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}\" \"XXXX...\"",
+    "description": "You should rarely encounter this error since the checksum is generally inserted at run time if you are generating code by means of the Code Dom API.\nHowever, if you were to type in this #pragma statement and mistype either the GUID or checksum, you would get this error. The syntax checking by the compiler does not validate that you typed in a correct GUID, but it does check for the right number of digits and delimiters, and that the digits are hexadecimal. Likewise, it verifies that the checksum contains an even number of digits, and that the digits are hexadecimal.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/s3etx4x8(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1696",
+    "message": "Single-line comment or end-of-line expected",
+    "description": "The compiler requires a preprocessor directive to be followed by an end-of-line terminator or by a single-line comment. The compiler has finished processing a valid preprocessor directive, and has encountered something that violates this syntax constraint.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/0b7sz3ke(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0078",
+    "message": "The \u0027l\u0027 suffix is easily confused with the digit \u00271\u0027 -- use \u0027L\u0027 for clarity",
+    "description": "The compiler warns when it detects a cast to long using a lowercase l instead of an uppercase L.\nThe following sample generates CS0078:",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/s74dtt7k(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0168",
+    "message": "The variable \u0027var\u0027 is assigned but its value is never used",
+    "description": "The compiler warns when a variable is declared but not used.\nThe following sample generates two CS0168 warnings:",
+    "category": "level 3",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/tf85t6e4(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1697",
+    "message": "Different checksum values given for \u0027file name\u0027",
+    "description": "You have specified more than one checksum for a given file. The debugger uses the checksum value to determine which file to debug when there is more than one file in a project with the same name. Most users will not encounter this error, but if you are writing an application that generates code, you may run into it. To resolve this error, ensure that you generate the checksum only once for any given code file.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/71a7x9zx(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0602",
+    "message": "The feature \u0027old_feature\u0027 is deprecated. Please use \u0027new_feature\u0027 instead",
+    "description": "A language feature used in your code (old_feature) is still supported, but that support may be removed in a future release. Instead, you should use the recommended syntax (new_feature).",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/yk6dwc9a(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1590",
+    "message": "Invalid XML include element -- Missing file attribute",
+    "description": "A path or doc attribute, passed to the \u003cinclude\u003e tag, was missing or incomplete.\nThe following sample generates CS1590:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/549c3y6s(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1591",
+    "message": "Missing XML comment for publicly visible type or member \u0027Type_or_Member\u0027",
+    "description": "The /doc compiler option was specified, but one or more constructs did not have comments.\nThe following sample generates CS1591:",
+    "category": "level 4",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/zk18c1w9.aspx"
+  },
+  {
+    "id": "CS1522",
+    "message": "Empty switch block",
+    "description": "The compiler detected a switch block with no case or default statement. A switch block must have one or more case or default statements.\nThe following sample generates CS1522:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/x68b4s45(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1592",
+    "message": "Badly formed XML in included comments file -- \u0027reason\u0027",
+    "description": "A problem, reported as reason, was found in the file specified by the \u003cinclude\u003e tag.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/89c331t3(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0684",
+    "message": "\u0027interface\u0027 interface marked with \u0027CoClassAttribute\u0027 not marked with \u0027ComImportAttribute\u0027",
+    "description": "If you specify CoClassAttribute on an interface, you must also specify ComImportAttribute.\nThe following sample generates CS0684:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/wft4tcwz(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1598",
+    "message": "XML parser could not be loaded for the following reason: \u0027reason\u0027. The XML documentation file \u0027file\u0027 will not be generated.",
+    "description": "The /doc option was specified, but the compiler could not find and load msxml3.dll. Make sure that the file msxml3.dll is installed and registered.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/szfbfb7e.aspx"
+  },
+  {
+    "id": "CS1060",
+    "message": "Use of possibly unassigned field \u0027name\u0027. Struct instance variables are initially unassigned if struct is unassigned.",
+    "description": "Struct members are initialized to their default value if you do not explicitly initialize them. The default value for class types (and other reference types) is null. If the class is not initialized before any attempt to access it, a NullReferenceException will be thrown at runtime. The compiler cannot determine definitively whether the class member will be initialized or not, and so CS1060 is a warning and not an error.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/bb384216.aspx"
+  },
+  {
+    "id": "CS0465",
+    "message": "Introducing a \u0027Finalize\u0027 method can interfere with destructor invocation. Did you intend to declare a destructor?",
+    "description": "This warning occurs when you create a class with a method whose signature is public virtual void Finalize.\nIf such a class is used as a base class and if the deriving class defines a destructor, the destructor will override the base class Finalize method, not Finalize.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/02wtfwbt.aspx"
+  },
+  {
+    "id": "CS0464",
+    "message": "Comparing with null of type \u0027type\u0027 always produces \u0027false\u0027",
+    "description": "This warning is produced when you perform a comparison between a nullable variable and null, and the comparison is not \u003d\u003d or !\u003d. To resolve this error, verify if you really want to check a value for null. A comparison like i \u003d\u003d null can be either true of false. A comparison like i \u003e null is always false.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/7kdfy0dz(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0467",
+    "message": "Ambiguity between method \u0027method\u0027 and non-method \u0027non-method\u0027. Using method group.",
+    "description": "Inherited members from different interfaces that have the same signature cause an ambiguity error.",
+    "category": "level 2",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228509.aspx"
+  },
+  {
+    "id": "CS1720",
+    "message": "Expression will always cause a System.NullReferenceException because the default value of \u0027generic type\u0027 is null",
+    "description": "If you write an expression involving the default of a generic type variable that is a reference type (for example, a class), this error will occur. Consider the following expression:\nSince T is a reference type, its default value is null, and so attempting to apply the ToString method to it will throw a NullReferenceException.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/z8ec80x7(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0688",
+    "message": "\u0027method1\u0027 has a link demand, but overrides or implements \u0027method2\u0027 which does not have a link demand. A security hole may exist.",
+    "description": "The link demand set up on the derived class method can easily be circumvented by calling the base class method. To close the security hole, the base class method needs to also use the link demand. For more information, see Demand vs. LinkDemand.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ffx7yb34(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0469",
+    "message": "The \u0027goto case\u0027 value is not implicitly convertible to type \u0027type\u0027",
+    "description": "When you use goto case, there must be an implicit conversion from the value of the goto case to the type of the switch.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228370(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1723",
+    "message": "XML comment on \u0027param\u0027 has cref attribute \u0027attribute\u0027 that refers to a type parameter",
+    "description": "This error is generated by an XML comment that refers to a type parameter.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228603(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0162",
+    "message": "Unreachable code detected",
+    "description": "The compiler detected code that will never be executed.\nThe following sample generates CS0162:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/c0h4st1x(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1691",
+    "message": "\u0027number\u0027 is not a valid warning number",
+    "description": "A number that was passed to the #pragma warning preprocessor directive was not a valid warning number. Verify that the number represents a warning, not an error or another sequence of characters.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/7z6tx3wa.aspx"
+  },
+  {
+    "id": "CS1690",
+    "message": "Accessing a member on \u0027member\u0027 may cause a runtime exception because it is a field of a marshal-by-reference class",
+    "description": "This warning occurs when you try to call a method, property, or indexer on a member of a class that derives from MarshalByRefObject, and the member is a value type. Objects that inherit from MarshalByRefObject are typically intended to be marshaled by reference across an application domain. If any code ever attempts to directly access the value-type member of such an object across an application domain, a runtime exception will occur. To resolve the warning, first copy the member into a local variable and call the method on that variable.\nThe following sample generates CS1690:",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/x524dkh4.aspx"
+  },
+  {
+    "id": "CS0164",
+    "message": "This label has not been referenced",
+    "description": "A label was declared but never used.\nThe following sample generates CS0164:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/1k8ft9ad(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1692",
+    "message": "Invalid number",
+    "description": "A number of preprocessor directives, such as #pragma and #line, use numbers as parameters. One of these numbers is invalid because it is too big, in the wrong format, contains illegal characters, and so on. To correct this error, correct the number.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/c5fc6adb(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1635",
+    "message": "Cannot restore warning \u0027warning code\u0027 because it was disabled globally",
+    "description": "This warning occurs if you use the /nowarn command line option or project setting to disable a warning for the entire compilation unit, but you use #pragma warning restore to attempt to restore that warning. To resolve this error, remove the /nowarn command line option or project setting, or remove the #pragma warning restore for any warnings you are disabling via the command line or project settings. For more information, see the #pragma warning topic.\nThe following sample generates CS1635:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/y0bcfsxd(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1634",
+    "message": "Expected disable or restore",
+    "description": "This error occurs if a #pragma warning clause is badly formed, such as if disable or restore was omitted. For more information, see the #pragma warning topic.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/h11w67kf(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1633",
+    "message": "Unrecognized #pragma directive",
+    "description": "The pragma used was not one of the known pragmas supported by the C# compiler. To resolve this error, use only pragmas supported.\nThe following sample generates CS1633:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/yz2zkt9f(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1687",
+    "message": "Source file has exceeded the limit of 16,707,565 lines representable in the PDB, debug information will be incorrect",
+    "description": "The PDB and debugger have some limitations about how big a file can be. If the source file is too big, the debugger will not behave properly beyond that limit. The user should either not emit debug information for that file by possibly using #line hidden, or they should find a way to shrink the file, possibly by splitting the file into multiple files. They might want to use the partial keyword to split up a large class.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/yzc7hf6w(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1685",
+    "message": "The predefined type \u0027System.type name\u0027 is defined in multiple assemblies in the global alias; using definition from \u0027File Name\u0027",
+    "description": "This error occurs when a predefined system type such as System.int32 is found in two assemblies. One way this can happen is if you are referencing mscorlib from two different places, such as trying to run the.Net Framework versions 1.0 and 1.1 side-by-side.\nThe compiler will use the definition from only one of the assemblies. The compiler searches only global aliases, does not search libraries defined /reference. If you have specified /nostdlib, the compiler will search for Object, and in the future start all searches for predefined types in the file where it found Object.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/8xys0hxk.aspx"
+  },
+  {
+    "id": "CS1683",
+    "message": "Reference to type \u0027Type Name\u0027 claims it is defined in this assembly, but it is not defined in source or any added modules",
+    "description": "This error can occur when you are importing an assembly that contains a reference back to the assembly you are currently compiling, but the assembly being compiled contains nothing matching the reference. One way to get to this situation is to compile your assembly, which initially does contain the member that the assembly being imported is referencing. Then you update your assembly, mistakenly removing the members that the imported assembly is referencing.",
+    "category": "level 1",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/6b351z64.aspx"
+  },
+  {
+    "id": "CS1684",
+    "message": "Reference to type \u0027Type Name\u0027 claims it is defined in \u0027Namespace\u0027, but it could not be found",
+    "description": "This error can be caused by a reference inside one namespace referring to a type that it says exists inside a second namespace, but the type does not exist. For example, mydll.dll says that type A exists inside yourdll.dll, but no such type exists inside yourdll.dll. One possible cause of this error is that the version of yourdll.dll you are using is too old and A has not yet been defined.\nThe following sample generates CS1684.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/9w8ddtax(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3027",
+    "message": "\u0027type_1\u0027 is not CLS-compliant because base interface \u0027type_2\u0027 is not CLS-compliant",
+    "description": "A non-CLS compliant type cannot be a base type for a type that is CLS compliant.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228609(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0253",
+    "message": "Possible unintended reference comparison; to get a value comparison, cast the right hand side to type \u0027type\u0027",
+    "description": "The compiler is doing a reference comparison. If you want to compare the value of strings, cast the right side of the expression to type.\nThe following sample generates CS0253:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/etywy2s3(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3026",
+    "message": "CLS-compliant field \u0027field\u0027 cannot be volatile",
+    "description": "A volatile variable should not be CLS compliant.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ms228369(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0402",
+    "message": "\u0027identifier\u0027 : an entry point cannot be generic or in a generic type",
+    "description": "The entry point was found in a generic type. To remove this warning, implement Main in a non-generic class or struct.",
+    "category": "level 4",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/ht5h7yhs(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS5000",
+    "message": "Unknown compiler option \u0027/option\u0027",
+    "description": "An invalid compiler option was specified.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/5084aa62(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1580",
+    "message": "Invalid type for parameter \u0027parameter number\u0027 in XML comment cref attribute",
+    "description": "When attempting to reference an overload form of a method, the compiler detected a syntax error. Typically, this indicates that the parameter name, and not the type, was specified. A malformed line will appear in the generated XML file.\nThe following sample generates CS1580:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/03t96cfx(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1581",
+    "message": "Invalid return type in XML comment cref attribute",
+    "description": "When attempting to reference a method, the compiler detected an error due to an invalid return type.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/2x5b3kwy(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1587",
+    "message": "XML comment is not placed on a valid language element",
+    "description": "Recommended tags for documentation comments are not allowed on all language elements. For example, a tag is not allowed on a namespace. For more information on XML comments, see Recommended Tags for Documentation Comments (C# Programming Guide).",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/d3x6ez1z(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0672",
+    "message": "Member \u0027member1\u0027 overrides obsolete member \u0027member2. Add the Obsolete attribute to \u0027member1\u0027",
+    "description": "The compiler found an override to a method marked as obsolete. However, the overriding method was not itself marked as obsolete. The overriding method will still generate CS0612, if called.\nReview your method declarations and explicitly indicate whether a method (and all of its overrides) should be marked obsolete.\nThe following sample generates CS0672:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/9dzeyth8(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1584",
+    "message": "XML comment on \u0027member\u0027 has syntactically incorrect cref attribute \u0027invalid_syntax\u0027",
+    "description": "One of the parameters passed to a tag for documentation comments has invalid syntax. For more information, see Recommended Tags for Documentation Comments (C# Programming Guide).",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/hz13h4se(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0458",
+    "message": "The result of the expression is always \u0027null\u0027 of type \u0027type name\u0027",
+    "description": "This warning is caused by a nullable expression that always results in null.\nThe following code generates warning CS0458.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/b5y7f57h(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0252",
+    "message": "Possible unintended reference comparison; to get a value comparison, cast the left hand side to type \u0027type\u0027",
+    "description": "The compiler is doing a reference comparison. If you want to compare the value of strings, cast the left side of the expression to type.\nThe following sample generates CS0252:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/f6dtw2ah(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3023",
+    "message": "CLSCompliant attribute has no meaning when applied to return types. Try putting it on the method instead.",
+    "description": "Function return types are not checked for CLS Compliance, since the CLS Compliance rules apply to methods and type declarations.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/251xk0fs(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0251",
+    "message": "Indexing an array with a negative index (array indices always start at zero)",
+    "description": "Do not use a negative number to index into an array.\nThe following sample generates CS0251:",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/y2zwz8ah(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3024",
+    "message": "Constraint type \u0027type\u0027 is not CLS-compliant.",
+    "description": "The compiler issues this warning because the use of a non-CLS-compliant type as a generic type constraint could make it impossible for code written in some languages to consume your generic class.",
+    "category": "Compiler Warning CS3024",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bb397768(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS0675",
+    "message": "Bitwise-or operator used on a sign-extended operand; consider casting to a smaller unsigned type first",
+    "description": "The compiler implicitly widened and sign-extended a variable, and then used the resulting value in a bitwise OR operation. This can result in unexpected behavior.\nThe following sample generates CS0675:",
+    "category": "level 3",
+    "version": "Visual Studio 2013",
+    "url": "http://msdn.microsoft.com/en-us/library/wdc6717a.aspx"
+  },
+  {
+    "id": "CS3021",
+    "message": "\u0027type\u0027 does not need a CLSCompliant attribute because the assembly does not have a CLSCompliant attribute",
+    "description": "This warning occurs if [CLSCompliant(false)] appears on a class in an assembly which does not have an assembly-level CLSCompliant attribute set to true (i.e., the line [assembly: CLSCompliant(true)]). Since the assembly is not declaring itself CLS compliant, there is no need for anything within the assembly to declare itself non-compliant, since it is assumed to be non-compliant. For more information on CLS Compliance, see Writing CLS-Compliant Code.\nTo get rid of this warning, remove the attribute or add the assembly level attribute.",
+    "category": "level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/1x9049cy(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1589",
+    "message": "Unable to include XML fragment \u0027fragment\u0027 of file \u0027file\u0027 -- reason",
+    "description": "The syntax (fragment) of a \u003cinclude\u003e tag, which referenced a file (file), was incorrect for the specified reason.\nA malformed line will be placed in the generated XML file.\nThe following sample generates CS1589:",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/3y857kz5(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1927",
+    "message": "Ignoring /win32manifest for module because it only applies to assemblies.",
+    "description": "A win32 manifest is only applied at the assembly level. Your module will compile but it will not have a manifest.",
+    "category": "Level 2",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/bb513727(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS3022",
+    "message": "CLSCompliant attribute has no meaning when applied to parameters. Try putting it on the method instead.",
+    "description": "Method parameters are not checked for CLS Compliance, since the CLS Compliance rules apply to methods and type declarations.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/0df6ca21(v\u003dvs.90).aspx"
+  },
+  {
+    "id": "CS1682",
+    "message": "Reference to type \u0027type\u0027 claims it is nested within \u0027nested type\u0027, but it could not be found",
+    "description": "This error arises when you import references that do not agree with other references or with code you have written. A common way to get this error is to write code that refers to a class in metadata, and then you either delete that class or modify its definition.",
+    "category": "level 1",
+    "version": "Visual Studio 2008",
+    "url": "http://msdn.microsoft.com/en-us/library/fce5tf34(v\u003dvs.90).aspx"
+  }
+]

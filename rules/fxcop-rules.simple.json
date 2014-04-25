@@ -1,0 +1,1882 @@
+[
+  {
+    "id": "CA1000",
+    "message": "Do not declare static members on generic types",
+    "description": "When a static member of a generic type is called, the type argument must be specified for the type. When a generic instance member that does not support inference is called, the type argument must be specified for the member. In these two cases, the syntax for specifying the type argument is different and easily confused.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotDeclareStaticMembersOnGenericTypes"
+  },
+  {
+    "id": "CA1001",
+    "message": "Types that own disposable fields should be disposable",
+    "description": "A class declares and implements an instance field that is a System.IDisposable type, and the class does not implement IDisposable. A class that declares an IDisposable field indirectly owns an unmanaged resource and should implement the IDisposable interface.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "TypesThatOwnDisposableFieldsShouldBeDisposable"
+  },
+  {
+    "id": "CA1002",
+    "message": "Do not expose generic lists",
+    "description": "System.Collections.Generic.List\u003c(Of \u003c(T\u003e)\u003e) is a generic collection that is designed for performance, not inheritance. Therefore, List does not contain any virtual members. The generic collections that are designed for inheritance should be exposed instead.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotExposeGenericLists"
+  },
+  {
+    "id": "CA1003",
+    "message": "Use generic event handler instances",
+    "description": "A type contains a delegate that returns void, whose signature contains two parameters (the first an object and the second a type that is assignable to EventArgs), and the containing assembly targets Microsoft .NET Framework 2.0.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UseGenericEventHandlerInstances"
+  },
+  {
+    "id": "CA1004",
+    "message": "Generic methods should provide type parameter",
+    "description": "Inference is how the type argument of a generic method is determined by the type of argument that is passed to the method, instead of by the explicit specification of the type argument. To enable inference, the parameter signature of a generic method must include a parameter that is of the same type as the type parameter for the method. In this case, the type argument does not have to be specified. When using inference for all type parameters, the syntax for calling generic and non-generic instance methods is identical; this simplifies the usability of generic methods.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "GenericMethodsShouldProvideTypeParameter"
+  },
+  {
+    "id": "CA1005",
+    "message": "Avoid excessive parameters on generic types",
+    "description": "The more type parameters a generic type contains, the more difficult it is to know and remember what each type parameter represents. It is usually obvious with one type parameter, as in List\u003cT\u003e, and in certain cases that have two type parameters, as in Dictionary\u003cTKey, TValue\u003e. However, if more than two type parameters exist, the difficulty becomes too great for most users.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AvoidExcessiveParametersOnGenericTypes"
+  },
+  {
+    "id": "CA1006",
+    "message": "Do not nest generic types in member signatures",
+    "description": "A nested type argument is a type argument that is also a generic type. To call a member whose signature contains a nested type argument, the user must instantiate one generic type and pass this type to the constructor of a second generic type. The required procedure and syntax are complex and should be avoided.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotNestGenericTypesInMemberSignatures"
+  },
+  {
+    "id": "CA1007",
+    "message": "Use generics where appropriate",
+    "description": "An externally visible method contains a reference parameter of type System.Object. Use of a generic method enables all types, subject to constraints, to be passed to the method without first casting the type to the reference parameter type.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UseGenericsWhereAppropriate"
+  },
+  {
+    "id": "CA1008",
+    "message": "Enums should have zero value",
+    "description": "The default value of an uninitialized enumeration, just as other value types, is zero. A nonflags-attributed enumeration should define a member by using the value of zero so that the default value is a valid value of the enumeration. If an enumeration that has the FlagsAttribute attribute applied defines a zero-valued member, its name should be \"None\" to indicate that no values have been set in the enumeration.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "EnumsShouldHaveZeroValue"
+  },
+  {
+    "id": "CA1009",
+    "message": "Declare event handlers correctly",
+    "description": "Event handler methods take two parameters. The first is of type System.Object and is named \"sender\". This is the object that raised the event. The second parameter is of type System.EventArgs and is named \"e\". This is the data that is associated with the event. Event handler methods should not return a value; in the C# programming language, this is indicated by the return type void.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DeclareEventHandlersCorrectly"
+  },
+  {
+    "id": "CA1010",
+    "message": "Collections should implement generic interface",
+    "description": "To broaden the usability of a collection, implement one of the generic collection interfaces. Then the collection can be used to populate generic collection types.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "CollectionsShouldImplementGenericInterface"
+  },
+  {
+    "id": "CA1011",
+    "message": "Consider passing base types as parameters",
+    "description": "When a base type is specified as a parameter in a method declaration, any type that is derived from the base type can be passed as the corresponding argument to the method. If the additional functionality that is provided by the derived parameter type is not required, use of the base type enables wider use of the method.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ConsiderPassingBaseTypesAsParameters"
+  },
+  {
+    "id": "CA1012",
+    "message": "Abstract types should not have constructors",
+    "description": "Constructors on abstract types can be called only by derived types. Because public constructors create instances of a type, and you cannot create instances of an abstract type, an abstract type that has a public constructor is incorrectly designed.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AbstractTypesShouldNotHaveConstructors"
+  },
+  {
+    "id": "CA1013",
+    "message": "Overload operator equals on overloading add and subtract",
+    "description": "A public or protected type implements the addition or subtraction operators without implementing the equality operator.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "OverloadOperatorEqualsOnOverloadingAddAndSubtract"
+  },
+  {
+    "id": "CA1014",
+    "message": "Mark assemblies with CLSCompliantAttribute",
+    "description": "The Common Language Specification (CLS) defines naming restrictions, data types, and rules to which assemblies must conform if they will be used across programming languages. Good design dictates that all assemblies explicitly indicate CLS compliance by using CLSCompliantAttribute . If this attribute is not present on an assembly, the assembly is not compliant.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MarkAssembliesWithClsCompliant"
+  },
+  {
+    "id": "CA1016",
+    "message": "Mark assemblies with AssemblyVersionAttribute",
+    "description": "The .NET Framework uses the version number to uniquely identify an assembly, and to bind to types in strongly named assemblies. The version number is used together with version and publisher policy. By default, applications run only with the assembly version with which they were built.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MarkAssembliesWithAssemblyVersion"
+  },
+  {
+    "id": "CA1017",
+    "message": "Mark assemblies with ComVisibleAttribute",
+    "description": "ComVisibleAttribute determines how COM clients access managed code. Good design dictates that assemblies explicitly indicate COM visibility. COM visibility can be set for the whole assembly and then overridden for individual types and type members. If this attribute is not present, the contents of the assembly are visible to COM clients.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MarkAssembliesWithComVisible"
+  },
+  {
+    "id": "CA1018",
+    "message": "Mark attributes with AttributeUsageAttribute",
+    "description": "When you define a custom attribute, mark it by using AttributeUsageAttribute to indicate where in the source code the custom attribute can be applied. The meaning and intended usage of an attribute will determine its valid locations in code.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MarkAttributesWithAttributeUsage"
+  },
+  {
+    "id": "CA1019",
+    "message": "Define accessors for attribute arguments",
+    "description": "Attributes can define mandatory arguments that must be specified when you apply the attribute to a target. These are also known as positional arguments because they are supplied to attribute constructors as positional parameters. For every mandatory argument, the attribute should also provide a corresponding read-only property so that the value of the argument can be retrieved at execution time. Attributes can also define optional arguments, which are also known as named arguments. These arguments are supplied to attribute constructors by name and should have a corresponding read/write property.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DefineAccessorsForAttributeArguments"
+  },
+  {
+    "id": "CA1020",
+    "message": "Avoid namespaces with few types",
+    "description": "Make sure that each of your namespaces has a logical organization, and that a valid reason exists for putting types in a sparsely populated namespace.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AvoidNamespacesWithFewTypes"
+  },
+  {
+    "id": "CA1021",
+    "message": "Avoid out parameters",
+    "description": "Passing types by reference (using out or ref) requires experience with pointers, understanding how value types and reference types differ, and handling methods with multiple return values. Also, the difference between out and ref parameters is not widely understood.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AvoidOutParameters"
+  },
+  {
+    "id": "CA1023",
+    "message": "Indexers should not be multidimensional",
+    "description": "Indexers (that is, indexed properties) should use a single index. Multidimensional indexers can significantly reduce the usability of the library.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "IndexersShouldNotBeMultidimensional"
+  },
+  {
+    "id": "CA1024",
+    "message": "Use properties where appropriate",
+    "description": "A public or protected method has a name that starts with \"Get\", takes no parameters, and returns a value that is not an array. The method might be a good candidate to become a property.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UsePropertiesWhereAppropriate"
+  },
+  {
+    "id": "CA1025",
+    "message": "Replace repetitive arguments with params array",
+    "description": "Use a parameter array instead of repeated arguments when the exact number of arguments is unknown and when the variable arguments are the same type or can be passed as the same type.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ReplaceRepetitiveArgumentsWithParamsArray"
+  },
+  {
+    "id": "CA1026",
+    "message": "Default parameters should not be used",
+    "description": "Methods that use default parameters are allowed under the CLS; however, the CLS lets compilers ignore the values that are assigned to these parameters. To maintain the behavior that you want across programming languages, methods that use default parameters should be replaced by method overloads that provide the default parameters.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DefaultParametersShouldNotBeUsed"
+  },
+  {
+    "id": "CA1027",
+    "message": "Mark enums with FlagsAttribute",
+    "description": "An enumeration is a value type that defines a set of related named constants. Apply FlagsAttribute to an enumeration when its named constants can be meaningfully combined.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MarkEnumsWithFlags"
+  },
+  {
+    "id": "CA1028",
+    "message": "Enum storage should be Int32",
+    "description": "An enumeration is a value type that defines a set of related named constants. By default, the System.Int32 data type is used to store the constant value. Although you can change this underlying type, it is not required or recommended for most scenarios.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "EnumStorageShouldBeInt32"
+  },
+  {
+    "id": "CA1030",
+    "message": "Use events where appropriate",
+    "description": "This rule detects methods that have names that ordinarily would be used for events. If a method is called in response to a clearly defined state change, the method should be invoked by an event handler. Objects that call the method should raise events instead of calling the method directly.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UseEventsWhereAppropriate"
+  },
+  {
+    "id": "CA1031",
+    "message": "Do not catch general exception types",
+    "description": "General exceptions should not be caught. Catch a more specific exception, or rethrow the general exception as the last statement in the catch block.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotCatchGeneralExceptionTypes"
+  },
+  {
+    "id": "CA1032",
+    "message": "Implement standard exception constructors",
+    "description": "Failure to provide the full set of constructors can make it difficult to correctly handle exceptions.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ImplementStandardExceptionConstructors"
+  },
+  {
+    "id": "CA1033",
+    "message": "Interface methods should be callable by child types",
+    "description": "An unsealed externally visible type provides an explicit method implementation of a public interface and does not provide an alternative externally visible method that has the same name.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "InterfaceMethodsShouldBeCallableByChildTypes"
+  },
+  {
+    "id": "CA1034",
+    "message": "Nested types should not be visible",
+    "description": "A nested type is a type that is declared in the scope of another type. Nested types are useful to encapsulate private implementation details of the containing type. Used for this purpose, nested types should not be externally visible.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "NestedTypesShouldNotBeVisible"
+  },
+  {
+    "id": "CA1035",
+    "message": "ICollection implementations have strongly typed members",
+    "description": "This rule requires ICollection implementations to provide strongly typed members so that users are not required to cast arguments to the Object type when they use the functionality that is provided by the interface. This rule assumes that the type that implements ICollection does so to manage a collection of instances of a type that is stronger than Object.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ICollectionImplementationsHaveStronglyTypedMembers"
+  },
+  {
+    "id": "CA1036",
+    "message": "Override methods on comparable types",
+    "description": "A public or protected type implements the System.IComparable interface. It does not override Object.Equals nor does it overload the language-specific operator for equality, inequality, less than, or greater than.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "OverrideMethodsOnComparableTypes"
+  },
+  {
+    "id": "CA1038",
+    "message": "Enumerators should be strongly typed",
+    "description": "This rule requires IEnumerator implementations to also provide a strongly typed version of the Current property so that users are not required to cast the return value to the strong type when they use the functionality that is provided by the interface.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "EnumeratorsShouldBeStronglyTyped"
+  },
+  {
+    "id": "CA1039",
+    "message": "Lists are strongly typed",
+    "description": "This rule requires IList implementations to provide strongly typed members so that users are not required to cast arguments to the System.Object type when they use the functionality that is provided by the interface.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ListsAreStronglyTyped"
+  },
+  {
+    "id": "CA1040",
+    "message": "Avoid empty interfaces",
+    "description": "Interfaces define members that provide a behavior or usage contract. The functionality that is described by the interface can be adopted by any type, regardless of where the type appears in the inheritance hierarchy. A type implements an interface by providing implementations for the members of the interface. An empty interface does not define any members; therefore, it does not define a contract that can be implemented.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AvoidEmptyInterfaces"
+  },
+  {
+    "id": "CA1041",
+    "message": "Provide ObsoleteAttribute message",
+    "description": "A type or member is marked by using a System.ObsoleteAttribute attribute that does not have its ObsoleteAttribute.Message property specified. When a type or member that is marked by using ObsoleteAttribute is compiled, the Message property of the attribute is displayed. This gives the user information about the obsolete type or member.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ProvideObsoleteAttributeMessage"
+  },
+  {
+    "id": "CA1043",
+    "message": "Use integral or string argument for indexers",
+    "description": "Indexers (that is, indexed properties) should use integral or string types for the index. These types are typically used for indexing data structures and they increase the usability of the library. Use of the Object type should be restricted to those cases where the specific integral or string type cannot be specified at design time.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UseIntegralOrStringArgumentForIndexers"
+  },
+  {
+    "id": "CA1044",
+    "message": "Properties should not be write only",
+    "description": "Although it is acceptable and often necessary to have a read-only property, the design guidelines prohibit the use of write-only properties. This is because letting a user set a value, and then preventing the user from viewing that value, does not provide any security. Also, without read access, the state of shared objects cannot be viewed, which limits their usefulness.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "PropertiesShouldNotBeWriteOnly"
+  },
+  {
+    "id": "CA1045",
+    "message": "Do not pass types by reference",
+    "description": "Passing types by reference (using out or ref) requires experience with pointers, understanding how value types and reference types differ, and handling methods that have multiple return values. Library architects who design for a general audience should not expect users to master working with out or ref parameters.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotPassTypesByReference"
+  },
+  {
+    "id": "CA1046",
+    "message": "Do not overload operator equals on reference types",
+    "description": "For reference types, the default implementation of the equality operator is almost always correct. By default, two references are equal only if they point to the same object.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotOverloadOperatorEqualsOnReferenceTypes"
+  },
+  {
+    "id": "CA1047",
+    "message": "Do not declare protected members in sealed types",
+    "description": "Types declare protected members so that inheriting types can access or override the member. By definition, sealed types cannot be inherited, which means that protected methods on sealed types cannot be called.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotDeclareProtectedMembersInSealedTypes"
+  },
+  {
+    "id": "CA1048",
+    "message": "Do not declare virtual members in sealed types",
+    "description": "Types declare methods as virtual so that inheriting types can override the implementation of the virtual method. By definition, a sealed type cannot be inherited. This makes a virtual method on a sealed type meaningless.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotDeclareVirtualMembersInSealedTypes"
+  },
+  {
+    "id": "CA1049",
+    "message": "Types that own native resources should be disposable",
+    "description": "Types that allocate unmanaged resources should implement IDisposable to enable callers to release those resources on demand and to shorten the lifetimes of the objects that hold the resources.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "TypesThatOwnNativeResourcesShouldBeDisposable"
+  },
+  {
+    "id": "CA1050",
+    "message": "Declare types in namespaces",
+    "description": "Types are declared in namespaces to prevent name collisions and as a way to organize related types in an object hierarchy.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DeclareTypesInNamespaces"
+  },
+  {
+    "id": "CA1051",
+    "message": "Do not declare visible instance fields",
+    "description": "The primary use of a field should be as an implementation detail. Fields should be private or internal and should be exposed by using properties.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotDeclareVisibleInstanceFields"
+  },
+  {
+    "id": "CA1052",
+    "message": "Static holder types should be sealed",
+    "description": "A public or protected type contains only static members and is not declared by using the sealed (C# Reference) (NotInheritable) modifier. A type that is not meant to be inherited should be marked by using the sealed modifier to prevent its use as a base type.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "StaticHolderTypesShouldBeSealed"
+  },
+  {
+    "id": "CA1053",
+    "message": "Static holder types should not have constructors",
+    "description": "A public or nested public type declares only static members and has a public or protected default constructor. The constructor is unnecessary because calling static members does not require an instance of the type. The string overload should call the uniform resource identifier (URI) overload by using the string argument for safety and security.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "StaticHolderTypesShouldNotHaveConstructors"
+  },
+  {
+    "id": "CA1054",
+    "message": "URI parameters should not be strings",
+    "description": "If a method takes a string representation of a URI, a corresponding overload should be provided that takes an instance of the URI class, which provides these services in a safe and secure manner.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UriParametersShouldNotBeStrings"
+  },
+  {
+    "id": "CA1055",
+    "message": "URI return values should not be strings",
+    "description": "This rule assumes that the method returns a URI. A string representation of a URI is prone to parsing and encoding errors, and can lead to security vulnerabilities. The System.Uri class provides these services in a safe and secure manner.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UriReturnValuesShouldNotBeStrings"
+  },
+  {
+    "id": "CA1056",
+    "message": "URI properties should not be strings",
+    "description": "This rule assumes that the property represents a Uniform Resource Identifier (URI). A string representation of a URI is prone to parsing and encoding errors, and can lead to security vulnerabilities. The System.Uri class provides these services in a safe and secure manner.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "UriPropertiesShouldNotBeStrings"
+  },
+  {
+    "id": "CA1057",
+    "message": "String URI overloads call System.Uri overloads",
+    "description": "A type declares method overloads that differ only by the replacement of a string parameter with a System.Uri parameter. The overload that takes the string parameter does not call the overload that takes the URI parameter.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "StringUriOverloadsCallSystemUriOverloads"
+  },
+  {
+    "id": "CA1058",
+    "message": "Types should not extend certain base types",
+    "description": "An externally visible type extends certain base types. Use one of the alternatives.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "TypesShouldNotExtendCertainBaseTypes"
+  },
+  {
+    "id": "CA1059",
+    "message": "Members should not expose certain concrete types",
+    "description": "A concrete type is a type that has a complete implementation and therefore can be instantiated. To enable widespread use of the member, replace the concrete type by using the suggested interface.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MembersShouldNotExposeCertainConcreteTypes"
+  },
+  {
+    "id": "CA1060",
+    "message": "Move P/Invokes to NativeMethods class",
+    "description": "Platform Invocation methods, such as those that are marked by using the System.Runtime.InteropServices.DllImportAttribute attribute, or methods that are defined by using the Declare keyword in Visual Basic, access unmanaged code. These methods should be of the NativeMethods, SafeNativeMethods, or UnsafeNativeMethods class.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "MovePInvokesToNativeMethodsClass"
+  },
+  {
+    "id": "CA1061",
+    "message": "Do not hide base class methods",
+    "description": "A method in a base type is hidden by an identically named method in a derived type, when the parameter signature of the derived method differs only by types that are more weakly derived than the corresponding types in the parameter signature of the base method.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotHideBaseClassMethods"
+  },
+  {
+    "id": "CA1062",
+    "message": "Validate arguments of public methods",
+    "description": "All reference arguments that are passed to externally visible methods should be checked against null.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ValidateArgumentsOfPublicMethods"
+  },
+  {
+    "id": "CA1063",
+    "message": "Implement IDisposable correctly",
+    "description": "All IDisposable types should implement the Dispose pattern correctly.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ImplementIDisposableCorrectly"
+  },
+  {
+    "id": "CA1064",
+    "message": "Exceptions should be public",
+    "description": "An internal exception is visible only inside its own internal scope. After the exception falls outside the internal scope, only the base exception can be used to catch the exception. If the internal exception is inherited from T:System.Exception, T:System.SystemException, or T:System.ApplicationException, the external code will not have sufficient information to know what to do with the exception.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "ExceptionsShouldBePublic"
+  },
+  {
+    "id": "CA1065",
+    "message": "Do not raise exceptions in unexpected locations",
+    "description": "A method that is not expected to throw exceptions throws an exception.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "DoNotRaiseExceptionsInUnexpectedLocations"
+  },
+  {
+    "id": "CA1300",
+    "message": "Specify MessageBoxOptions",
+    "description": "To correctly display a message box for cultures that use a right-to-left reading order, the RightAlign and RtlReading members of the MessageBoxOptions enumeration must be passed to the Show method.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SpecifyMessageBoxOptions"
+  },
+  {
+    "id": "CA1301",
+    "message": "Avoid duplicate accelerators",
+    "description": "An access key, also known as an accelerator, enables keyboard access to a control by using the ALT key. When multiple controls have duplicate access keys, the behavior of the access key is not well defined.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "AvoidDuplicateAccelerators"
+  },
+  {
+    "id": "CA1302",
+    "message": "Do not hardcode locale specific strings",
+    "description": "The System.Environment.SpecialFolder enumeration contains members that refer to special system folders. The locations of these folders can have different values on different operating systems; the user can change some of the locations; and the locations are localized. The Environment.GetFolderPath method returns the locations that are associated with the Environment.SpecialFolder enumeration, localized and appropriate for the currently running computer.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "DoNotHardcodeLocaleSpecificStrings"
+  },
+  {
+    "id": "CA1303",
+    "message": "Do not pass literals as localized parameters",
+    "description": "An externally visible method passes a string literal as a parameter to a constructor or method in the .NET Framework class library, and that string should be localizable.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "DoNotPassLiteralsAsLocalizedParameters"
+  },
+  {
+    "id": "CA1304",
+    "message": "Specify CultureInfo",
+    "description": "A method or constructor calls a member that has an overload that accepts a System.Globalization.CultureInfo parameter, and the method or constructor does not call the overload that takes the CultureInfo parameter. When a CultureInfo or System.IFormatProvider object is not supplied, the default value that is supplied by the overloaded member might not have the effect that you want in all locales.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SpecifyCultureInfo"
+  },
+  {
+    "id": "CA1305",
+    "message": "Specify IFormatProvider",
+    "description": "A method or constructor calls one or more members that have overloads that accept a System.IFormatProvider parameter, and the method or constructor does not call the overload that takes the IFormatProvider parameter. When a System.Globalization.CultureInfo or IFormatProvider object is not supplied, the default value that is supplied by the overloaded member might not have the effect that you want in all locales.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SpecifyIFormatProvider"
+  },
+  {
+    "id": "CA1306",
+    "message": "Set locale for data types",
+    "description": "The locale determines culture-specific presentation elements for data, such as formatting that is used for numeric values, currency symbols, and sort order. When you create a DataTable or DataSet, you should explicitly set the locale.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SetLocaleForDataTypes"
+  },
+  {
+    "id": "CA1307",
+    "message": "Specify StringComparison",
+    "description": "A string comparison operation uses a method overload that does not set a StringComparison parameter.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SpecifyStringComparison"
+  },
+  {
+    "id": "CA1308",
+    "message": "Normalize strings to uppercase",
+    "description": "Strings should be normalized to uppercase. A small group of characters cannot make a round trip when they are converted to lowercase.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "NormalizeStringsToUppercase"
+  },
+  {
+    "id": "CA1309",
+    "message": "Use ordinal StringComparison",
+    "description": "A string comparison operation that is nonlinguistic does not set the StringComparison parameter to either Ordinal or OrdinalIgnoreCase. By explicitly setting the parameter to either StringComparison.Ordinal or StringComparison.OrdinalIgnoreCase, your code often gains speed, becomes more correct, and becomes more reliable.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "UseOrdinalStringComparison"
+  },
+  {
+    "id": "CA1400",
+    "message": "P/Invoke entry points should exist",
+    "description": "A public or protected method is marked by using the System.Runtime.InteropServices.DllImportAttribute attribute. Either the unmanaged library could not be located or the method could not be matched to a function in the library.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "PInvokeEntryPointsShouldExist"
+  },
+  {
+    "id": "CA1401",
+    "message": "P/Invokes should not be visible",
+    "description": "A public or protected method in a public type has the System.Runtime.InteropServices.DllImportAttribute attribute (also implemented by the Declare keyword in Visual Basic). Such methods should not be exposed.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "PInvokesShouldNotBeVisible"
+  },
+  {
+    "id": "CA1402",
+    "message": "Avoid overloads in COM visible interfaces",
+    "description": "When overloaded methods are exposed to COM clients, only the first method overload retains its name. Subsequent overloads are uniquely renamed by appending to the name an underscore character (_) and an integer that corresponds to the order of declaration of the overload.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "AvoidOverloadsInComVisibleInterfaces"
+  },
+  {
+    "id": "CA1403",
+    "message": "Auto layout types should not be COM visible",
+    "description": "A COM-visible value type is marked by using the System.Runtime.InteropServices.StructLayoutAttribute attribute set to LayoutKind.Auto. The layout of these types can change between versions of the .NET Framework, which will break COM clients that expect a specific layout.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "AutoLayoutTypesShouldNotBeComVisible"
+  },
+  {
+    "id": "CA1404",
+    "message": "Call GetLastError immediately after P/Invoke",
+    "description": "A call is made to the Marshal.GetLastWin32Error method or the equivalent Win32 GetLastError function, and the immediately previous call is not to an operating system invoke method.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "CallGetLastErrorImmediatelyAfterPInvoke"
+  },
+  {
+    "id": "CA1405",
+    "message": "COM visible type base types should be COM visible",
+    "description": "A COM-visible type derives from a type that is not COM-visible.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "ComVisibleTypeBaseTypesShouldBeComVisible"
+  },
+  {
+    "id": "CA1406",
+    "message": "Avoid Int64 arguments for Visual Basic 6 clients",
+    "description": "Visual Basic 6 COM clients cannot access 64-bit integers.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "AvoidInt64ArgumentsForVB6Clients"
+  },
+  {
+    "id": "CA1407",
+    "message": "Avoid static members in COM visible types",
+    "description": "COM does not support static methods.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "AvoidStaticMembersInComVisibleTypes"
+  },
+  {
+    "id": "CA1408",
+    "message": "Do not use AutoDual ClassInterfaceType",
+    "description": "Types that use a dual interface enable clients to bind to a specific interface layout. Any changes in a future version to the layout of the type or any base types will break COM clients that bind to the interface. By default, if the ClassInterfaceAttribute attribute is not specified, a dispatch-only interface is used.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "DoNotUseAutoDualClassInterfaceType"
+  },
+  {
+    "id": "CA1409",
+    "message": "Com visible types should be creatable",
+    "description": "A reference type that is specifically marked as visible to COM contains a public parameterized constructor but does not contain a public default (parameterless) constructor. A type without a public default constructor is not creatable by COM clients.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "ComVisibleTypesShouldBeCreatable"
+  },
+  {
+    "id": "CA1410",
+    "message": "COM registration methods should be matched",
+    "description": "A type declares a method that is marked by using the System.Runtime.InteropServices.ComRegisterFunctionAttribute attribute but does not declare a method marked by using the System.Runtime.InteropServices.ComUnregisterFunctionAttribute attribute, or vice versa.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "ComRegistrationMethodsShouldBeMatched"
+  },
+  {
+    "id": "CA1411",
+    "message": "COM registration methods should not be visible",
+    "description": "A method marked by using the System.Runtime.InteropServices.ComRegisterFunctionAttribute attribute or the System.Runtime.InteropServices.ComUnregisterFunctionAttribute attribute is externally visible.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "ComRegistrationMethodsShouldNotBeVisible"
+  },
+  {
+    "id": "CA1412",
+    "message": "Mark ComSource Interfaces as IDispatch",
+    "description": "A type is marked by using the System.Runtime.InteropServices.ComSourceInterfacesAttribute attribute, and at least one of the specified interfaces is not marked by using the System.Runtime.InteropServices.InterfaceTypeAttribute attribute set to ComInterfaceType.InterfaceIsIDispatch.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "MarkComSourceInterfacesAsIDispatch"
+  },
+  {
+    "id": "CA1413",
+    "message": "Avoid non-public fields in COM visible value types",
+    "description": "Nonpublic instance fields of COM-visible value types are visible to COM clients. Review the content of the fields for information that should not be exposed, or that will have unintended design or security effects.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "AvoidNonpublicFieldsInComVisibleValueTypes"
+  },
+  {
+    "id": "CA1414",
+    "message": "Mark boolean P/Invoke arguments with MarshalAs",
+    "description": "The Boolean data type has multiple representations in unmanaged code.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "MarkBooleanPInvokeArgumentsWithMarshalAs"
+  },
+  {
+    "id": "CA1415",
+    "message": "Declare P/Invokes correctly",
+    "description": "This rule looks for operating system invoke method declarations that target Win32 functions that have a pointer to an OVERLAPPED structure parameter and the corresponding managed parameter is not a pointer to a System.Threading.NativeOverlapped structure.",
+    "category": "Microsoft.Interoperability",
+    "severity": null,
+    "type": "DeclarePInvokesCorrectly"
+  },
+  {
+    "id": "CA1500",
+    "message": "Variable names should not match field names",
+    "description": "An instance method declares a parameter or a local variable whose name matches an instance field of the declaring type, leading to errors.",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "VariableNamesShouldNotMatchFieldNames"
+  },
+  {
+    "id": "CA1501",
+    "message": "Avoid excessive inheritance",
+    "description": "A type is more than four levels deep in its inheritance hierarchy. Deeply nested type hierarchies can be difficult to follow, understand, and maintain.",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "AvoidExcessiveInheritance"
+  },
+  {
+    "id": "CA1502",
+    "message": "Avoid excessive complexity",
+    "description": "This rule measures the number of linearly independent paths through the method, which is determined by the number and complexity of conditional branches.",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "AvoidExcessiveComplexity"
+  },
+  {
+    "id": "CA1504",
+    "message": "Review misleading field names",
+    "description": "The name of an instance field starts with \"s_\", or the name of a static (Shared in Visual Basic) field starts with \"m_\".",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "ReviewMisleadingFieldNames"
+  },
+  {
+    "id": "CA1505",
+    "message": "Avoid unmaintainable code",
+    "description": "A type or method has a low maintainability index value. A low maintainability index indicates that a type or method is probably difficult to maintain and would be a good candidate for redesign.",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "AvoidUnmantainableCode"
+  },
+  {
+    "id": "CA1506",
+    "message": "Avoid excessive class coupling",
+    "description": "This rule measures class coupling by counting the number of unique type references that a type or method contains.",
+    "category": "Microsoft.Maintainability",
+    "severity": null,
+    "type": "AvoidExcessiveClassCoupling"
+  },
+  {
+    "id": "CA1600",
+    "message": "Do not use idle process priority",
+    "description": "Do not set process priority to Idle. Processes that have System.Diagnostics.ProcessPriorityClass.Idle will occupy the CPU when it would otherwise be idle, and will therefore block standby.",
+    "category": "Microsoft.Mobility",
+    "severity": null,
+    "type": "DoNotUseIdleProcessPriority"
+  },
+  {
+    "id": "CA1601",
+    "message": "Do not use timers that prevent power state changes",
+    "description": "Higher-frequency periodic activity will keep the CPU busy and interfere with power-saving idle timers that turn off the display and hard disks.",
+    "category": "Microsoft.Mobility",
+    "severity": null,
+    "type": "DoNotUseTimersThatPreventPowerStateChanges"
+  },
+  {
+    "id": "CA1700",
+    "message": "Do not name enum values \u0027Reserved\u0027",
+    "description": "This rule assumes that an enumeration member that has a name that contains \"reserved\" is not currently used but is a placeholder to be renamed or removed in a future version. Renaming or removing a member is a breaking change.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "DoNotNameEnumValuesReserved"
+  },
+  {
+    "id": "CA1701",
+    "message": "Resource string compound words should be cased correctly",
+    "description": "Each word in the resource string is split into tokens based on the casing. Each contiguous two-token combination is checked by the Microsoft spelling checker library. If recognized, the word produces a violation of the rule.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "ResourceStringCompoundWordsShouldBeCasedCorrectly"
+  },
+  {
+    "id": "CA1702",
+    "message": "Compound words should be cased correctly",
+    "description": "The name of an identifier contains multiple words, and at least one of the words appears to be a compound word that is not cased correctly.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "CompoundWordsShouldBeCasedCorrectly"
+  },
+  {
+    "id": "CA1703",
+    "message": "Resource strings should be spelled correctly",
+    "description": "A resource string contains one or more words that are not recognized by the Microsoft spelling checker library.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "ResourceStringsShouldBeSpelledCorrectly"
+  },
+  {
+    "id": "CA1704",
+    "message": "Identifiers should be spelled correctly",
+    "description": "The name of an externally visible identifier contains one or more words that are not recognized by the Microsoft spelling checker library.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldBeSpelledCorrectly"
+  },
+  {
+    "id": "CA1707",
+    "message": "Identifiers should not contain underscores",
+    "description": "By convention, identifier names do not contain the underscore (_) character. This rule checks namespaces, types, members, and parameters.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldNotContainUnderscores"
+  },
+  {
+    "id": "CA1708",
+    "message": "Identifiers should differ by more than case",
+    "description": "Identifiers for namespaces, types, members, and parameters cannot differ only by case because languages that target the common language runtime are not required to be case-sensitive.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldDifferByMoreThanCase"
+  },
+  {
+    "id": "CA1709",
+    "message": "Identifiers should be cased correctly",
+    "description": "By convention, parameter names use camel casing and namespace, type, and member names use Pascal casing.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldBeCasedCorrectly"
+  },
+  {
+    "id": "CA1710",
+    "message": "Identifiers should have correct suffix",
+    "description": "By convention, the names of types that extend certain base types or that implement certain interfaces, or types that are derived from these types, have a suffix that is associated with the base type or interface.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldHaveCorrectSuffix"
+  },
+  {
+    "id": "CA1711",
+    "message": "Identifiers should not have incorrect suffix",
+    "description": "By convention, only the names of types that extend certain base types or that implement certain interfaces, or types that are derived from these types, should end with specific reserved suffixes. Other type names should not use these reserved suffixes.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldNotHaveIncorrectSuffix"
+  },
+  {
+    "id": "CA1712",
+    "message": "Do not prefix enum values with type name",
+    "description": "Names of enumeration members are not prefixed by using the type name because development tools are expected to provide type information.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "DoNotPrefixEnumValuesWithTypeName"
+  },
+  {
+    "id": "CA1713",
+    "message": "Events should not have before or after prefix",
+    "description": "The name of an event starts with \"Before\" or \"After\". To name related events that are raised in a specific sequence, use the present or past tense to indicate the relative position in the sequence of actions.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "EventsShouldNotHaveBeforeOrAfterPrefix"
+  },
+  {
+    "id": "CA1714",
+    "message": "Flags enums should have plural names",
+    "description": "A public enumeration has the System.FlagsAttribute attribute, and its name does not end in \"s\". Types that are marked by using FlagsAttribute have names that are plural because the attribute indicates that more than one value can be specified.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "FlagsEnumsShouldHavePluralNames"
+  },
+  {
+    "id": "CA1715",
+    "message": "Identifiers should have correct prefix",
+    "description": "The name of an externally visible interface does not start with an uppercase \"I\". The name of a generic type parameter on an externally visible type or method does not start with an uppercase \"T\".",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldHaveCorrectPrefix"
+  },
+  {
+    "id": "CA1716",
+    "message": "Identifiers should not match keywords",
+    "description": "A namespace name or a type name matches a reserved keyword in a programming language. Identifiers for namespaces and types should not match keywords that are defined by languages that target the common language runtime.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldNotMatchKeywords"
+  },
+  {
+    "id": "CA1717",
+    "message": "Only FlagsAttribute enums should have plural names",
+    "description": "Naming conventions dictate that a plural name for an enumeration indicates that more than one value of the enumeration can be specified at the same time.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "OnlyFlagsEnumsShouldHavePluralNames"
+  },
+  {
+    "id": "CA1719",
+    "message": "Parameter names should not match member names",
+    "description": "A parameter name should communicate the meaning of a parameter and a member name should communicate the meaning of a member. It would be a rare design where these were the same. Naming a parameter the same as its member name is unintuitive and makes the library difficult to use.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "ParameterNamesShouldNotMatchMemberNames"
+  },
+  {
+    "id": "CA1720",
+    "message": "Identifiers should not contain type names",
+    "description": "The name of a parameter in an externally visible member contains a data type name, or the name of an externally visible member contains a language-specific data type name.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldNotContainTypeNames"
+  },
+  {
+    "id": "CA1721",
+    "message": "Property names should not match get methods",
+    "description": "The name of a public or protected member starts with \"Get\" and otherwise matches the name of a public or protected property. \"Get\" methods and properties should have names that clearly distinguish their function.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "PropertyNamesShouldNotMatchGetMethods"
+  },
+  {
+    "id": "CA1722",
+    "message": "Identifiers should not have incorrect prefix",
+    "description": "By convention, only certain programming elements have names that begin with a specific prefix.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "IdentifiersShouldNotHaveIncorrectPrefix"
+  },
+  {
+    "id": "CA1724",
+    "message": "Type Names Should Not Match Namespaces",
+    "description": "Type names should not match the names of namespaces that are defined in the .NET Framework class library. Violating this rule can reduce the usability of the library.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "TypeNamesShouldNotMatchNamespaces"
+  },
+  {
+    "id": "CA1725",
+    "message": "Parameter names should match base declaration",
+    "description": "Consistent naming of parameters in an override hierarchy increases the usability of the method overrides. A parameter name in a derived method that differs from the name in the base declaration can cause confusion about whether the method is an override of the base method or a new overload of the method.",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "ParameterNamesShouldMatchBaseDeclaration"
+  },
+  {
+    "id": "CA1726",
+    "message": "Use preferred terms",
+    "description": "The name of an externally visible identifier includes a term for which an alternative, preferred term exists. Alternatively, the name includes the term \"Flag\" or \"Flags\".",
+    "category": "Microsoft.Naming",
+    "severity": null,
+    "type": "UsePreferredTerms"
+  },
+  {
+    "id": "CA1800",
+    "message": "Do not cast unnecessarily",
+    "description": "Duplicate casts decrease performance, especially when the casts are performed in compact iteration statements.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "DoNotCastUnnecessarily"
+  },
+  {
+    "id": "CA1801",
+    "message": "Review unused parameters",
+    "description": "A method signature includes a parameter that is not used in the method body.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ReviewUnusedParameters"
+  },
+  {
+    "id": "CA1802",
+    "message": "Use Literals Where Appropriate",
+    "description": "A field is declared static and read-only (Shared and ReadOnly in Visual Basic), and is initialized by using a value that is computable at compile time. Because the value that is assigned to the targeted field is computable at compile time, change the declaration to a const (Const in Visual Basic) field so that the value is computed at compile time instead of at run time.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "UseLiteralsWhereAppropriate"
+  },
+  {
+    "id": "CA1804",
+    "message": "Remove unused locals",
+    "description": "Unused local variables and unnecessary assignments increase the size of an assembly and decrease performance.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "RemoveUnusedLocals"
+  },
+  {
+    "id": "CA1806",
+    "message": "Do not ignore method results",
+    "description": "A new object is created but never used; or a method that creates and returns a new string is called and the new string is never used; or a COM or P/Invoke method returns an HRESULT or error code that is never used.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotIgnoreMethodResults"
+  },
+  {
+    "id": "CA1809",
+    "message": "Avoid excessive locals",
+    "description": "A common performance optimization is to store a value in a processor register instead of memory, which is referred to as \"enregistering the value\". To increase the chance that all local variables are enregistered, limit the number of local variables to 64.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "AvoidExcessiveLocals"
+  },
+  {
+    "id": "CA1810",
+    "message": "Initialize reference type static fields inline",
+    "description": "When a type declares an explicit static constructor, the just-in-time (JIT) compiler adds a check to each static method and instance constructor of the type to make sure that the static constructor was previously called. Static constructor checks can decrease performance.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "InitializeReferenceTypeStaticFieldsInline"
+  },
+  {
+    "id": "CA1811",
+    "message": "Avoid uncalled private code",
+    "description": "A private or internal (assembly-level) member does not have callers in the assembly; it is not invoked by the common language runtime; and it is not invoked by a delegate.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "AvoidUncalledPrivateCode"
+  },
+  {
+    "id": "CA1812",
+    "message": "Avoid uninstantiated internal classes",
+    "description": "An instance of an assembly-level type is not created by code in the assembly.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "AvoidUninstantiatedInternalClasses"
+  },
+  {
+    "id": "CA1813",
+    "message": "Avoid unsealed attributes",
+    "description": "The .NET Framework class library provides methods for retrieving custom attributes. By default, these methods search the attribute inheritance hierarchy. Sealing the attribute eliminates the search through the inheritance hierarchy and can improve performance.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "AvoidUnsealedAttributes"
+  },
+  {
+    "id": "CA1814",
+    "message": "Prefer jagged arrays over multidimensional",
+    "description": "A jagged array is an array whose elements are arrays. The arrays that make up the elements can be of different sizes, leading to less wasted space for some sets of data.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "PreferJaggedArraysOverMultidimensional"
+  },
+  {
+    "id": "CA1815",
+    "message": "Override equals and operator equals on value types",
+    "description": "For value types, the inherited implementation of Equals uses the Reflection library and compares the contents of all fields. Reflection is computationally expensive, and comparing every field for equality might be unnecessary. If you expect users to compare or sort instances, or to use instances as hash table keys, your value type should implement Equals.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "OverrideEqualsAndOperatorEqualsOnValueTypes"
+  },
+  {
+    "id": "CA1816",
+    "message": "Call GC.SuppressFinalize correctly",
+    "description": "A method that is an implementation of Dispose does not call GC.SuppressFinalize; or a method that is not an implementation of Dispose calls GC.SuppressFinalize; or a method calls GC.SuppressFinalize and passes something other than this (Me in Visual Basic).",
+    "category": "Microsoft. Usage",
+    "severity": null,
+    "type": "CallGCSuppressFinalizeCorrectly"
+  },
+  {
+    "id": "CA1819",
+    "message": "Properties should not return arrays",
+    "description": "Arrays that are returned by properties are not write-protected, even when the property is read-only. To keep the array tamper-proof, the property must return a copy of the array. Typically, users will not understand the adverse performance implications of calling such a property.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "PropertiesShouldNotReturnArrays"
+  },
+  {
+    "id": "CA1820",
+    "message": "Test for empty strings using string length",
+    "description": "Comparing strings by using the String.Length property or the String.IsNullOrEmpty method is significantly faster than using Equals.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "TestForEmptyStringsUsingStringLength"
+  },
+  {
+    "id": "CA1821",
+    "message": "Remove empty finalizers",
+    "description": "Whenever you can, avoid finalizers because of the additional performance overhead that is involved in tracking object lifetime. An empty finalizer incurs added overhead and delivers no benefit.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "RemoveEmptyFinalizers"
+  },
+  {
+    "id": "CA1822",
+    "message": "Mark members as static",
+    "description": "Members that do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "MarkMembersAsStatic"
+  },
+  {
+    "id": "CA1823",
+    "message": "Avoid unused private fields",
+    "description": "Private fields were detected that do not appear to be accessed in the assembly.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "AvoidUnusedPrivateFields"
+  },
+  {
+    "id": "CA1824",
+    "message": "Mark assemblies with NeutralResourcesLanguageAttribute",
+    "description": "The NeutralResourcesLanguage attribute informs the ResourceManager of the language that was used to display the resources of a neutral culture for an assembly. This improves lookup performance for the first resource that you load and can reduce your working set.",
+    "category": "Microsoft.Performance",
+    "severity": null,
+    "type": "MarkAssembliesWithNeutralResourcesLanguage"
+  },
+  {
+    "id": "CA1900",
+    "message": "Value type fields should be portable",
+    "description": "This rule checks that structures that are declared by using explicit layout will align correctly when marshaled to unmanaged code on 64-bit operating systems.",
+    "category": "Microsoft.Portability",
+    "severity": null,
+    "type": "ValueTypeFieldsShouldBePortable"
+  },
+  {
+    "id": "CA1901",
+    "message": "P/Invoke declarations should be portable",
+    "description": "This rule evaluates the size of each parameter and the return value of a P/Invoke, and verifies that the size of the parameter is correct when marshaled to unmanaged code on 32-bit and 64-bit operating systems.",
+    "category": "Microsoft.Portability",
+    "severity": null,
+    "type": "PInvokeDeclarationsShouldBePortable"
+  },
+  {
+    "id": "CA1903",
+    "message": "Use only API from targeted framework",
+    "description": "A member or type is using a member or type that was introduced in a service pack that was not included together with the targeted framework of the project.",
+    "category": "Microsoft.Portability",
+    "severity": null,
+    "type": "UseOnlyApiFromTargetedFramework"
+  },
+  {
+    "id": "CA2000",
+    "message": "Dispose objects before losing scope",
+    "description": "Because an exceptional event might occur that will prevent the finalizer of an object from running, the object should be explicitly disposed before all references to it are out of scope.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "DisposeObjectsBeforeLosingScope"
+  },
+  {
+    "id": "CA2001",
+    "message": "Avoid calling problematic methods",
+    "description": "A member calls a potentially dangerous or problematic method.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "AvoidCallingProblematicMethods"
+  },
+  {
+    "id": "CA2002",
+    "message": "Do not lock on objects with weak identity",
+    "description": "An object is said to have a weak identity when it can be directly accessed across application domain boundaries. A thread that tries to acquire a lock on an object that has a weak identity can be blocked by a second thread in a different application domain that has a lock on the same object.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "DoNotLockOnObjectsWithWeakIdentity"
+  },
+  {
+    "id": "CA2003",
+    "message": "Do not treat fibers as threads",
+    "description": "A managed thread is being treated as a Win32 thread.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "DoNotTreatFibersAsThreads"
+  },
+  {
+    "id": "CA2004",
+    "message": "Remove calls to GC.KeepAlive",
+    "description": "If you convert to SafeHandle usage, remove all calls to GC.KeepAlive (object). In this case, classes should not have to call GC.KeepAlive. This assumes they do not have a finalizer but rely on SafeHandle to finalize the OS handle for them.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "RemoveCallsToGCKeepAlive"
+  },
+  {
+    "id": "CA2006",
+    "message": "Use SafeHandle to encapsulate native resources",
+    "description": "Use of IntPtr in managed code might indicate a potential security and reliability problem. All uses of IntPtr must be reviewed to determine whether use of a SafeHandle, or similar technology, is required in its place.",
+    "category": "Microsoft.Reliability",
+    "severity": null,
+    "type": "UseSafeHandleToEncapsulateNativeResources"
+  },
+  {
+    "id": "CA2100",
+    "message": "Review SQL queries for security vulnerabilities",
+    "description": "A method sets the System.Data.IDbCommand.CommandText property by using a string that is built from a string argument to the method. This rule assumes that the string argument contains user input. A SQL command string that is built from user input is vulnerable to SQL injection attacks.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewSqlQueriesForSecurityVulnerabilities"
+  },
+  {
+    "id": "CA2101",
+    "message": "Specify marshaling for P/Invoke string arguments",
+    "description": "A platform invoke member allows partially trusted callers, has a string parameter, and does not explicitly marshal the string. This can cause a potential security vulnerability.",
+    "category": "Microsoft.Globalization",
+    "severity": null,
+    "type": "SpecifyMarshalingForPInvokeStringArguments"
+  },
+  {
+    "id": "CA2102",
+    "message": "Catch non-CLSCompliant exceptions in general handlers",
+    "description": "A member in an assembly that is not marked by using the RuntimeCompatibilityAttribute or is marked RuntimeCompatibility(WrapNonExceptionThrows \u003d false) contains a catch block that handles System.Exception and does not contain an immediately following general catch block.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "CatchNonClsCompliantExceptionsInGeneralHandlers"
+  },
+  {
+    "id": "CA2103",
+    "message": "Review imperative security",
+    "description": "A method uses imperative security and might be constructing the permission by using state information or return values that can change as long as the demand is active. Use declarative security whenever possible.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewImperativeSecurity"
+  },
+  {
+    "id": "CA2104",
+    "message": "Do not declare read only mutable reference types",
+    "description": "An externally visible type contains an externally visible read-only field that is a mutable reference type. A mutable type is a type whose instance data can be modified.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "DoNotDeclareReadOnlyMutableReferenceTypes"
+  },
+  {
+    "id": "CA2105",
+    "message": "Array fields should not be read only",
+    "description": "When you apply the read-only (ReadOnly in Visual Basic) modifier to a field that contains an array, the field cannot be changed to reference a different array. However, the elements of the array that are stored in a read-only field can be changed.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ArrayFieldsShouldNotBeReadOnly"
+  },
+  {
+    "id": "CA2106",
+    "message": "Secure asserts",
+    "description": "A method asserts a permission and no security checks are performed on the caller. Asserting a security permission without performing any security checks can leave an exploitable security weakness in your code.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecureAsserts"
+  },
+  {
+    "id": "CA2107",
+    "message": "Review deny and permit only usage",
+    "description": "The PermitOnly method and CodeAccessPermission.Deny security actions should be used only by those who have an advanced knowledge of .NET Framework security. Code that uses these security actions should undergo a security review.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewDenyAndPermitOnlyUsage"
+  },
+  {
+    "id": "CA2108",
+    "message": "Review declarative security on value types",
+    "description": "A public or protected value type is secured by Data Access or Link Demands.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewDeclarativeSecurityOnValueTypes"
+  },
+  {
+    "id": "CA2109",
+    "message": "Review visible event handlers",
+    "description": "A public or protected event-handling method was detected. Event-handling methods should not be exposed unless absolutely necessary.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewVisibleEventHandlers"
+  },
+  {
+    "id": "CA2111",
+    "message": "Pointers should not be visible",
+    "description": "A pointer is not private, internal, or read-only. Malicious code can change the value of the pointer, which potentially gives access to arbitrary locations in memory or causes application or system failures.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "PointersShouldNotBeVisible"
+  },
+  {
+    "id": "CA2112",
+    "message": "Secured types should not expose fields",
+    "description": "A public or protected type contains public fields and is secured by Link Demands. If code has access to an instance of a type that is secured by a link demand, the code does not have to satisfy the link demand to access the fields of the type.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecuredTypesShouldNotExposeFields"
+  },
+  {
+    "id": "CA2114",
+    "message": "Method security should be a superset of type",
+    "description": "A method should not have both method-level and type-level declarative security for the same action.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "MethodSecurityShouldBeASupersetOfType"
+  },
+  {
+    "id": "CA2115",
+    "message": "Call GC.KeepAlive when using native resources",
+    "description": "This rule detects errors that might occur because an unmanaged resource is being finalized while it is still being used in unmanaged code.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "CallGCKeepAliveWhenUsingNativeResources"
+  },
+  {
+    "id": "CA2116",
+    "message": "APTCA methods should only call APTCA methods",
+    "description": "When the APTCA (AllowPartiallyTrustedCallersAttribute) is present on a fully trusted assembly, and the assembly executes code in another assembly that does not allow for partially trusted callers, a security exploit is possible.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "AptcaMethodsShouldOnlyCallAptcaMethods"
+  },
+  {
+    "id": "CA2117",
+    "message": "APTCA types should only extend APTCA base types",
+    "description": "When the APTCA is present on a fully trusted assembly, and a type in the assembly inherits from a type that does not allow for partially trusted callers, a security exploit is possible.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "AptcaTypesShouldOnlyExtendAptcaBaseTypes"
+  },
+  {
+    "id": "CA2118",
+    "message": "Review SuppressUnmanagedCodeSecurityAttribute usage",
+    "description": "SuppressUnmanagedCodeSecurityAttribute changes the default security system behavior for members that execute unmanaged code that uses COM interop or operating system invocation. This attribute is primarily used to increase performance; however, the performance gains come together with significant security risks.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ReviewSuppressUnmanagedCodeSecurityUsage"
+  },
+  {
+    "id": "CA2119",
+    "message": "Seal methods that satisfy private interfaces",
+    "description": "An inheritable public type provides an overridable method implementation of an internal (Friend in Visual Basic) interface. To fix a violation of this rule, prevent the method from being overridden outside the assembly.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SealMethodsThatSatisfyPrivateInterfaces"
+  },
+  {
+    "id": "CA2120",
+    "message": "Secure serialization constructors",
+    "description": "This type has a constructor that takes a System.Runtime.Serialization.SerializationInfo object and a System.Runtime.Serialization.StreamingContext object (the signature of the serialization constructor). This constructor is not secured by a security check, but one or more of the regular constructors in the type are secured.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecureSerializationConstructors"
+  },
+  {
+    "id": "CA2121",
+    "message": "Static constructors should be private",
+    "description": "The system calls the static constructor before the first instance of the type is created or any static members are referenced. If a static constructor is not private, it can be called by code other than the system. Depending on the operations that are performed in the constructor, this can cause unexpected behavior.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "StaticConstructorsShouldBePrivate"
+  },
+  {
+    "id": "CA2122",
+    "message": "Do not indirectly expose methods with link demands",
+    "description": "A public or protected member has Link Demands and is called by a member that does not perform any security checks. A link demand checks the permissions of the immediate caller only.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "DoNotIndirectlyExposeMethodsWithLinkDemands"
+  },
+  {
+    "id": "CA2123",
+    "message": "Override link demands should be identical to base",
+    "description": "This rule matches a method to its base method, which is either an interface or a virtual method in another type, and then compares the link demands on each. If this rule is violated, a malicious caller can bypass the link demand just by calling the unsecured method.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "OverrideLinkDemandsShouldBeIdenticalToBase"
+  },
+  {
+    "id": "CA2124",
+    "message": "Wrap vulnerable finally clauses in outer try",
+    "description": "A public or protected method contains a try/finally block. The finally block appears to reset the security state and is not itself enclosed in a finally block.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "WrapVulnerableFinallyClausesInOuterTry"
+  },
+  {
+    "id": "CA2126",
+    "message": "Type link demands require inheritance demands",
+    "description": "A public unsealed type is protected by using a link demand and has an overridable method. Neither the type nor the method is protected by using an inheritance demand.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TypeLinkDemandsRequireInheritanceDemands"
+  },
+  {
+    "id": "CA2127",
+    "message": "Members should not have conflicting transparency annotations",
+    "description": "Critical code cannot occur in a 100 percent−transparent assembly. This rule analyzes 100 percent−transparent assemblies for any SecurityCritical annotations at the type, field, and method levels.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparencyAnnotationsShouldNotConflict"
+  },
+  {
+    "id": "CA2128",
+    "message": "Transparent methods may not use security asserts",
+    "description": "This rule analyzes all methods and types in an assembly that is either 100 percent−transparent or mixed transparent/critical, and flags any declarative or imperative use of Assert.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecurityTransparentCodeShouldNotAssert"
+  },
+  {
+    "id": "CA2129",
+    "message": "Transparent code must not reference security critical items",
+    "description": "Methods that are marked by SecurityTransparentAttribute call nonpublic members that are marked as SecurityCritical. This rule analyzes all methods and types in an assembly that is mixed transparent/critical, and flags any calls from transparent code to nonpublic critical code that are not marked as SecurityTreatAsSafe.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotReferenceCriticalCode"
+  },
+  {
+    "id": "CA2130",
+    "message": "Security critical constants should be transparent",
+    "description": "Transparency enforcement is not enforced for constant values because compilers inline constant values so that no lookup is required at run time. Constant fields should be security transparent so that code reviewers do not assume that transparent code cannot access the constant.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "ConstantsShouldBeTransparent"
+  },
+  {
+    "id": "CA2131",
+    "message": "Security critical types may not participate in type equivalence",
+    "description": "A type participates in type equivalence and either the type itself, or a member or field of the type, is marked by using the SecurityCriticalAttribute attribute. This rule occurs on any critical types or types that contain critical methods or fields that are participating in type equivalence. When the CLR detects such a type, it does not load it with a TypeLoadException at run time. Typically, this rule is raised only when users implement type equivalence manually instead of in by relying on tlbimp and the compilers to do the type equivalence.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "CriticalTypesMustNotParticipateInTypeEquivalence"
+  },
+  {
+    "id": "CA2132",
+    "message": "Default constructors must be at least as critical as base type default constructors",
+    "description": "Types and members that have the SecurityCriticalAttribute cannot be used by Silverlight application code. Security-critical types and members can be used only by trusted code in the .NET Framework for Silverlight class library. Because a public or protected construction in a derived class must have the same or greater transparency than its base class, a class in an application cannot be derived from a class marked as SecurityCritical.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "DefaultConstructorsMustHaveConsistentTransparency"
+  },
+  {
+    "id": "CA2133",
+    "message": "Delegates must bind to methods with consistent transparency",
+    "description": "This warning is raised on a method that binds a delegate that is marked by using the SecurityCriticalAttribute to a method that is transparent or that is marked by using the SecuritySafeCriticalAttribute. The warning also is raised on a method that binds a delegate that is transparent or safe-critical to a critical method.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "DelegatesMustBindWithConsistentTransparency"
+  },
+  {
+    "id": "CA2134",
+    "message": "Methods must keep consistent transparency when overriding base methods",
+    "description": "This rule is raised when a method marked by using the SecurityCriticalAttribute overrides a method that is transparent or marked by using the SecuritySafeCriticalAttribute. The rule also is raised when a method that is transparent or marked by using the SecuritySafeCriticalAttribute overrides a method that is marked by using a SecurityCriticalAttribute. The rule is applied when overriding a virtual method or implementing an interface.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "MethodsMustOverrideWithConsistentTransparency"
+  },
+  {
+    "id": "CA2135",
+    "message": "Level 2 assemblies should not contain LinkDemands",
+    "description": "LinkDemands are deprecated in the level 2 security rule set. Instead of using LinkDemands to enforce security at JIT compilation time, mark the methods, types, and fields by using the SecurityCriticalAttribute attribute.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecurityRuleSetLevel2MethodsShouldNotBeProtectedWithLinkDemands"
+  },
+  {
+    "id": "CA2136",
+    "message": "Members should not have conflicting transparency annotations",
+    "description": "Transparency attributes are applied from code elements of larger scope to elements of smaller scope. The transparency attributes of code elements that have larger scope take precedence over transparency attributes of code elements that are contained in the first element. For example, a class that is marked by using the SecurityCriticalAttribute attribute cannot contain a method that is marked by using the SecuritySafeCriticalAttribute attribute.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparencyAnnotationsShouldNotConflict"
+  },
+  {
+    "id": "CA2137",
+    "message": "Transparent methods must contain only verifiable IL",
+    "description": "A method contains unverifiable code or returns a type by reference. This rule is raised on attempts by security transparent code to execute unverifiable microsoft intermediate language (MISL). However, the rule does not contain a full IL verifier, and instead uses heuristics to catch most violations of MSIL verification.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustBeVerifiable"
+  },
+  {
+    "id": "CA2138",
+    "message": "Transparent methods must not call methods with the SuppressUnmanagedCodeSecurity attribute",
+    "description": "A security transparent method calls a method that is marked by using the SuppressUnmanagedCodeSecurityAttribute attribute.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotCallSuppressUnmanagedCodeSecurityMethods"
+  },
+  {
+    "id": "CA2139",
+    "message": "Transparent methods may not use the HandleProcessCorruptingExceptions attribute",
+    "description": "This rule is raised by any method that is transparent and attempts to handle a process corrupting exception by using the HandleProcessCorruptedStateExceptionsAttribute attribute. A process corrupting exception is a CLR version 4.0 exception classification of exceptions such as AccessViolationException. The HandleProcessCorruptedStateExceptionsAttribute attribute may be used only by security critical methods, and will be ignored if it is applied to a transparent method.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotHandleProcessCorruptingExceptions"
+  },
+  {
+    "id": "CA2140",
+    "message": "Transparent code must not reference security critical items",
+    "description": "A code element that is marked by using the SecurityCriticalAttribute attribute is security critical. A transparent method cannot use a security critical element. If a transparent type attempts to use a security critical type, a TypeAccessException, MethodAccessException, or FieldAccessException is raised.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotReferenceCriticalCode"
+  },
+  {
+    "id": "CA2141",
+    "message": "CA2141:Transparent methods must not satisfy LinkDemands",
+    "description": "A security transparent method calls a method in an assembly that is not marked by using the APTCA, or a security transparent method satisfies a LinkDemand for a type or a method.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotSatisfyLinkDemands"
+  },
+  {
+    "id": "CA2142",
+    "message": "Transparent code should not be protected with LinkDemands",
+    "description": "This rule is raised on transparent methods that require LinkDemands to access them. Security transparent code should not be responsible for verifying the security of an operation, and therefore should not demand permissions.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsShouldNotBeProtectedWithLinkDemands"
+  },
+  {
+    "id": "CA2143",
+    "message": "Transparent methods should not use security demands",
+    "description": "Security transparent code should not be responsible for verifying the security of an operation, and therefore should not demand permissions. Security transparent code should use full demands to make security decisions and safe-critical code should not rely on transparent code to have made the full demand.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsShouldNotDemand"
+  },
+  {
+    "id": "CA2144",
+    "message": "Transparent code should not load assemblies from byte arrays",
+    "description": "The security review for transparent code is not as complete as the security review for critical code because transparent code cannot perform security sensitive actions. Assemblies that are loaded from a byte array might not be noticed in transparent code, and that byte array might contain critical, or more important safe-critical code, that does have to be audited.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsShouldNotLoadAssembliesFromByteArrays"
+  },
+  {
+    "id": "CA2145",
+    "message": "Transparent methods should not be decorated with the SuppressUnmanagedCodeSecurityAttribute",
+    "description": "Methods that are decorated by the SuppressUnmanagedCodeSecurityAttribute attribute have an implicit LinkDemand put upon any method that calls it. This LinkDemand requires that the calling code be security critical. Marking the method that uses SuppressUnmanagedCodeSecurity by using the SecurityCriticalAttribute attribute makes this requirement more obvious for callers of the method.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsShouldNotUseSuppressUnmanagedCodeSecurity"
+  },
+  {
+    "id": "CA2146",
+    "message": "Types must be at least as critical as their base types and interfaces",
+    "description": "This rule is raised when a derived type has a security transparency attribute that is not as critical as its base type or implemented interface. Only critical types can derive from critical base types or implement critical interfaces, and only critical or safe-critical types can derive from safe-critical base types or implement safe-critical interfaces.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TypesMustBeAtLeastAsCriticalAsBaseTypes"
+  },
+  {
+    "id": "CA2147",
+    "message": "Transparent methods may not use security asserts",
+    "description": "Code that is marked as SecurityTransparentAttribute is not granted sufficient permissions to assert.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "SecurityTransparentCodeShouldNotAssert"
+  },
+  {
+    "id": "CA2149",
+    "message": "Transparent methods must not call into native code",
+    "description": "This rule is raised on any transparent method that calls directly into native code (for example, through a P/Invoke). Violations of this rule lead to a MethodAccessException in the level 2 transparency model and a full demand for UnmanagedCode in the level 1 transparency model.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "TransparentMethodsMustNotCallNativeCode"
+  },
+  {
+    "id": "CA2151",
+    "message": "Fields with critical types should be security critical",
+    "description": "To use security critical types, the code that references the type must be either security critical or security safe critical. This is true even if the reference is indirect. Therefore, having a security transparent or security safe critical field is misleading because transparent code will still be unable to access the field.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": ""
+  },
+  {
+    "id": "CA2200",
+    "message": "Rethrow to preserve stack details",
+    "description": "An exception is rethrown and the exception is explicitly specified in the throw statement. If an exception is rethrown by specifying the exception in the throw statement, the list of method calls between the original method that threw the exception and the current method is lost.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "RethrowToPreserveStackDetails"
+  },
+  {
+    "id": "CA2201",
+    "message": "Do not raise reserved exception types",
+    "description": "This makes the original error difficult to detect and debug.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotRaiseReservedExceptionTypes"
+  },
+  {
+    "id": "CA2202",
+    "message": "Do not dispose objects multiple times",
+    "description": "A method implementation contains code paths that could cause multiple calls to System.IDisposable.Dispose or a Dispose equivalent (such as a Close() method on some types) on the same object.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotDisposeObjectsMultipleTimes"
+  },
+  {
+    "id": "CA2204",
+    "message": "Literals should be spelled correctly",
+    "description": "A literal string in a method body contains one or more words that are not recognized by the Microsoft spelling checker library.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "LiteralsShouldBeSpelledCorrectly"
+  },
+  {
+    "id": "CA2205",
+    "message": "Use managed equivalents of Win32 API",
+    "description": "An operating system invoke method is defined and a method that has the equivalent functionality is located in the .NET Framework class library.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "UseManagedEquivalentsOfWin32Api"
+  },
+  {
+    "id": "CA2207",
+    "message": "Initialize value type static fields inline",
+    "description": "A value type declares an explicit static constructor. To fix a violation of this rule, initialize all static data when it is declared and remove the static constructor.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "InitializeValueTypeStaticFieldsInline"
+  },
+  {
+    "id": "CA2208",
+    "message": "Instantiate argument exceptions correctly",
+    "description": "A call is made to the default (parameterless) constructor of an exception type that is or derives from ArgumentException, or an incorrect string argument is passed to a parameterized constructor of an exception type that is or derives from ArgumentException.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "InstantiateArgumentExceptionsCorrectly"
+  },
+  {
+    "id": "CA2210",
+    "message": "Assemblies should have valid strong names",
+    "description": "The strong name protects clients from unknowingly loading an assembly that has been tampered with. Assemblies without strong names should not be deployed outside very limited scenarios. If you share or distribute assemblies that are not correctly signed, the assembly can be tampered with, the common language runtime might not load the assembly, or the user might have to disable verification on his or her computer.",
+    "category": "Microsoft.Design",
+    "severity": null,
+    "type": "AssembliesShouldHaveValidStrongNames"
+  },
+  {
+    "id": "CA2211",
+    "message": "Non-constant fields should not be visible",
+    "description": "Static fields that are neither constants nor read-only are not thread-safe. Access to such a field must be carefully controlled and requires advanced programming techniques to synchronize access to the class object.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "NonConstantFieldsShouldNotBeVisible"
+  },
+  {
+    "id": "CA2212",
+    "message": "Do not mark serviced components with WebMethod",
+    "description": "A method in a type that inherits from System.EnterpriseServices.ServicedComponent is marked by using System.Web.Services.WebMethodAttribute. Because WebMethodAttribute and a ServicedComponent method have conflicting behavior and requirements for context and transaction flow, the behavior of the method will be incorrect in some scenarios.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotMarkServicedComponentsWithWebMethod"
+  },
+  {
+    "id": "CA2213",
+    "message": "Disposable fields should be disposed",
+    "description": "A type that implements System.IDisposable declares fields that are of types that also implement IDisposable. The Dispose method of the field is not called by the Dispose method of the declaring type.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DisposableFieldsShouldBeDisposed"
+  },
+  {
+    "id": "CA2214",
+    "message": "Do not call overridable methods in constructors",
+    "description": "When a constructor calls a virtual method, the constructor for the instance that invokes the method may not have executed.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotCallOverridableMethodsInConstructors"
+  },
+  {
+    "id": "CA2215",
+    "message": "Dispose methods should call base class dispose",
+    "description": "If a type inherits from a disposable type, it must call the Dispose method of the base type from its own Dispose method.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DisposeMethodsShouldCallBaseClassDispose"
+  },
+  {
+    "id": "CA2216",
+    "message": "Disposable types should declare finalizer",
+    "description": "A type that implements System.IDisposable and has fields that suggest the use of unmanaged resources does not implement a finalizer, as described by Object.Finalize.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DisposableTypesShouldDeclareFinalizer"
+  },
+  {
+    "id": "CA2217",
+    "message": "Do not mark enums with FlagsAttribute",
+    "description": "An externally visible enumeration is marked by using FlagsAttribute, and it has one or more values that are not powers of two or a combination of the other defined values on the enumeration.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotMarkEnumsWithFlags"
+  },
+  {
+    "id": "CA2218",
+    "message": "Override GetHashCode on overriding Equals",
+    "description": "GetHashCode returns a value, based on the current instance, that is suited for hashing algorithms and data structures such as a hash table. Two objects that are the same type and are equal must return the same hash code.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OverrideGetHashCodeOnOverridingEquals"
+  },
+  {
+    "id": "CA2219",
+    "message": "Do not raise exceptions in exception clauses",
+    "description": "When an exception is raised in a finally or fault clause, the new exception hides the active exception. When an exception is raised in a filter clause, the run time silently catches the exception. This makes the original error difficult to detect and debug.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotRaiseExceptionsInExceptionClauses"
+  },
+  {
+    "id": "CA2220",
+    "message": "Finalizers should call base class finalizer",
+    "description": "Finalization must be propagated through the inheritance hierarchy. To guarantee this, types must call their base class Finalize method in their own Finalize method.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "FinalizersShouldCallBaseClassFinalizer"
+  },
+  {
+    "id": "CA2221",
+    "message": "Finalizers should be protected",
+    "description": "Finalizers must use the family access modifier.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "FinalizersShouldBeProtected"
+  },
+  {
+    "id": "CA2222",
+    "message": "Do not decrease inherited member visibility",
+    "description": "You should not change the access modifier for inherited members. Changing an inherited member to private does not prevent callers from accessing the base class implementation of the method.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotDecreaseInheritedMemberVisibility"
+  },
+  {
+    "id": "CA2223",
+    "message": "Members should differ by more than return type",
+    "description": "Although the common language runtime allows the use of return types to differentiate between otherwise identical members, this feature is not in the Common Language Specification, nor is it a common feature of .NET programming languages.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "MembersShouldDifferByMoreThanReturnType"
+  },
+  {
+    "id": "CA2224",
+    "message": "Override equals on overloading operator equals",
+    "description": "A public type implements the equality operator but does not override Object.Equals.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OverrideEqualsOnOverloadingOperatorEquals"
+  },
+  {
+    "id": "CA2225",
+    "message": "Operator overloads have named alternates",
+    "description": "An operator overload was detected, and the expected named alternative method was not found. The named alternative member provides access to the same functionality as the operator and is provided for developers who program in languages that do not support overloaded operators.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OperatorOverloadsHaveNamedAlternates"
+  },
+  {
+    "id": "CA2226",
+    "message": "Operators should have symmetrical overloads",
+    "description": "A type implements the equality or inequality operator and does not implement the opposite operator.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OperatorsShouldHaveSymmetricalOverloads"
+  },
+  {
+    "id": "CA2227",
+    "message": "Collection properties should be read only",
+    "description": "A writable collection property allows a user to replace the collection with a different collection. A read-only property stops the collection from being replaced but still allows the individual members to be set.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "CollectionPropertiesShouldBeReadOnly"
+  },
+  {
+    "id": "CA2228",
+    "message": "Do not ship unreleased resource formats",
+    "description": "Resource files that were built by using prerelease versions of the .NET Framework might not be usable by supported versions of the .NET Framework.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "DoNotShipUnreleasedResourceFormats"
+  },
+  {
+    "id": "CA2229",
+    "message": "Implement serialization constructors",
+    "description": "To fix a violation of this rule, implement the serialization constructor. For a sealed class, make the constructor private; otherwise, make it protected.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ImplementSerializationConstructors"
+  },
+  {
+    "id": "CA2230",
+    "message": "Use params for variable arguments",
+    "description": "A public or protected type contains a public or protected method that uses the VarArgs calling convention instead of the params keyword.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "UseParamsForVariableArguments"
+  },
+  {
+    "id": "CA2231",
+    "message": "Overload operator equals on overriding ValueType.Equals",
+    "description": "A value type overrides Object.Equals but does not implement the equality operator.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OverloadOperatorEqualsOnOverridingValueTypeEquals"
+  },
+  {
+    "id": "CA2232",
+    "message": "Mark Windows Forms entry points with STAThread",
+    "description": "STAThreadAttribute indicates that the COM threading model for the application is a single-threaded apartment. This attribute must be present on the entry point of any application that uses Windows Forms; if it is omitted, the Windows components might not work correctly.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "MarkWindowsFormsEntryPointsWithStaThread"
+  },
+  {
+    "id": "CA2233",
+    "message": "Operations should not overflow",
+    "description": "You should not perform arithmetic operations without first validating the operands. This makes sure that the result of the operation is not outside the range of possible values for the data types that are involved.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "OperationsShouldNotOverflow"
+  },
+  {
+    "id": "CA2234",
+    "message": "Pass System.Uri objects instead of strings",
+    "description": "A call is made to a method that has a string parameter whose name contains \"uri\", \"URI\", \"urn\", \"URN\", \"url\", or \"URL\". The declaring type of the method contains a corresponding method overload that has a System.Uri parameter.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "PassSystemUriObjectsInsteadOfStrings"
+  },
+  {
+    "id": "CA2235",
+    "message": "Mark all non-serializable fields",
+    "description": "An instance field of a type that is not serializable is declared in a type that is serializable.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "MarkAllNonSerializableFields"
+  },
+  {
+    "id": "CA2236",
+    "message": "Call base class methods on ISerializable types",
+    "description": "To fix a violation of this rule, call the base type GetObjectData method or serialization constructor from the corresponding derived type method or constructor.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "CallBaseClassMethodsOnISerializableTypes"
+  },
+  {
+    "id": "CA2237",
+    "message": "Mark ISerializable types with SerializableAttribute",
+    "description": "To be recognized by the common language runtime as serializable, types must be marked by using the SerializableAttribute attribute even when the type uses a custom serialization routine through implementation of the ISerializable interface.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "MarkISerializableTypesWithSerializable"
+  },
+  {
+    "id": "CA2238",
+    "message": "Implement serialization methods correctly",
+    "description": "A method that handles a serialization event does not have the correct signature, return type, or visibility.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ImplementSerializationMethodsCorrectly"
+  },
+  {
+    "id": "CA2239",
+    "message": "Provide deserialization methods for optional fields",
+    "description": "A type has a field that is marked by using the System.Runtime.Serialization.OptionalFieldAttribute attribute, and the type does not provide deserialization event handling methods.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ProvideDeserializationMethodsForOptionalFields"
+  },
+  {
+    "id": "CA2240",
+    "message": "Implement ISerializable correctly",
+    "description": "To fix a violation of this rule, make the GetObjectData method visible and overridable, and make sure that all instance fields are included in the serialization process or explicitly marked by using the NonSerializedAttribute attribute.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ImplementISerializableCorrectly"
+  },
+  {
+    "id": "CA2241",
+    "message": "Provide correct arguments to formatting methods",
+    "description": "The format argument that is passed to System.String.Format does not contain a format item that corresponds to each object argument, or vice versa.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "ProvideCorrectArgumentsToFormattingMethods"
+  },
+  {
+    "id": "CA2242",
+    "message": "Test for NaN correctly",
+    "description": "This expression tests a value against Single.Nan or Double.Nan. Use Single.IsNan(Single) or Double.IsNan(Double) to test the value.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "TestForNaNCorrectly"
+  },
+  {
+    "id": "CA2243",
+    "message": "Attribute string literals should parse correctly",
+    "description": "The string literal parameter of an attribute does not parse correctly for a URL, a GUID, or a version.",
+    "category": "Microsoft.Usage",
+    "severity": null,
+    "type": "AttributeStringLiteralsShouldParseCorrectly"
+  },
+  {
+    "id": "CA5122",
+    "message": "CA5122 P/Invoke declarations should not be safe critical",
+    "description": "Methods are marked as SecuritySafeCritical when they perform a security sensitive operation, but are also safe to be used by transparent code. Transparent code may never directly call native code through a P/Invoke. Therefore, marking a P/Invoke as security safe critical will not enable transparent code to call it, and is misleading for security analysis.",
+    "category": "Microsoft.Security",
+    "severity": null,
+    "type": "PInvokesShouldNotBeSafeCriticalFxCopRule"
+  }
+]

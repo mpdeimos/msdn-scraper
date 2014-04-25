@@ -4,26 +4,21 @@ import com.mpdeimos.webscraper.Scraper;
 import com.mpdeimos.webscraper.Scraper.ScraperBuilder;
 import com.mpdeimos.webscraper.ScraperException;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 public abstract class RuleResolver
 {
 	public final Rule[] resolve() throws ScraperException
 	{
-		RuleOverview[] ruleOverviewSites = getRuleOverviewSites();
+		IRuleProvider provider = getRuleProvider();
 		ScraperBuilder builder = Scraper.builder();
-		builder.add(ruleOverviewSites);
+		builder.add(provider);
 		builder.build().scrape();
 
-		ArrayList<Rule> rules = new ArrayList<Rule>();
-		for (RuleOverview ruleOverview : ruleOverviewSites)
-		{
-			rules.addAll(ruleOverview.getRules());
-		}
+		Collection<? extends Rule> rules = provider.getRules();
 
 		return rules.toArray(new Rule[rules.size()]);
 	}
 
-	protected abstract RuleOverview[] getRuleOverviewSites()
-			throws ScraperException;
+	protected abstract IRuleProvider getRuleProvider();
 }

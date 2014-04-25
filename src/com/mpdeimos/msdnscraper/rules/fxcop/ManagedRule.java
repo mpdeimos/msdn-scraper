@@ -25,4 +25,40 @@ public class ManagedRule extends Rule
 		return details;
 	}
 
+	@Override
+	public String getId()
+	{
+		return id;
+	}
+
+	@Override
+	public String getMessage()
+	{
+		return message;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	@Override
+	public String getCategory()
+	{
+		return details.category;
+	}
+
+	@Override
+	public String getSeverity()
+	{
+		return null;
+	}
+
+	@Override
+	public String getTypeName()
+	{
+		return details.typeName;
+	}
+
 }

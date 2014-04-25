@@ -1,0 +1,2706 @@
+[
+  {
+    "id": "SPC010101",
+    "message": "Fix schema errors",
+    "description": "The XML files within a wsp solution should not contain schema errors.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "FixSchemaErrorsInSolution"
+  },
+  {
+    "id": "SPC010102",
+    "message": "Declare required attribute \u0027SolutionId\u0027 in Solution",
+    "description": "Required attribute \u0027SolutionId\u0027 must be declared in Solution.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInSolution"
+  },
+  {
+    "id": "SPC010103",
+    "message": "Define a valid GUID for attribute \u0027SolutionId\u0027 in Solution",
+    "description": "The attribute \u0027SolutionId\u0027 in Solution must be a valid GUID. Otherwise the deployment or retraction of the solution may not work properly.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineSolutionIdAsTypeGUID"
+  },
+  {
+    "id": "SPC010104",
+    "message": "Remove unused files from Solution package",
+    "description": "Files in the solution package which are not listed in manifest.xml or in a feature.xml should be removed from the package.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "RemoveUnusedFilesFromPackage"
+  },
+  {
+    "id": "SPC010202",
+    "message": "Declare element \u0027SafeControl\u0027 for each implemented WebControl",
+    "description": "For each non-abstract class which is derived from \u0027System.Web.UI.WebControls.WebControl\u0027 a SafeControl entry must be placed inside the manifest.xml.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareSafeControlEntryForWebControls"
+  },
+  {
+    "id": "SPC010203",
+    "message": "Deploy referenced Assembly with correct version, culture and public key token",
+    "description": "If an assembly references a different assembly then version, culture and public key token of the referenced assembly must be the same or use BindingRedirects.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeployReferencedAssemblyWithCorrectVersion"
+  },
+  {
+    "id": "SPC010212",
+    "message": "Do not set SPSite.CatchAccessDeniedException property",
+    "description": "Property SPSite.CatchAccessDeniedException is reserved for internal use. Use the SPSecurity.CatchAccessDeniedException property instead to specify whether SharePoint Foundation traps and handles \"Access Denied\" exceptions.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallSPSiteCatchAccessDeniedException"
+  },
+  {
+    "id": "SPC010213",
+    "message": "Do not set SPSite.ReadLocked property",
+    "description": "Property SPSite.ReadLocked is reserved for internal and is not intended to be used directly from your code. Use the IsReadLocked property instead.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallSPSiteReadLocked"
+  },
+  {
+    "id": "SPC010221",
+    "message": "Do not call deprecated members",
+    "description": "Depending on the target SharePoint version of the solution an assembly in this solution should not call deprecated methods or properties.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallDeprecatedMethods"
+  },
+  {
+    "id": "SPC010223",
+    "message": "Do not implement deprecated interfaces",
+    "description": "Depending on the target SharePoint version of the solution an assembly in this solution should not implement deprecated interfaces.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotImplementDeprecatedInterfaces"
+  },
+  {
+    "id": "SPC010224",
+    "message": "Do not inherit from deprecated type",
+    "description": "Depending on the target SharePoint version of the solution an assembly in this solution should not inherit from deprecated type.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotInheritFromDeprecatedTypes"
+  },
+  {
+    "id": "SPC010225",
+    "message": "Do not reference deprecated types",
+    "description": "Depending on the target SharePoint version of the solution an assembly in this solution should not reference deprecated types.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseDeprecatedTypes"
+  },
+  {
+    "id": "SPC010701",
+    "message": "Declare required attributes in SiteDefinition",
+    "description": "Required attributes Title and ListDir must be declared in SiteDefinition.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInSiteDefinition"
+  },
+  {
+    "id": "SPC010702",
+    "message": "Declare element \u0027SiteDefinition\u0027 in Solution",
+    "description": "A deployed SiteDefinition should be included correctly in manifest.xml of the Solution.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareSiteDefinitionElementInSolution"
+  },
+  {
+    "id": "SPC010703",
+    "message": "Do not reference WebApplication Feature in attribute \u0027VisibilityFeatureDependency\u0027",
+    "description": "The attribute \u0027VisibilityFeatureDependency\u0027 is not supported for Features with Web application scope.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotAddDependencyToWebAppFeatureInSiteDefinition"
+  },
+  {
+    "id": "SPC012101",
+    "message": "Declare required attributes in Feature",
+    "description": "Required attributes Id and Scope must be declared in Feature.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInFeature"
+  },
+  {
+    "id": "SPC012102",
+    "message": "Define a valid GUID for attribute \u0027Id\u0027 in Feature",
+    "description": "The attribute \u0027Id\u0027 in Feature must be a valid GUID.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineFeatureIdAsTypeGUID"
+  },
+  {
+    "id": "SPC012103",
+    "message": "Remove spaces from Feature folder",
+    "description": "SharePoint Foundation supports no spaces for Feature folder and file names.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "RemoveSpacesFromFeatureFolder"
+  },
+  {
+    "id": "SPC012104",
+    "message": "Define attribute \u0027Title\u0027 in Feature with max. 255 characters",
+    "description": "The attribute \u0027Title\u0027 of a Feature is limited to 255 characters.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineFeatureTitleWithMax255Characters"
+  },
+  {
+    "id": "SPC012111",
+    "message": "Do not define attribute \u0027ActiveOnDefault\u0027 in Feature with Scope \u0027Web\u0027 or \u0027Site\u0027",
+    "description": "Attribute \u0027ActivateOnDefault\u0027 cannot be \u0027TRUE\u0027 for Feature with Scope \u0027Web\u0027 or \u0027Site\u0027, except in Sandboxed solutions. In Sandboxed solutions the attribute is used during activation of the solution to activate Feature with scope \u0027Site\u0027. This behaviour is not documented in MSDN and may be unexpected und unintended.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineActiveOnDefaultInWebOrSiteFeatures"
+  },
+  {
+    "id": "SPC012112",
+    "message": "Do not define attribute \u0027AutoActivateInCentralAdmin\u0027 in Feature with Scope \u0027Farm\u0027",
+    "description": "AutoActivateInCentralAdmin cannot be TRUE for Feature with Scope \u0027Farm\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineAutoActivateInCentralAdminInFarmFeatures"
+  },
+  {
+    "id": "SPC012113",
+    "message": "Define required attributes for Feature receiver",
+    "description": "Attributes \u0027ReceiverAssembly\u0027 and \u0027ReceiverClass\u0027 must be defined in conjunction.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineAllRequiredAttributesForFeatureReceiver"
+  },
+  {
+    "id": "SPC012114",
+    "message": "Define correct SolutionId in Feature",
+    "description": "All features in a solution must correctly reference their parent solution via the SolutionId property.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineCorrectSolutionIdInFeatures"
+  },
+  {
+    "id": "SPC012115",
+    "message": "Define ReceiverAssembly in Feature correctly",
+    "description": "ReceiverAssembly in Feature should contain the full qualified name of the referenced assembly.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineCorrectReceiverAssemblyInFeature"
+  },
+  {
+    "id": "SPC012116",
+    "message": "Define Version in Feature correctly",
+    "description": "Version in Feature should contain a correct version number.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineCorrectVersionInFeature"
+  },
+  {
+    "id": "SPC012121",
+    "message": "Add missing assembly for \u0027ReceiverAssembly\u0027 in Feature",
+    "description": "If a Feature references an assembly in attribute \u0027ReceiverAssembly\u0027 the assembly should be available.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "AddMissingAssemblyForFeatureReceiverAssembly"
+  },
+  {
+    "id": "SPC012122",
+    "message": "Deploy the \u0027ReceiverAssembly\u0027 of a Feature to GAC",
+    "description": "If a Feature references an assembly in attribute \u0027ReceiverAssembly\u0027 the assembly must be deployed to GAC. Otherwise the assembly could not be loaded during feature activation.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployFeatureReceiverAssemblyToGAC"
+  },
+  {
+    "id": "SPC012131",
+    "message": "Declare attribute \u0027Title\u0027 in Feature",
+    "description": "A Feature should have a Title.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareFeatureTitle"
+  },
+  {
+    "id": "SPC012133",
+    "message": "Do not define Feature Id with curly brackets",
+    "description": "A Feature Id should not contain curly brackets at the beginning and end.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineFeatureIdWithoutCurlyBrackets"
+  },
+  {
+    "id": "SPC012141",
+    "message": "Add Resources when DefaultResourceFile is declared",
+    "description": "If attribute \u0027DefaultResourceFile\u0027 is declared the necessary Resource files must be available.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "AddResourcesWhenDefaultResourceFileIsDeclared"
+  },
+  {
+    "id": "SPC012201",
+    "message": "Declare required fields in FieldType",
+    "description": "Required fields Filterable, ParentType, Sortable, TypeDisplayName and TypeName must be declared in FieldType",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInFieldType"
+  },
+  {
+    "id": "SPC012202",
+    "message": "Do not declare field \u0027InternalType\u0027 in FieldTypes",
+    "description": "Do not use a \u003cField Name\u003d\"InternalType\"\u003e element in a custom field type definition.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDeclareInternalTypeInFieldTypes"
+  },
+  {
+    "id": "SPC012203",
+    "message": "Do not declare field \u0027SQLType\u0027 in FieldTypes",
+    "description": "Do not use a \u003cField Name\u003d\"SQLType\"\u003e element in a custom field type definition. The field represents the SQL data type that will be used to store the data in the content database, but cannot be used in custom field types.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDeclareSQLTypeInFieldTypes"
+  },
+  {
+    "id": "SPC012206",
+    "message": "Declare field \u0027FieldTypeClass\u0027 in FieldType",
+    "description": "Field \u003cField Name\u003d\"FieldTypeClass\" /\u003e is an optional element, but required for all custom field types. Represents the strong name of the field type class library.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareFieldTypeClassInFieldType"
+  },
+  {
+    "id": "SPC012211",
+    "message": "Do not use obsolete RenderPattern in FieldTypes",
+    "description": "RenderPattern in FieldTypes is obsolete.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseRenderPatternInFieldTypes"
+  },
+  {
+    "id": "SPC012212",
+    "message": "Do not use PropertySchema in FieldTypes",
+    "description": "PropertySchema in FieldTypes is obsolete.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotUsePropertySchemaInFieldTypes"
+  },
+  {
+    "id": "SPC015101",
+    "message": "Do not define Field in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "Field can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineFieldInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015102",
+    "message": "Add curly brackets to Field ID",
+    "description": "Field ID must contain curly brackets.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "AddCurlyBracketsToFieldId"
+  },
+  {
+    "id": "SPC015103",
+    "message": "Define a uniqe Field ID",
+    "description": "The ID of a Field must be unique in the farm.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineUniqueFieldId"
+  },
+  {
+    "id": "SPC015104",
+    "message": "Define Field ID as valid GUID",
+    "description": "Field ID must be a valid GUID.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineFieldIdAsGUID"
+  },
+  {
+    "id": "SPC015105",
+    "message": "Declare required attributes in Field",
+    "description": "Required attributes ID, Name and Type must be declared in Field.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareAllRequiredAttributesInFields"
+  },
+  {
+    "id": "SPC015106",
+    "message": "Define Field DisplayName with max. 255 characters",
+    "description": "The DisplayName of a Field is limited to 255 characters.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineDisplayNameInFieldWithMax255Characters"
+  },
+  {
+    "id": "SPC015107",
+    "message": "Do not use deprecated attribute \u0027FromBaseType\u0027",
+    "description": "Attribute \u0027FromBaseType\u0027 is deprecated in favor of the Sealed attribute.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseDeprecatedAttributeFromBaseTypeInField"
+  },
+  {
+    "id": "SPC015108",
+    "message": "Declare all recommended attributes in Field",
+    "description": "All recommended attributes ID, Type, Name, DisplayName, and Group should be declared in Field.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareAllRecommendedAttributesInFields"
+  },
+  {
+    "id": "SPC015201",
+    "message": "Do not define ContentType ID longer than 1024 characters",
+    "description": "Content type IDs have a maximum length of 512 bytes. Because two hexadecimal characters can fit in each byte, each content type ID has an effective maximum length of 1024 characters.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineContentTypeIDWithMoreThan1024Characters"
+  },
+  {
+    "id": "SPC015202",
+    "message": "Do not define ContentType in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "ContentType can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineContentTypeInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015203",
+    "message": "Declare required attributes in ContentType",
+    "description": "Required attributes ID and Name must be declared in ContentType.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInContentType"
+  },
+  {
+    "id": "SPC015204",
+    "message": "Do not define duplicate ContentType ID",
+    "description": "ContentType ID must be unique.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineDuplicateContentTypeID"
+  },
+  {
+    "id": "SPC015205",
+    "message": "Do not define ContentType Name longer than 124 characters",
+    "description": "Length of attribute \u0027Name\u0027 in content types is limited to 124 characters. The name itself cannot be longer than 128 characters and cannot contain the characters \\ / : * ? \" # % \u003c \u003e { } | ~ \u0026, two consecutive periods (..), or special characters such as a tab.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineContentTypeNameWithMoreThan124Characters"
+  },
+  {
+    "id": "SPC015206",
+    "message": "Define ContentTypes ID as hexadecimal GUID",
+    "description": "It is recommended to use the GUID approach to identify any content types that are direct children of content types you did not create. Use the GUID approach if the parent content type is one of the following. That way, you are assured that the content type ID is unique and will not be duplicated later by the developer of the parent content type.",
+    "category": "Correctness",
+    "severity": "Warning",
+    "type": "DefineContentTypeIDAsHexadecimalGUID"
+  },
+  {
+    "id": "SPC015207",
+    "message": "Do not declare attributes in ContentType which are reserved for internal use",
+    "description": "The attribute \u0027BaseType\u0027 is reserved for internal use and should not be declared in ContentType.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDeclareInternalAttributesInContentType"
+  },
+  {
+    "id": "SPC015208",
+    "message": "Do not declare obsolete attributes in ContentType",
+    "description": "The attributes \u0027ResourceFolder\u0027 and \u0027DocumentTemplate\u0027 are obsolete and should not be declared in ContentType.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeclareObsoleteAttributesInContentType"
+  },
+  {
+    "id": "SPC015209",
+    "message": "Inherit ContentType from existing parent ContentType",
+    "description": "The parent ContentType of a ContentType must be either a SharePoint ContentType or a ContentType within the WSP solutions.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "InheritContentTypeFromExistingParentContentType"
+  },
+  {
+    "id": "SPC015210",
+    "message": "Define correct parent FeatureId in ContentType",
+    "description": "If ContentType defines attribute \u0027FeatureId\u0027 the value must be correct and include braces.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DefineCorrectParentFeatureId"
+  },
+  {
+    "id": "SPC015211",
+    "message": "Define attribute \u0027Inherits\u0027 to FALSE in ContentType if RemoveFieldRef are used",
+    "description": "A content type should not have attribute \u0027Inherits\u0027 set to \u0027TRUE\u0027 if elements of type \u0027RemoveFieldRef\u0027 are used. Set Inherits to \u0027FALSE\u0027 or hide the not used columns with Hidden\u003dTRUE to remove fields from a content type.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DefineInheritsInContentTypeWithRemoveFiedRef"
+  },
+  {
+    "id": "SPC015212",
+    "message": "Define attribute \u0027Inherits\u0027 to FALSE in ContentType if Custom Forms are used",
+    "description": "A content type should not have attribute \u0027Inherits\u0027 set to \u0027TRUE\u0027 if custom forms are used. Set Inherits to \u0027FALSE\u0027 or remove the custom form from a content type.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DefineInheritsToFalseInContentTypeWithForms"
+  },
+  {
+    "id": "SPC015301",
+    "message": "Do not define Module in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "Module can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineModuleInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015302",
+    "message": "Add missing referenced File for Module",
+    "description": "A Module in a Feature deploys files which are included in the feature as ElementFile. The rule checks if this referenced file is available or not.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "AddMissingModuleFileToFeature"
+  },
+  {
+    "id": "SPC015303",
+    "message": "Declare File element in Module",
+    "description": "A Module should contain at least one File element as child. Otherwise the Module has no need and should be removed.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareFileElementInModule"
+  },
+  {
+    "id": "SPC015401",
+    "message": "Do not define ListInstance in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "ListInstance can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineListInstanceInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015402",
+    "message": "Declare required attributes in ListInstance",
+    "description": "Required attributes TemplateType, Title and Url be declared in ListInstance.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInListInstance"
+  },
+  {
+    "id": "SPC015403",
+    "message": "Define unique value for attribute \u0027Id\u0027 in ListInstance",
+    "description": "If a value is defined for attribute \u0027Id\u0027 is defined in a ListInstance the value must be unique within the same Feature.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineUniqueIdInListInstance"
+  },
+  {
+    "id": "SPC015404",
+    "message": "Deploy missing ListTemplate for ListInstance",
+    "description": "A ListInstance instantiates lists based on a ListTemplate. This ListTemplate must be either a SharePoint default ListTemplate or a custom ListTemplate which must be deployed.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeployMissingListTemplateForListInstance"
+  },
+  {
+    "id": "SPC015405",
+    "message": "Remove curly brackets from attribut FeatureId in ListInstance",
+    "description": "Curly brackets should be removed from attribute \u0027FeatureId\u0027 in ListInstance.",
+    "category": "Correctness",
+    "severity": "Warning",
+    "type": "RemoveCurlyBracketsFromFeatureIdInListInstance"
+  },
+  {
+    "id": "SPC015406",
+    "message": "Deploy missing ListDefinition in CustomSchema of ListInstance",
+    "description": "A ListInstance can directly reference a ListDefinition in attribute \u0027CustomSchema\u0027. This ListDefinition must be depoyed in the same Feature as ElementFile.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeployMissingCustomSchemaForListInstance"
+  },
+  {
+    "id": "SPC015501",
+    "message": "Do not define ListTemplate in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "ListTemplate can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineListTemplateInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015502",
+    "message": "Declare required attributes in ListTemplate",
+    "description": "Required attributes BaseType, DisplayName and Name must be declared in ListTemplate.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInListTemplate"
+  },
+  {
+    "id": "SPC015505",
+    "message": "Do not define ListTemplate Name with spaces",
+    "description": "Name of ListTemplate cannot contain spaces or special characters.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineListNameWithSpaces"
+  },
+  {
+    "id": "SPC015506",
+    "message": "Define unique attribute \u0027Type\u0027 for ListTemplate",
+    "description": "The attribute \u0027Type\u0027 must be unique within the Feature.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineUniqueListTemplateType"
+  },
+  {
+    "id": "SPC015510",
+    "message": "Deploy missing Image in ListTemplate",
+    "description": "If a ListTemplate references a file in attribute \u0027Image\u0027 (e.g. an icon) the file must be deployed.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingImageOfListTemplate"
+  },
+  {
+    "id": "SPC015601",
+    "message": "Do not define ContentTypeBinding in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "ContentTypeBinding can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineContentTypeBindingInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC015701",
+    "message": "Declare required attribute in CustomAction",
+    "description": "Required attribute \u0027Title\u0027 must be declared in CustomAction.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInCustomAction"
+  },
+  {
+    "id": "SPC015702",
+    "message": "Define unique value for \u0027Id\u0027 in CustomAction",
+    "description": "Define a unique value for attribute \u0027Id\u0027 in CustomAction. The ID may be a GUID, or it may be a unique term.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineUniqueIDInCustomAction"
+  },
+  {
+    "id": "SPC015703",
+    "message": "Deploy missing file in UrlAction for CustomAction",
+    "description": "If a CustomAction references a file in attribute \u0027UrlAction\u0027 (e.g. ASPX page) the file must be deployed. Otherwise a click on this CustomAction will lead to 404 error.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingUrlActionFileOfCustomAction"
+  },
+  {
+    "id": "SPC015704",
+    "message": "Deploy missing file in ImageUrl for CustomAction",
+    "description": "If a CustomAction references a file in attribute \u0027ImageUrl\u0027 (e.g. an icon) the file must be deployed.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingImageOfCustomAction"
+  },
+  {
+    "id": "SPC015705",
+    "message": "Deploy missing file in Ribbon for CustomAction",
+    "description": "If a CustomAction references a file in ribbon (e.g. an icon) the file must be deployed.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingRibbonImageOfCustomAction"
+  },
+  {
+    "id": "SPC015706",
+    "message": "Deploy missing file in CommandUIHandler for CustomAction",
+    "description": "If a CustomAction references a file in ribbon CommandUIHandler (e.g. a page) the file must be deployed.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingRibbonCommandUIHandlerOfCustomAction"
+  },
+  {
+    "id": "SPC015801",
+    "message": "Declare required attributes in CustomActionGroup",
+    "description": "Required attributes \u0027Location\u0027 and \u0027Title\u0027 must be declared in CustomActionGroup.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInCustomActionGroup"
+  },
+  {
+    "id": "SPC016001",
+    "message": "Do not define Receiver in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "Receiver can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineReceiverInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC016002",
+    "message": "Declare Scope for Receivers in Site Features",
+    "description": "If event receivers are used within a feature with scope \u0027Site\u0027 the attribute \u0027Scope\u0027 should be specified.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareScopeForReceiversInSiteFeatures"
+  },
+  {
+    "id": "SPC016003",
+    "message": "Do not define Receiver \u0027EmailReceived\u0027 on SiteCollection level.",
+    "description": "If email event receivers are used within a feature with scope \u0027Site\u0027 the attribute \u0027Scope\u0027 must be set to \u0027Web\u0027 or the event receiver must be deployed via a web scopes feature.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineEmailEventReceiverInSiteCollectionLevel"
+  },
+  {
+    "id": "SPC016101",
+    "message": "Define ControlAssembly and ControlClass in DelegateControl",
+    "description": "When implementing a server control (DelegateControl), use both the ControlAssembly and ControlClass attributes.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineControlAssemblyAndClass"
+  },
+  {
+    "id": "SPC016102",
+    "message": "Deploy missing assembly from attribute ControlAssembly",
+    "description": "When using attribute ControlAssembly the referenced assembly must be deployed to SharePoint or must be a SharePoint assembly.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeployMissingControlAssembly"
+  },
+  {
+    "id": "SPC016103",
+    "message": "Deploy missing control from attribute ControlSrc",
+    "description": "When using attribute ControlSrc the referenced ascx control must be deployed to SharePoint or must be a SharePoint control.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeployMissingControlTemplate"
+  },
+  {
+    "id": "SPC016201",
+    "message": "Do not define Worfklow in Feature with scope \u0027Web\u0027, \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "Worfklow can only be deployed with Features of scope \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineWorkflowInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC016202",
+    "message": "Declare required attributes in Workflow",
+    "description": "Required attributes Name, CodeBesideAssembly, CodeBesideClass and Id must be declared in Workflow.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInWorkflow"
+  },
+  {
+    "id": "SPC016203",
+    "message": "Define a valid GUID for attribute \u0027Id\u0027 in Workflow",
+    "description": "The attribute \u0027Id\u0027 in Workflow must be a valid GUID.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DefineWorkflowIdAsTypeGUID"
+  },
+  {
+    "id": "SPC016301",
+    "message": "Do not define DocumentConveter in Feature with scope \u0027Web\u0027, \u0027Site\u0027 or \u0027Farm\u0027",
+    "description": "DocumentConveter can only be deployed with Features of scope \u0027WebApplication\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineDocumentConverterInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC016401",
+    "message": "Declare property \u0027Title\u0027 in WebParts",
+    "description": "WebPart should contain a title which is visible to the user in SharePoint.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareTitleInWebPartDefinition"
+  },
+  {
+    "id": "SPC016501",
+    "message": "Declare required attributes in FieldRef",
+    "description": "Required attributes ID, Name must be declared in FieldRef.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInFieldRef"
+  },
+  {
+    "id": "SPC016502",
+    "message": "Define attribute \u0027ID\u0027 with curly brackets in FieldRef",
+    "description": "The attribute \u0027ID\u0027 in elements of type \u0027FieldRef\u0027 should start and end with \u0027}\u0027. Otherwise they may not work correctly.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineValidIDInFieldRef"
+  },
+  {
+    "id": "SPC016503",
+    "message": "Define attribute \u0027ID\u0027 in FieldRef in correct casing",
+    "description": "The attribute \u0027ID\u0027 in elements of type \u0027FieldRef\u0027 is case sensitive. It must use the same casing as the ID of the referenced field.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineFieldRefInCorrectCasing"
+  },
+  {
+    "id": "SPC016601",
+    "message": "Declare required attributes in RemoveFieldRef",
+    "description": "Required attributes ID must be declared in RemoveFieldRef.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInRemoveFieldRef"
+  },
+  {
+    "id": "SPC016602",
+    "message": "Do not declare ignored attributes in RemoveFieldRef",
+    "description": "Do not declare attributes except ID in RemoveFieldRef. All other attributes are ignored by SharePoint.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "NotDeclareIgnoredAttributesInRemoveFieldRef"
+  },
+  {
+    "id": "SPC016603",
+    "message": "Define attribute \u0027ID\u0027 with curly brackets in RemoveFieldRef",
+    "description": "The attribute \u0027ID\u0027 in elements of type \u0027RemoveFieldRef\u0027 should start and end with \u0027}\u0027. Otherwise they may not work correctly.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineValidIDInRemoveFiedRef"
+  },
+  {
+    "id": "SPC017001",
+    "message": "Do not define TemplateAssociation in Feature with scope \u0027Web\u0027",
+    "description": "TemplateAssociation (FeatureSiteTemplateAssociationDefinition) can only be deployed with Features of scope \u0027Site\u0027, \u0027WebApplication\u0027 or \u0027Farm\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefineTemplateAssocationInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC017002",
+    "message": "Declare required attributes in TemplateAssocation",
+    "description": "Required attributes Id and TemplateName must be declared in TemplateAssocation.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInTemplateAssociation"
+  },
+  {
+    "id": "SPC017101",
+    "message": "Do not define PropertyBag in Feature with scope \u0027WebApplication\u0027 or \u0027Farm\u0027",
+    "description": "PropertyBag can only be deployed with Features of scope \u0027Web\u0027 or \u0027Site\u0027.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DoNotDefinePropertyBagInFeatureWithWrongScope"
+  },
+  {
+    "id": "SPC017401",
+    "message": "Declare required attributes in FeatureActivationDependency",
+    "description": "Required attribute FeatureId must be declared in FeatureActivationDependency.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInFeatureActivationDependency"
+  },
+  {
+    "id": "SPC017402",
+    "message": "Define optional attributes in FeatureActivationDependency correctly",
+    "description": "If optional attributes in FeatureActivationDependency are defined (like the target \u0027FeatureTitle\u0027) the values must be the same.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DefineOptionalAttributesInFeatureActivationDependencyCorrectly"
+  },
+  {
+    "id": "SPC017411",
+    "message": "Do not add ActivationDependency to hidden Feature",
+    "description": "Features with ActivationDependency cannot be hidden.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DoNotAddActivationDependencyToHiddenFeature"
+  },
+  {
+    "id": "SPC017412",
+    "message": "Do not add ActivationDependency to a Feature with a more restrictive scope",
+    "description": "A Feature cannot have an ActivationDependency to a more restrictive scope. For example, a site collection-scoped Feature cannot have an ActivationDependency on a Web site-scoped Feature.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DoNotAddActivationDependencyToMoreRestrictiveScope"
+  },
+  {
+    "id": "SPC017413",
+    "message": "Do not add cross-scope ActivationDependency to a hidden Feature",
+    "description": "A Feature cannot have an cross-scope ActivationDependency to a hidden Feature. For example, a Web site-scoped feature cannot be dependent on a site collection–scoped Feature that is not visible in the user interface.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DoNotAddCrossScopeActivationDependencyToHiddenFeature"
+  },
+  {
+    "id": "SPC017414",
+    "message": "Do not chain ActivationDependencies of Features when last Feature is visible",
+    "description": "ActivationDependencies can work only one level deep. SharePoint Foundation does not support more than one level in activation dependencies if the last Feature is visible.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DoNotChainActivationDependencies"
+  },
+  {
+    "id": "SPC017415",
+    "message": "Do not create circular chain of FeatureActivationDependencies",
+    "description": "ActivationDependencies between Features can result in a circular dependency which is not allowed.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DoNotCreateCircularChaingOfActivationDependencies"
+  },
+  {
+    "id": "SPC017510",
+    "message": "Declare element \u0027DefaultDescription\u0027 in schema of ListTemplate",
+    "description": "The element \u0027DefaultDescription\u0027 must be declared in the schema.xml of a ListTemplate.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DeclareDefaultDescriptionInListDefinition"
+  },
+  {
+    "id": "SPC017511",
+    "message": "Declare required attributes in schema of ListTemplate",
+    "description": "The attribte \u0027Title\u0027, \u0027Name\u0027 and \u0027Direction\u0027 must be declared in the schema.xml of a ListTemplate.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRequiredAttributesInListDefinition"
+  },
+  {
+    "id": "SPC017601",
+    "message": "Deploy missing assembly for WebService (.svc)",
+    "description": "A WCF Webservice (.svc) file references an assembly which handles the requests for the WebService. This assembly should be present in the solution.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeployMissingAssemblyInWCFWebService"
+  },
+  {
+    "id": "SPC017701",
+    "message": "Declare required attributes in WebTemplate",
+    "description": "Required attributes BaseTemplateID, BaseTemplateName, BaseConfigurationID and Name must be declared in WebTemplate.",
+    "category": "Correctness",
+    "severity": "CriticalError",
+    "type": "DeclareRequiredAttributesInWebTemplate"
+  },
+  {
+    "id": "SPC017702",
+    "message": "Derive WebTemplate from an existing Template",
+    "description": "A WebTemplate must derive from an existing Template, e.g from a template in TEMPLATE\\1033\\XML\\WEBTEMP.xml.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DefineValidParentWebTemplate"
+  },
+  {
+    "id": "SPC017711",
+    "message": "Declare recommended attributes in WebTemplate",
+    "description": "Attributes Title and Description should be declared in WebTemplate.",
+    "category": "Correctness",
+    "severity": "Error",
+    "type": "DeclareRecommendedAttributesInWebTemplate"
+  },
+  {
+    "id": "SPC019901",
+    "message": "Do not declare obsolete attributes",
+    "description": "Obsolete attributes should not be declared and should be removed from the code.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeclareObsoleteAttributes"
+  },
+  {
+    "id": "SPC019902",
+    "message": "Define Boolean attributes in upper case",
+    "description": "Boolean attributes should be define in upper case letters (TRUE or FALSE).",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "DefineBooleanAttributesInUpperCase"
+  },
+  {
+    "id": "SPC019903",
+    "message": "Remove spaces from resource keys",
+    "description": "If attributes in SharePoint elements are localized with resources the resource key cannot contains spaces.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "RemoveSpacesFromResourceKey"
+  },
+  {
+    "id": "SPC019904",
+    "message": "Add translation for a resource key",
+    "description": "If attributes in SharePoint elements are localized with resources the resource key must be available in a resx file.",
+    "category": "Correctness",
+    "severity": "CriticalWarning",
+    "type": "AddTranslationForResourceKey"
+  },
+  {
+    "id": "SPC020201",
+    "message": "Do not update list of blocked extensions",
+    "description": "The assembly should not access property Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions and also update the web application. The rule assumes that the list of blocked file extensions has been changed by the code.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotUpdateBlockedFileExtensions"
+  },
+  {
+    "id": "SPC020202",
+    "message": "Avoid setting \u0027AllowUnsafeUpdates\u0027 on SPWeb",
+    "description": "The assembly should not call Microsoft.SharePoint.SPWeb.AllowUnsafeUpdates to run make changes to SPWeb with a lower security context. Setting this property to true opens security risks, potentially introducing cross-site scripting vulnerabilities.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "AvoidCallToAllowUnsafeUpdatesOnSPWeb"
+  },
+  {
+    "id": "SPC020203",
+    "message": "Avoid setting \u0027AllowUnsafeUpdates\u0027 on SPSite",
+    "description": "The assembly should not call Microsoft.SharePoint.SPSite.AllowUnsafeUpdates to run make changes to SPSite with a lower security context. Setting this property to true opens security risks, potentially introducing cross-site scripting vulnerabilities.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "AvoidCallToAllowUnsafeUpdatesOnSPSite"
+  },
+  {
+    "id": "SPC020204",
+    "message": "Do not call \u0027WindowsIdentity.Impersonate\u0027",
+    "description": "The assembly should not call WindowsIdentity.Impersonate() to run code with higher permissions.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallWindowsIdentityImpersonate"
+  },
+  {
+    "id": "SPC020205",
+    "message": "Do not set \u0027AllowEveryoneViewItems\u0027 for SPList to TRUE",
+    "description": "The property ListAllowEveryoneViewItems of the SPList object should not be set to true, as it allows every authenticated user of the web application to access the list items when the URL is known.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotSetSPListAllowEveryoneViewItemsToTrue"
+  },
+  {
+    "id": "SPC020206",
+    "message": "Avoid usage of \u0027RunWithElevatedPrivileges\u0027",
+    "description": "The assembly should not call Microsoft.SharePoint.SPSecurity.RunWithElevatedPrivileges to run code with higher permissions.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "AvoidCallToRunWithElevatedPrivileges"
+  },
+  {
+    "id": "SPC020210",
+    "message": "Do not add PageParserPaths to web.config",
+    "description": "PageParserPaths can be used to enable inline code in ASPX pages which is not allowed.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotAddPageParserPathToWebConfig"
+  },
+  {
+    "id": "SPC020220",
+    "message": "Do not call \u0027HttpUtility.HtmlEncode\u0027.",
+    "description": "The assembly should not call HttpUtility.HtmlEncode(string) to encode strings. Use \u0027SPHttpUtility.HtmlEncode\u0027 instead.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallHttpUtilityHtmlEncode"
+  },
+  {
+    "id": "SPC020221",
+    "message": "Do not nest calls to RunWithElevatedPrivileges",
+    "description": "Do not call RunWithElevatedPrivileges inside a existing RunWithElevatedPrivileges.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotNestCallsToRunWithElevatedPrivileges"
+  },
+  {
+    "id": "SPC020602",
+    "message": "CAS Policy \u0027Maschine\u0027 with access\u003d\u0027Administer\u0027 is not allowed",
+    "description": "The CAS Policy \u0027Maschine\u0027 with access\u003d\u0027Administer\u0027 is not allowed.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "PolicyMachineAccessAdministerNotAllowed"
+  },
+  {
+    "id": "SPC020603",
+    "message": "Policy Permission Impersonate not allowed",
+    "description": "The CAS Policy for Microsoft.SharePoint.Security.SharePointPermission with settings Impersonate\u003dtrue is not allowed.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "PolicyPermissionImpersonateNotAllowed"
+  },
+  {
+    "id": "SPC020611",
+    "message": "Do not define \u0027FileIOPermission\u0027 with \u0027Unrestricted\u003dtrue\u0027",
+    "description": "The CAS Policy for System.Security.Permissions.FileIOPermission with setting \u0027Unrestricted\u003dtrue\u0027 is not allowed. This means read and write permission to all locations on the SharePoint system. Limit the permission to certain folders, e.g. TEMP.",
+    "category": "Security",
+    "severity": "Error",
+    "type": "DoNotDefineUnrestrictedFileIOPermission"
+  },
+  {
+    "id": "SPC020612",
+    "message": "Do not define \u0027RegistryPermission\u0027 with \u0027Unrestricted\u003dtrue\u0027",
+    "description": "The CAS Policy for System.Security.Permissions.RegistryPermission with setting \u0027Unrestricted\u003dtrue\u0027 is not allowed.",
+    "category": "Security",
+    "severity": "Error",
+    "type": "DoNotDefineUnrestrictedRegistryPermission"
+  },
+  {
+    "id": "SPC020613",
+    "message": "Do not define \u0027SecurityPermission\u0027 with \u0027Unrestricted\u003dtrue\u0027",
+    "description": "The CAS Policy for System.Security.Permissions.SecurityPermission with setting \u0027Unrestricted\u003dtrue\u0027 is not allowed.",
+    "category": "Security",
+    "severity": "Error",
+    "type": "DoNotDefineUnrestrictedSecurityPermission"
+  },
+  {
+    "id": "SPC020614",
+    "message": "Do not define \u0027EnvironmentPermission\u0027 with \u0027Unrestricted\u003dtrue\u0027",
+    "description": "The CAS Policy for System.Security.Permissions.EnvironmentPermission with setting \u0027Unrestricted\u003dtrue\u0027 is not allowed.",
+    "category": "Security",
+    "severity": "Error",
+    "type": "DoNotDefineUnrestrictedEnvironmentPermission"
+  },
+  {
+    "id": "SPC020615",
+    "message": "Do not define \u0027SmtpPermission\u0027 with \u0027Unrestricted\u003dtrue\u0027",
+    "description": "The CAS Policy for System.Net.Mail.SmtpPermission with setting \u0027Unrestricted\u003dtrue\u0027 is not allowed.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotDefineUnrestrictedSMTPPermission"
+  },
+  {
+    "id": "SPC025501",
+    "message": "Do not set \u0027AllowEveryoneViewItems\u0027 to TRUE in ListDefinition",
+    "description": "The attribute ListAllowEveryoneViewItems of a ListDefinition should not be set to true, as it allows every authenticated user of the web application to access the list items when the URL is known.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotSetAllowEveryoneViewItemsToTrue"
+  },
+  {
+    "id": "SPC026901",
+    "message": "Do not use inline code in ASPX pages",
+    "description": "ASPX pages should not contain inline code. Use code behind instead.",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseInlineCodeInASPXPage"
+  },
+  {
+    "id": "SPC026902: Add \u0027SharePoint",
+    "message": "FormDigest\u0027 to ASPX page",
+    "description": "ASPX pages should contain \u0027SharePoint:FormDigest\u0027 to ensure security validation of requests,",
+    "category": "Security",
+    "severity": "CriticalWarning",
+    "type": "AddValidateFormDigestToASPXPage"
+  },
+  {
+    "id": "SPC030101",
+    "message": "Do not override system files",
+    "description": "Solutions must not override system files. If this solution is deployed it could damage the SharePoint farm and make it unreachable.",
+    "category": "SharePoint Supportability",
+    "severity": "CriticalError",
+    "type": "DoNotOverrideSystemFiles"
+  },
+  {
+    "id": "SPC030202",
+    "message": "Do not access SharePoint API via reflection",
+    "description": "It is not supported to access non public properties or methods of the SharePoint API, e.g. via reflection.",
+    "category": "SharePoint Supportability",
+    "severity": "CriticalError",
+    "type": "DoNotUseReflectionToAccessSharePointAPI"
+  },
+  {
+    "id": "SPC030203",
+    "message": "Do not read ConnectionString from SPContentDatabase",
+    "description": "There is no reason to read the connection string of a SharePoint content database except if you want to read from the database which is not supported.",
+    "category": "SharePoint Supportability",
+    "severity": "Error",
+    "type": "DoNotReadContentDatabaseConnectionString"
+  },
+  {
+    "id": "SPC030204",
+    "message": "Do not query SharePoint databases directly",
+    "description": "It is not allowed to read or write directly to SharePoint databases. Use API, webservices etc. instead.",
+    "category": "SharePoint Supportability",
+    "severity": "Error",
+    "type": "DoNotQuerySharePointDatabasesDirectly"
+  },
+  {
+    "id": "SPC040102",
+    "message": "Declare attribute \u0027Title\u0027 and \u0027Description\u0027 in Solutions",
+    "description": "To make it easier to identify Solutions in the Solution Gallery in SharePoint the attributes \u0027Title\u0027 and \u0027Description\u0027 should be declared.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "DeclareTitleAndDescriptionInSolutions"
+  },
+  {
+    "id": "SPC040208",
+    "message": "Define AssemblyFileVersion in Assembly",
+    "description": "In SharePoint changing the AssemblyVersion very frequently can lead to problems, because the full name of the assembly could be used in features or webparts. However, to identify the version of the assembly the attribute \u0027AssemblyFileVersion\u0027 should be used (used with same major version but incremented minor version, build etc.)",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareAssemblyFileVersionInAssembly"
+  },
+  {
+    "id": "SPC040209",
+    "message": "Do not store Urls hardcoded in Assembly",
+    "description": "Remove hard coded Urls from the code and make them configurable.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DoNotStoreUrlsHardCodedInAssemblies"
+  },
+  {
+    "id": "SPC040212",
+    "message": "Do not create ContentTypes in code",
+    "description": "ContentTypes should be created declaratively in XML and not in code.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "DoNotCreateContentTypesInCode"
+  },
+  {
+    "id": "SPC040213",
+    "message": "Do not inherit WebParts from Microsoft.SharePoint.WebPartPages.WebPart",
+    "description": "WebParts should be inherited from the ASP.NET Webpart (System.Web.UI.WebControls.WebParts.WebPart). Do not inherit from the SharePoint WebPart.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DoNotInheritWebPartsFromSharePoint"
+  },
+  {
+    "id": "SPC040701",
+    "message": "Do not make SiteDefinition visible in the whole farm",
+    "description": "Site definitions are visible in the whole farm by default. The attribute \u0027VisibilityFeatureDependency\u0027 provides a way to hide the site definition depending on an activated feature.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "TemplateConfigurationShouldNotBeVisibleInWholeFarm"
+  },
+  {
+    "id": "SPC042101",
+    "message": "Declare attribute \u0027Description\u0027 in Features",
+    "description": "A Feature should contain a description of the purpose of a Feature in attribute \u0027Description\u0027.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareDescriptionInFeatures"
+  },
+  {
+    "id": "SPC042102",
+    "message": "Declare attribute \u0027Version\u0027 in Features",
+    "description": "A feature should contain a valid version number in attribute \u0027Version\u0027. This may be necessary to use FeatureUpgrade method to allow updates in the future.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareVersionInFeatures"
+  },
+  {
+    "id": "SPC042103",
+    "message": "Make Features with scope \u0027Farm\u0027 or \u0027WebApplication\u0027 visible",
+    "description": "Feature of scope \u0027Farm\u0027 or \u0027WebApplication\u0027 should not be hidden. They are not visible for the farm administrator in the Central Administration and cannot be deactivated via the UI e.g. in case of problems. If the feature is visible in the Central Administration the farm administrator can easier identify available and activated features.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "MakeFeaturesWithScopeFarmOrWebAppVisible"
+  },
+  {
+    "id": "SPC042104",
+    "message": "Consider to make Feature with scope \u0027Web\u0027 or \u0027Site\u0027 hidden",
+    "description": "Consider to make Features with scope \u0027Web\u0027 or \u0027Site\u0027 hidden to avoid activation via the UI.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "MakeFeaturesWithScopeSiteOrWebHidden"
+  },
+  {
+    "id": "SPC042106",
+    "message": "Declare attribute \u0027Title\u0027 and \u0027Description\u0027 in FeatureActivitationDependencies",
+    "description": "To make it easier to identify feature activation dependencies the attributes title and description should contain the title and description of the referenced feature.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "FeatureActivitationDependenciesShouldContainTitleAndDescription"
+  },
+  {
+    "id": "SPC042107",
+    "message": "Define attribute \u0027ReceiverAssembly\u0027 in Feature as full qualified assembly name",
+    "description": "If a Feature references an Assembly in attribute \u0027ReceiverAssembly\u0027 the given value should be a full qualified assembly name (e.g. \u0027System.Data, Version\u003d1.0.3300.0, Culture\u003dneutral, PublicKeyToken\u003db77a5c561934e089\u0027). Although the order of the values in the assembly name is not mandatory a well-formed assembly name improves readability of the XML code.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DefineFeatureReceiverAssemblyAsFQN"
+  },
+  {
+    "id": "SPC042201",
+    "message": "Declare all FieldTypes in a single file",
+    "description": "If multiple FieldTypes are deployed by a Solution these FieldTypes should be store in a single XML file to avoid unnecessary files.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareFieldTypesInASingleFile"
+  },
+  {
+    "id": "SPC045201",
+    "message": "Declare attribute \u0027Inherits\u0027 in ContentTypes",
+    "description": "In SharePoint 2010 the new attribute \u0027Inherits\u0027 for ContentTypes defines whether fields of the parent ContentType are inherited to the ContentType. For compatibility reasons to SharePoint 2007 this attribute should be specified.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareAttributeInheritsInContentType"
+  },
+  {
+    "id": "SPC045203",
+    "message": "Define attribute \u0027ID\u0027 in ContentTypes uppercase",
+    "description": "The ID of a ContentType should by a GUID in uppercase letters to avoid problems when accessing ContentTypes in code.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareContentTypeIDUpperCase"
+  },
+  {
+    "id": "SPC045401",
+    "message": "Declare \u0027TemplateType\u0027 and \u0027FeatureId\u0027 for external ListInstance",
+    "description": "If the ListInstance seems to be used for an external list, the correct TemplateType (600) should be used.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareTemplateTypeForExternalList"
+  },
+  {
+    "id": "SPC045801",
+    "message": "Declare attribute \u0027Description\u0027 in CustomActionGroup",
+    "description": "CustomActionGroup should define attribute Description.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareDescriptionInCustomActionGroup"
+  },
+  {
+    "id": "SPC046101",
+    "message": "Declare attribute \u0027Sequence\u0027 in DelegateControl.",
+    "description": "Attribute \u0027Sequence\u0027 should be declared to specify the sequence number for the control, which determines whether the control is added to the control tree for a page. The control with the lowest sequence number is added to the tree.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareAttributeSequenceInControl"
+  },
+  {
+    "id": "SPC046102",
+    "message": "Declare attribute \u0027Id\u0027 in DelegateControl.",
+    "description": "Attribute \u0027Id\u0027 should be declared. Otherwise the delegate control will never be added to a control container.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareAttributeIdInControl"
+  },
+  {
+    "id": "SPC046401",
+    "message": "Declare property \u0027Title\u0027 and \u0027Description\u0027 in WebPart",
+    "description": "A WebPart should contain the attribute title and description to provide meaningfull information to the end user which would add the web part to a page.",
+    "category": "Design",
+    "severity": "CriticalWarning",
+    "type": "DeclareTitleAndDescriptionInWebPart"
+  },
+  {
+    "id": "SPC046901",
+    "message": "Do not write in ASPX Pages \u0027Register\u0027 tags in a single line",
+    "description": "ASPX pages should write the Register tag in separate lines to improve readability of the code.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "ASPXPageShouldProvideRegisterTagsInSeparateLines"
+  },
+  {
+    "id": "SPC046902",
+    "message": "Avoid inline JavaScript in ASPX Pages",
+    "description": "ASPX pages should not contain JavaScript code. Use separate .JS files instead.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "AvoidInlineJavaScriptInASPXPage"
+  },
+  {
+    "id": "SPC046903",
+    "message": "Avoid inline CSS in ASPX Pages",
+    "description": "ASPX pages should not contain CSS code. Use separate .CSS files instead.",
+    "category": "Design",
+    "severity": "Warning",
+    "type": "AvoidInlineCSSInASPXPage"
+  },
+  {
+    "id": "SPC050101",
+    "message": "Do not use spaces in file or folders names",
+    "description": "Files should be stored in subfolders which are named after the solution, or start with the solution. Avoid using dots or spaces in pathnames.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotUseSpacesInFilePaths"
+  },
+  {
+    "id": "SPC050201",
+    "message": "Instantiate a new SPSite inside RunWithElevatedPrivileges",
+    "description": "An SPSite object created outside the delegate can be referenced inside the delegate, however, the methods and property assessors of the object run with the privileges of the user context in which the objects were created, not with the elevated privileges.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "InstantiateNewSPSiteInRunWithElevatedPrivileges"
+  },
+  {
+    "id": "SPC050222",
+    "message": "Do not call SPList.Items",
+    "description": "Do not call SPList.Items. Use SPList.GetItems(SPQuery query) instead.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSPListItems"
+  },
+  {
+    "id": "SPC050223",
+    "message": "Do not call SPList.Items.GetItemById()",
+    "description": "Do not call SPList.Items.GetItemById(). Use SPList.GetItemById instead.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseListItemsGetItemById"
+  },
+  {
+    "id": "SPC050224",
+    "message": "Do not call SPList.Items[]",
+    "description": "Do not call SPList.Items[int] or SPList.Items[Guid]. Use SPList.GetItemByUniqueId(Guid) or SPList.GetItemById(int) instead.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseListItemsByIndex"
+  },
+  {
+    "id": "SPC050225",
+    "message": "Do not call SPList.Items.Count",
+    "description": "Do not call SPList.Items.Count. Use SPList.ItemCount instead.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseListItemsCount"
+  },
+  {
+    "id": "SPC050226",
+    "message": "Do not call SPListItemVersion.Delete to delete multiple versions",
+    "description": "When you delete multiple versions of a list item, use the DeleteByID() method; do not use the Delete() method. You will experience performance problems if you delete each SPListItemVersion object from an SPListItemVersionCollection object.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSPListItemVersionDelete"
+  },
+  {
+    "id": "SPC050227",
+    "message": "Do not call SPFileVersion.Delete to delete multiple versions",
+    "description": "When you delete multiple versions of a file, use the DeleteByID() method; do not use the Delete() method. You will experience performance problems if you delete each SPFileVersion object from an SPFileVersionVersionCollection object.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSPFileVersionDelete"
+  },
+  {
+    "id": "SPC050228",
+    "message": "Do not enable ObjectTracking in Linq.DataContext",
+    "description": "If your code only queries lists, rather than adding, deleting, or editing list items, then you can turn off object change tracking. Doing so will improve performance. Set the ObjectTrackingEnabled property to false.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotEnableObjectTrackingInLinqDataContext"
+  },
+  {
+    "id": "SPC050229",
+    "message": "Do not access SPListCollection by indexer multiple times",
+    "description": "Do not access SPListCollection by indexer multiple times. Instantiates the list object only once and assigns it to a variable in order to set properties and call methods.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotAccessListCollectionMultipleTimes"
+  },
+  {
+    "id": "SPC050230",
+    "message": "Do not call SPFolder.Files.Count",
+    "description": "Do not call SPFolder.Files.Count. Use SPFolder.ItemCount instead.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSPFolderItemsCount"
+  },
+  {
+    "id": "SPC050231",
+    "message": "Use SPBuiltInContentTypeId to reference builtin ContentType",
+    "description": "Use SPBuiltInContentTypeId to reference builtin ContentType.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "UseBuiltInContentTypesInsteadOfStrings"
+  },
+  {
+    "id": "SPC050232",
+    "message": "Use SPBuiltInFieldId to reference builtin Field",
+    "description": "Use SPBuiltInFieldId to reference builtin Field.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "UseBuiltInFieldsInsteadOfStrings"
+  },
+  {
+    "id": "SPC050233",
+    "message": "Define RowLimit for SPQuery",
+    "description": "Define RowLimit for SPQuery to limit the number of items returned in the query.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "UseRowLimitInQueries"
+  },
+  {
+    "id": "SPC050234",
+    "message": "Avoid using AppSettings to store configuration values",
+    "description": "Avoid storing or reading configuration values in web.config via AppSettings.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "AvoidUsingAppSettingsForConfiguration"
+  },
+  {
+    "id": "SPC050235",
+    "message": "Apply lock when caching SharePoint objects",
+    "description": "Some SharePoint objects are not thread safe and caching can cause applications to fail and cause unexpected or unrelated user errors. To avoid this ensure locking of cached objects.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "ApplyLockForCachingObjects"
+  },
+  {
+    "id": "SPC050236",
+    "message": "Do not call SPItemEventProperties.OpenWeb()",
+    "description": "Do not call SPItemEventProperties.OpenWeb(). Use the newly introduced SPItemEventProperties.Web property instead for better performance and to avoid the need to call Dispose().",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallSPItemEventPropertiesOpenWeb"
+  },
+  {
+    "id": "SPC050237",
+    "message": "Do not request SPField from SPFieldCollection by index. Use SPFieldCollection.GetField() instead.",
+    "description": "Calling SPFieldCollection[] to retrieve a SPField in a web could fail if not the display name is used as argument. Better use SPWeb.Fields.GetField() which returns the field with the specified internal, display, or static name.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseFieldCollectionByIndex"
+  },
+  {
+    "id": "SPC050238",
+    "message": "Do not call SPWeb.GetListFromUrl. Use SPWeb.GetListFromWebPartPageUrl instead.",
+    "description": "SPWeb.GetListFromUrl gets the list that is associated with the first Web Part on the specified Web Parts page. Beginning in Windows SharePoint Services 3.0, use the GetListFromWebPartPageUrl method instead of this method.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSPWebGetListFromUrl"
+  },
+  {
+    "id": "SPC050250",
+    "message": "Assign RowLimit for SPQuery in limited range",
+    "description": "Assign RowLimit for SPQuery within the limited range (default 1 to 2000).",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "AssignSPQueryRowLimitInLimitedRange"
+  },
+  {
+    "id": "SPC052101",
+    "message": "Do not activate or deactivate Features via API",
+    "description": "Do not activate or deactivate Features in code via API. Consider using Powershell or Feature Stapling.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DoNotActivateFeaturesViaAPI"
+  },
+  {
+    "id": "SPC052201",
+    "message": "Custom field types should not be user creatable",
+    "description": "Custom field types should not be user creatable because in this case they are visible in the complete farm which may not be the intention.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "CustomFieldTypesShouldNotBeUserCreatable"
+  },
+  {
+    "id": "SPC055201",
+    "message": "Consider using SPContentTypeCollection.BestMatch(SPContentTypeId) to retrieve a Content Type",
+    "description": "Use SPContentTypeCollection.BestMatch(string) to retrieve a Content Type from a SPContentTypeCollection.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "ConsiderBestMatchForContentTypesRetrieval"
+  },
+  {
+    "id": "SPC055501",
+    "message": "Define Type of ListTemplate greater than 10000",
+    "description": "The ListTemplate Type should be greater than 10000. This makes it easier to identify custom ListTemplates.",
+    "category": "Best Practices",
+    "severity": "CriticalWarning",
+    "type": "DefineListTemplateTypeGreaterThan10000"
+  },
+  {
+    "id": "SPC056001",
+    "message": "Do not instantiate SPList in Receiver",
+    "description": "Do not instantiate an SPList object within an event receiver.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotInstantiateSPListInEventReceiver"
+  },
+  {
+    "id": "SPC056002",
+    "message": "Do not instantiate SPListItem in Receiver",
+    "description": "Do not instantiate an SPListItem object within an event receiver.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotInstantiateSPListItemInEventReceiver"
+  },
+  {
+    "id": "SPC056003",
+    "message": "Do not instantiate SPSite in Receiver",
+    "description": "Do not instantiate an SPSite object within an event receiver.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotInstantiateSPSiteInEventReceiver"
+  },
+  {
+    "id": "SPC056004",
+    "message": "Do not instantiate SPWeb in Receiver",
+    "description": "Do not instantiate an SPWeb object within an event receiver.",
+    "category": "Best Practices",
+    "severity": "Warning",
+    "type": "DoNotInstantiateSPWebInEventReceiver"
+  },
+  {
+    "id": "SPC060101",
+    "message": "Consider the deployment of solution per web application and not globally",
+    "description": "Solution should not be deployed globally to reduce the impact of the solution for the SharePoint farm. Add either SafeControls, DWPFiles, CASPolicies or ApplicationResourceFiles to ensure that the solution is deployed to a dedicated web application.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeploySolutionGlobally"
+  },
+  {
+    "id": "SPC060103",
+    "message": "Do not deploy prohibited assemblies",
+    "description": "In some case WSPBuilder includes prohibited assemblies into the package, e.g. \u0027ssocli.dll\u0027.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployProhibitedAssemblies"
+  },
+  {
+    "id": "SPC060105",
+    "message": "Do not deploy thumbs.db",
+    "description": "In some case the file thumbs.db is generated in a Visual Studio project. This file should not be included in the WSP package.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployThumbsDB"
+  },
+  {
+    "id": "SPC060106",
+    "message": "Do not reset webserver",
+    "description": "A solution should not reset the webserver.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DoNotResetWebServer"
+  },
+  {
+    "id": "SPC060107",
+    "message": "Define mode \u0027Recycle\u0027 for Solution upgrade",
+    "description": "To reduce the downtime of a SharePoint farm during deployment the solution should not use default setting \u0027StartStop\u0027 for upgrading solutions. Spedifying \u0027Recycle\u0027 only recycles affected application pools and will not stop them.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DefineRecycleForResetWebServerModeOnUpgrade"
+  },
+  {
+    "id": "SPC060108",
+    "message": "Do not deploy files directly into system folder",
+    "description": "Solutions should not write in folders of system files directly. If you need to deploy a file in a system folder, use a project specific subfolder.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployFilesDirectlyIntoSystemFolder"
+  },
+  {
+    "id": "SPC060111",
+    "message": "Do not deploy batch files (.bat)",
+    "description": "Batch files should not be included in the WSP package.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployBatchFiles"
+  },
+  {
+    "id": "SPC060112",
+    "message": "Do not deploy PowerShell scripts (.ps1)",
+    "description": "PowerShell scripts should not be included in the WSP package.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployPowerShellScripts"
+  },
+  {
+    "id": "SPC060113",
+    "message": "Do not deploy setups (.msi)",
+    "description": "Setups like .msi files should not be included in the WSP package.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployMSIFiles"
+  },
+  {
+    "id": "SPC060201",
+    "message": "Deploy Assembly which must run in full trust to GAC",
+    "description": "The Assembly must be deployed to global assembly cache because it contains code which must be run in full trust or must be avaible to other components or services.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DeployAssemblyWithFullTrustCodeToGAC"
+  },
+  {
+    "id": "SPC060202",
+    "message": "Avoid deployment of Assembly to GAC if it is not necessary",
+    "description": "Assemblies should only be deployed to global assembly cache (GAC) if they contain e.g. feature receivers, event receivers, timer jobs or workflows. Consider the deployment to WebApplication.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DoNotDeployAssemblyToGACIfNotNecessary"
+  },
+  {
+    "id": "SPC060203",
+    "message": "Do not deploy assembly with DEBUG mode",
+    "description": "Assembly should be build with RELEASE mode. Main reason is to prevent running code which is defined within #DEBUG preprocessor directive and which typically should not run in productive environments.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployAssemblyWithDebugMode"
+  },
+  {
+    "id": "SPC060204",
+    "message": "Do not deploy SharePoint assemblies",
+    "description": "In some case Visual Studio or WSPBuilder include SharePoint assemblies into the package (e.g. Microsoft.Search.dll). This is not allowed.",
+    "category": "Deployment",
+    "severity": "CriticalError",
+    "type": "DoNotDeploySharePointAssemblies"
+  },
+  {
+    "id": "SPC060205",
+    "message": "Do not deploy assembly multiple times",
+    "description": "In some case the same assembly is included in several WSP packages of the same solution. This can occur if Visual Studio or WSPBuilder includes the files automatically into the WSP package.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployAssemblyMultipleTimes"
+  },
+  {
+    "id": "SPC060206",
+    "message": "Do not deploy empty Assemblies",
+    "description": "Assemblies without custom classes should not be deployed to SharePoint. This helps to reduce unneeded IISResets during deployment.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DoNotDeployEmptyAssemblies"
+  },
+  {
+    "id": "SPC060209",
+    "message": "Do not deploy SPWebConfigModifications via features",
+    "description": "Deployment of SPWebConfigModifications with a feature receiver should be avoided. The activation of this feature will start a timer job and will initiate the restart of services which may lead to problems during a deployment. Consider deploying of SPWebConfigModifications via PowerShell script or supplemental config file.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DoNotDeploySPWebConfigModificationsViaFeatures"
+  },
+  {
+    "id": "SPC060303",
+    "message": "Do not deploy RootFile to TEMPLATE folder",
+    "description": "Deploy a RootFile not to the TEMPLATE folder. Deploy this file as TemplateFile in the solution.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployRootFileToTemplatesFolder"
+  },
+  {
+    "id": "SPC060304",
+    "message": "Do not deploy RootFile multiple times",
+    "description": "Deploy a RootFile only once to SharePoint. Do not deploy the file by different solutions because this could lead to problems if one solution is retracted and removes the file.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployRootFileMultipleTimes"
+  },
+  {
+    "id": "SPC060401",
+    "message": "Do not deploy Images to LAYOUTS folder",
+    "description": "Do not deploy Images to LAYOUTS folder. Deploy to IMAGES folder instead.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DoNotDeployImagesToLayouts"
+  },
+  {
+    "id": "SPC060402",
+    "message": "Deploy only Images to IMAGES folder",
+    "description": "Deploy only Images to IMAGES folder. For files which are not images choose a different folder (e.g. LAYOUTS).",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DeployOnlyImageToImagesFolder"
+  },
+  {
+    "id": "SPC060403",
+    "message": "Deploy binary files (like Assemblies) to ClientBin folder",
+    "description": "Binary files should be deployed to LAYOUTS/ClientBin folder. This helps to find these files at the correct location.",
+    "category": "Deployment",
+    "severity": "Warning",
+    "type": "DeployBinaryFilesToClientBin"
+  },
+  {
+    "id": "SPC060404",
+    "message": "Do not deploy TemplateFile multiple times",
+    "description": "Deploy a TemplateFile only once to SharePoint. Do not deploy the file by different solutions because this could lead to problems if one solution is retracted and removes the file.",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployTemplateFileMultipleTimes"
+  },
+  {
+    "id": "SPC060405",
+    "message": "Do not deploy files of a Feature as TemplateFile",
+    "description": "File which are deployed into the folder of a Feature should not be deployed as TemplateFile. Either deploy the files as ElementFiles in the Feature (preferred) or as Resources in manifest.xml.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployFeatureFilesAsTemplateFile"
+  },
+  {
+    "id": "SPC060501",
+    "message": "Do not deploy Features ElementFiles as Resources",
+    "description": "Resource files can be used to deploy resources to an existing Feature folder. If the target Feature is part of the same solution package binary files should be deployed as ElementFile in the Feature. If the target Feature is not part of the package it does make sense to use Resources (e.g. to deploy additional languages to existing features).",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployFeatureFilesAsResource"
+  },
+  {
+    "id": "SPC062101",
+    "message": "Deploy missing image for Feature",
+    "description": "If a custom icon for a Feature is defined in attribute \u0027ImageUrl\u0027 the file should be deployed to SharePoint if not a SharePoint default image is used.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DeployMissingImageForFeature"
+  },
+  {
+    "id": "SPC062102",
+    "message": "Deploy missing ElementManifest or ElementFile in Feature",
+    "description": "If ElementManifests or ElementFile are listed in the feature.xml these files must be deployed within the solution package.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DeployMissingElementFile"
+  },
+  {
+    "id": "SPC062103",
+    "message": "Do not deploy feature with same folder name multiple times",
+    "description": "In some case the same feature is included in different WSP packages.",
+    "category": "Deployment",
+    "severity": "CriticalError",
+    "type": "DoNotDeployFeatureMultipleTimes"
+  },
+  {
+    "id": "SPC062104",
+    "message": "Do not deploy feature with same ID name multiple times",
+    "description": "In some case the same feature is included in different WSP packages.",
+    "category": "Deployment",
+    "severity": "CriticalError",
+    "type": "DoNotDeployFeatureWithSameIDMultipleTimes"
+  },
+  {
+    "id": "SPC062111",
+    "message": "Do not deploy empty ElementManifests in Features",
+    "description": "ElementManifests files in Features which do not contain any element have no purpose and should be removed from the solution.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DoNotDeployEmptyElementManifests"
+  },
+  {
+    "id": "SPC067201",
+    "message": "Do not deploy Webservice (.asmx) to LAYOUTS folder",
+    "description": "A Webservice (.asmx) should not be deployed to \u0027\\TEMPLATE\\LAYOUTS\\\u0027 folder (url: \u0027../_layouts/..\u0027). It should be deployed to \u0027\\ISAPI\\\u0027 instead (url \u0027../vti_bin/..\u0027).",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNoDeployWebServiceToLAYOUTS"
+  },
+  {
+    "id": "SPC067202",
+    "message": "Do not deploy Administration Webservice (.asmx) to ADMIN folder",
+    "description": "A Administration Webservice (.asmx) should not be deployed to \u0027\\TEMPLATE\\ADMIN\\\u0027 folder (url: \u0027../_admin/..\u0027). It should be deployed to \u0027\\ADMISAPI\\\u0027 instead (url \u0027../vti_adm/..\u0027).",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DotNoDeployAdministrationWebServiceToADMIN"
+  },
+  {
+    "id": "SPC067601",
+    "message": "Do not deploy a WCF Webservice (.svc) to LAYOUTS folder",
+    "description": "A WCF Webservice (.svc) should not be deployed to \u0027\\TEMPLATE\\LAYOUTS\\\u0027 folder (url: \u0027../_layouts/..\u0027). It should be deployed to \u0027\\ISAPI\\\u0027 instead (url \u0027../vti_bin/..\u0027).",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployWCFWebServiceToLAYOUTS"
+  },
+  {
+    "id": "SPC067602",
+    "message": "Do not deploy a WCF Administration Webservice (.svc) to ADMIN folder",
+    "description": "A WCF Administration Webservice (.svc) should not be deployed to \u0027\\TEMPLATE\\ADMIN\\\u0027 folder (url: \u0027../_admin/..\u0027). It should be deployed to \u0027\\ADMISAPI\\\u0027 instead (url \u0027../vti_adm/..\u0027).",
+    "category": "Deployment",
+    "severity": "Error",
+    "type": "DoNotDeployWCFAdministrationWebServiceToADMIN"
+  },
+  {
+    "id": "SPC067701",
+    "message": "Deploy missing image for WebTemplate",
+    "description": "If a custom icon for a WebTemplate is defined in attribute \u0027ImageUrl\u0027 the file should be deployed to SharePoint if not a SharePoint default image is used.",
+    "category": "Deployment",
+    "severity": "CriticalWarning",
+    "type": "DeployMissingImageForWebTemplate"
+  },
+  {
+    "id": "SPC070001",
+    "message": "Use resources for localizable attributes",
+    "description": "All localizable attributes of SharePoint artefacts like ContentType, Feature etc. should use resources.",
+    "category": "Localization",
+    "severity": "Warning",
+    "type": "UseResourcesForLocalizableAttributes"
+  },
+  {
+    "id": "SPC070002",
+    "message": "Move resource key of ElementManifest to Feature resources",
+    "description": "Localized attributes in ElementManifests (like ContentType) should use resources in the parent Feature, not in a RootFile (like \u002715\\Resources\\ResourceFile.resx\u0027).",
+    "category": "Localization",
+    "severity": "Warning",
+    "type": "UseFeatureResourcesForElements"
+  },
+  {
+    "id": "SPC076401",
+    "message": "Localize property \u0027Title\u0027 and \u0027Description\u0027 in WebPart",
+    "description": "Properties \u0027Title\u0027 and \u0027Description\u0027 in WebParts should be localized with .resx file.",
+    "category": "Localization",
+    "severity": "Warning",
+    "type": "LocalizeTitleAndDescriptionInWebPart"
+  },
+  {
+    "id": "SPC080101",
+    "message": "Define Solution name as valid namespace",
+    "description": "To make it easier to identify the correct wsp solution in the solution store the name of the solution should be a valid namespace (e.g. \u0027Company.Project.Components.wsp\u0027).",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "DefineSolutionNameAsValidNamespace"
+  },
+  {
+    "id": "SPC080102",
+    "message": "Files or Folders should contain the name of the parent solution",
+    "description": "Files or their folders should be named after the solution. This helps do make the file location unique to prevent overwriting of existing files and it is easier to see which WSP solution deployed the file. The rule is case sensitive.",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "SolutionShouldNameFilesOrTheirFoldersAfterTheSolution"
+  },
+  {
+    "id": "SPC080103",
+    "message": "Solution name should start with company name",
+    "description": "The solution name should start with company name to follow the rule \u0027CompanyName.ApplicationName.ComponentName.wsp\u0027.",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "SolutionNameShouldStartWithCompanyName"
+  },
+  {
+    "id": "SPC080801",
+    "message": "WebTemplate file in site definitions should start with \u0027WEBTEMP\u0027",
+    "description": "The name of the WebTemplate files should start with \u0027WEBTEMP\u0027.",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "WebTempFileShouldStartWithWEBTEMP"
+  },
+  {
+    "id": "SPC082101",
+    "message": "Feature name should start with solution name",
+    "description": "A feature name should be prefixed with the name of the parent solution. This helps to make the feature name unique and it is easier to see which WSP solution deployed the feature. The rule is case sensitive.",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "FeatureNameShouldStartWithSolutionName"
+  },
+  {
+    "id": "SPC082201",
+    "message": "Declare FieldType in File \u0027fldtypes_[namespace].xml\u0027",
+    "description": "The XML file which contains FieldTypes should follow the pattern \u0027fldtypes_[Namespace].xml\u0027. [Namespace] represents the name of the WSP solution with replaced \u0027.\u0027 with underscore. Reason: All FieldTypes are deployed to folder /SharePointRoot/Templates/XML and therefore must be stored in a file with a unique filename to avoid overriding existing FieldTypes from SharePoint or other custom solutions.",
+    "category": "Naming",
+    "severity": "Warning",
+    "type": "DeclareFieldTypeInCorrectlyNamedFile"
+  },
+  {
+    "id": "SPC090101",
+    "message": "Do not deploy ControlTemplates",
+    "description": "Depending on the customization policy Solutions should not deploy controltemplates.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotDeployControlTemplates"
+  },
+  {
+    "id": "SPC090102",
+    "message": "Do not deploy Feature with scope \u0027Farm\u0027",
+    "description": "Depending on the customization policy Solutions should not contain farm features.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotDeployFarmFeatures"
+  },
+  {
+    "id": "SPC090103",
+    "message": "Do not deploy Feature with scope \u0027WebApplication\u0027",
+    "description": "Depending on the customization policy Solutions should not contain webapplication features.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotDeployWebApplicatonFeatures"
+  },
+  {
+    "id": "SPC090201",
+    "message": "Do not create managed paths in code",
+    "description": "The assembly should not create managed paths in a web application.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotCreateManagedPaths"
+  },
+  {
+    "id": "SPC090202",
+    "message": "Do not implement IHttpHandler",
+    "description": "The assembly should not implement the interface IHttpHandler.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementIHttpHandler"
+  },
+  {
+    "id": "SPC090203",
+    "message": "Do not implement IHttpModule",
+    "description": "The assembly should not implement the interface IHttpModule.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementIHttpModule"
+  },
+  {
+    "id": "SPC090204",
+    "message": "Do not implement SPJobDefinition (TimerJob)",
+    "description": "The assembly should not implement the interface SPJobDefinition in gold environments.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementSPJobDefinition"
+  },
+  {
+    "id": "SPC090205",
+    "message": "Do not implement FeatureReceiver",
+    "description": "The assembly should not types inherited from \u0027Microsoft.SharePoint.SPFeatureReceiver\u0027.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementFeatureReceiver"
+  },
+  {
+    "id": "SPC090206",
+    "message": "Do not implement SPWebConfigModifications",
+    "description": "The assembly should not implement SPWebConfigModifications.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementSPWebConfigModifications"
+  },
+  {
+    "id": "SPC090207",
+    "message": "Do not implement Pluggable Autentication Provider",
+    "description": "The assembly should not implement Pluggable Autentication Provider.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementPluggableAutenticationProvider"
+  },
+  {
+    "id": "SPC090208",
+    "message": "Do not implement Pluggable SSO Provider",
+    "description": "The assembly should not implement Pluggable SSO Provider.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementPluggableSSOProvider"
+  },
+  {
+    "id": "SPC090701",
+    "message": "Do not implement SiteDefinition",
+    "description": "Depending on the customization policy do not implement a SiteDefinition.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementSiteDefinition"
+  },
+  {
+    "id": "SPC092201",
+    "message": "Do not implement FieldType",
+    "description": "Depending on the customization policy do not implement a custom FieldType.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementFieldType"
+  },
+  {
+    "id": "SPC095101",
+    "message": "Do not implement Field",
+    "description": "Depending on the customization policy do not implement a Field.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementField"
+  },
+  {
+    "id": "SPC095201",
+    "message": "Do not implement ContentType",
+    "description": "Depending on the customization policy do not implement a ContentType.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementContentType"
+  },
+  {
+    "id": "SPC095501",
+    "message": "Do not implement ListDefinition",
+    "description": "Depending on the customization policy do not implement a ListDefinition.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementListTemplate"
+  },
+  {
+    "id": "SPC095701",
+    "message": "Do not implement CustomAction",
+    "description": "Depending on the customization policy do not implement a CustomAction.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementCustomAction"
+  },
+  {
+    "id": "SPC095801",
+    "message": "Do not implement CustomActionGroup",
+    "description": "Depending on the customization policy do not implement a CustomActionGroup.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementCustomActionGroup"
+  },
+  {
+    "id": "SPC096001",
+    "message": "Do not implement Event Receiver",
+    "description": "Depending on the customization policy do not implement an Event Receiver.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementReceiver"
+  },
+  {
+    "id": "SPC096101",
+    "message": "Do not implement DelegateControl",
+    "description": "Depending on the customization policy do not implement a DelegateControl.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementDelegateControl"
+  },
+  {
+    "id": "SPC096201",
+    "message": "Do not implement Coded Worfklow",
+    "description": "Depending on the customization policy do not implement a Coded Worfklow.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementWorkflow"
+  },
+  {
+    "id": "SPC096301",
+    "message": "Do not implement DocumentConverter",
+    "description": "Depending on the customization policy do not implement a DocumentConveter.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementDocumentConverter"
+  },
+  {
+    "id": "SPC096901",
+    "message": "Do not use inline code in ASPX pages",
+    "description": "ASPX pages should not contain inline code.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotUseInlineCode"
+  },
+  {
+    "id": "SPC097001",
+    "message": "Do not implement FeatureTemplateAssocation",
+    "description": "Depending on the customization policy do not implement a FeatureTemplateAssocation.",
+    "category": "Customization",
+    "severity": "Warning",
+    "type": "DoNotImplementTemplateAssociation"
+  },
+  {
+    "id": "SPC100201",
+    "message": "Add attribute \u0027AllowPartiallyTrustedCallers\u0027",
+    "description": "Code in the sandboxed worker process can call only assemblies that have the AllowPartiallyTrustedCallersAttribute.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "AddAllowPartiallyTrustedCallersAttribute"
+  },
+  {
+    "id": "SPC100202",
+    "message": "Do not reference unavailable NET 3.5 assemblies",
+    "description": "Code in the sandbox runs as a partially trusted caller. This means that such code can access only those .NET Framework 3.5 assemblies that have the AllowPartiallyTrustedCallersAttribute attribute.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "AssemblyCannotReferenceUnavailableNET35Assemblies"
+  },
+  {
+    "id": "SPC100203",
+    "message": "Do not use unallowed SharePoint classes",
+    "description": "Only a subset of the APIs in Microsoft.SharePoint.dll are available in sandboxed solutions.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "DoNotCallUnallowedClasses"
+  },
+  {
+    "id": "SPC100204",
+    "message": "Do not inherit WebParts from SharePoint WebPart",
+    "description": "Sandboxed solutions can include only Web Parts derived from the ASP.NET class.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "DoNotInheritWebPartsFromSharePointAPI"
+  },
+  {
+    "id": "SPC100205",
+    "message": "Do not reference assemblies without AllowPartiallyTrustedCallers attribute",
+    "description": "Code in the sandboxed worker process can call only assemblies that have the AllowPartiallyTrustedCallersAttribute. This means that most custom assemblies that you deploy in sandboxed solutions must have this attribute.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "ReferencedAssembliesMustHaveAllowPartialTrustedCallersAttribute"
+  },
+  {
+    "id": "SPC100206",
+    "message": "Do not create static fields and properties",
+    "description": "Avoid creating static fields and properties in your sandboxed code.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "DoNotCreateStaticMembers"
+  },
+  {
+    "id": "SPC100209",
+    "message": "Create SPSite with correct parameters",
+    "description": "A new SPSite can only be instantiated in sandboxed solutions if calling code conforms to certain restrictions on the parameters that are passed.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Warning",
+    "type": "CreateSPSiteWithCorrectParameters"
+  },
+  {
+    "id": "SPC100211",
+    "message": "Do not set Read-Only Properties",
+    "description": "Some properties of SharePoint objects are read/write in farm solutions, but are read-only in sandboxed solutions.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Error",
+    "type": "DoNotSetReadOnlyProperties"
+  },
+  {
+    "id": "SPC100212",
+    "message": "Do not deploy Assembly to GAC",
+    "description": "Assemblies cannot be deployed to GAC in Sandboxed Solutions",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployAssembliesToGAC"
+  },
+  {
+    "id": "SPC100301",
+    "message": "Do not deploy RootFiles",
+    "description": "RootFiles cannot be deployed in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployRootFiles"
+  },
+  {
+    "id": "SPC100401",
+    "message": "Do not deploy TemplateFiles",
+    "description": "TemplateFiles cannot be deployed in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployTemplateFiles"
+  },
+  {
+    "id": "SPC100501",
+    "message": "Do not deploy Resources",
+    "description": "Resources cannot be deployed in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployResources"
+  },
+  {
+    "id": "SPC102101",
+    "message": "Do not deploy Farm Features",
+    "description": "Features with scope \u0027Farm\u0027 cannot be deployed in a sandboxed solution.",
+    "category": "Customization",
+    "severity": "CriticalError",
+    "type": "DoNotDeployFarmFeatures"
+  },
+  {
+    "id": "SPC102102",
+    "message": "Do not deploy WebApplication Features",
+    "description": "Features with scope \u0027WebApplication\u0027 cannot be deployed in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployWebAppFeatures"
+  },
+  {
+    "id": "SPC105801",
+    "message": "Do not deploy CustomActionGroup",
+    "description": "CustomActionGroup cannot be deployed in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "CriticalError",
+    "type": "DoNotDeployCustomActionGroup"
+  },
+  {
+    "id": "SPC105901",
+    "message": "Do not deploy HideCustomAction",
+    "description": "You cannot deploy a HideCustomAction element in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Warning",
+    "type": "DoNotDeployHideCustomAction"
+  },
+  {
+    "id": "SPC106101",
+    "message": "Do not deploy Delegate Control",
+    "description": "You cannot register a control candidate for a delegate control (Control element) in a sandboxed solution.",
+    "category": "Sandboxed Compatibility",
+    "severity": "Warning",
+    "type": "DoNotDeployControl"
+  },
+  {
+    "id": "SPC110201",
+    "message": "Dispose created SPSite objects",
+    "description": "When you create a SPSite object with a new operator, the creating application must dispose of it.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeCreatedSPSiteObject"
+  },
+  {
+    "id": "SPC110203",
+    "message": "Dispose SPWeb objects created with SPSite.OpenWeb",
+    "description": "The OpenWeb method create an SPWeb object and return it to the caller. This new object is not stored in the SPSite object and is not disposed of anywhere in the SPSite class. For this reason, you should dispose of any object created via these methods.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPWebCreatedByOpenWeb"
+  },
+  {
+    "id": "SPC110204",
+    "message": "Dispose SPSite objects created with SPSite.SelfServiceCreateSite",
+    "description": "The SelfServiceCreateSite method (all signatures) create an SPWeb object and return it to the caller. This new object is not stored in the SPSite object and is not disposed of anywhere in the SPSite class. For this reason, you should dispose of any object created via these methods.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPSiteCreatedBySelfServiceCreateSite"
+  },
+  {
+    "id": "SPC110205",
+    "message": "Dispose SPWeb created by SPLimitedWebPartManager",
+    "description": "The SPLimitedWebPartManager class contains a reference to an internal SPWeb object that must be disposed.",
+    "category": "Memory Disposal",
+    "severity": "Warning",
+    "type": "DisposeSPWebCreatedBySPLimitedWebPartManager"
+  },
+  {
+    "id": "SPC110211",
+    "message": "Dispose SPSite created by SPSiteCollection.Add",
+    "description": "The SPSiteCollection.Add method creates and returns a new SPSite object. You should dispose of any SPSite object returned from the SPSiteCollection.Add method.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPSiteCreatedBySPSiteCollectionAdd"
+  },
+  {
+    "id": "SPC110212",
+    "message": "Dispose SPSite created by SPSiteCollection[] index operator",
+    "description": "The SPSiteCollection [] index operator returns a new SPSite object for each access. An SPSite instance is created even if that object was already accessed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPSiteCreatedBySPSiteCollectionIndex"
+  },
+  {
+    "id": "SPC110213",
+    "message": "Dispose SPWeb created by SPWebCollection.Add",
+    "description": "The SPSite.AllWebs.Add method and SPWebCollection.Add method creates and returns an SPWeb object. You should dispose of any SPWeb object returned.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPWebCreatedBySPWebCollectionAdd"
+  },
+  {
+    "id": "SPC110214",
+    "message": "Dispose SPWeb created by SPWebCollection[] index operator",
+    "description": "The SPSite.AllWebs[] and SPWebCollection[] index operator returns a new SPWeb instance each time it is accessed. An object is created during the indexing operation even if that object was already accessed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPWebCreatedBySPWebCollectionIndex"
+  },
+  {
+    "id": "SPC110231",
+    "message": "Do not dispose SPListEventProperties.Web",
+    "description": "The SPWeb object in SPListEventProperties (e.g. used in a SPListEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPListEventPropertiesWeb"
+  },
+  {
+    "id": "SPC110232",
+    "message": "Do not dispose SPWebEventProperties.Web",
+    "description": "The SPWeb object in SPWebEventProperties (e.g. used in a SPWebEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPWebEventPropertiesWeb"
+  },
+  {
+    "id": "SPC110233",
+    "message": "Do not dispose SPItemEventProperties.Web",
+    "description": "The SPWeb object in SPItemEventProperties (e.g. used in a SPItemEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPItemEventPropertiesWeb"
+  },
+  {
+    "id": "SPC110234",
+    "message": "Do not dispose SPItemEventProperties.ListItem.Web",
+    "description": "The object in SPItemEventProperties.ListItem.Web (e.g. used in a SPItemEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPItemEventPropertiesListItemWeb"
+  },
+  {
+    "id": "SPC110235",
+    "message": "Do not dispose SPItemEventProperties.Web.Site",
+    "description": "The object in SPItemEventProperties.Web.Site (e.g. used in a SPItemEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPItemEventPropertiesWebSite"
+  },
+  {
+    "id": "SPC110236",
+    "message": "Do not dispose SPItemEventProperties.ListItem.Web.Site",
+    "description": "The object in SPItemEventProperties.ListItem.Web.Site (e.g. used in a SPItemEventReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPItemEventPropertiesListItemWebSite"
+  },
+  {
+    "id": "SPC110237",
+    "message": "Do not dispose SPFeatureReceiverProperties.Feature.Parent",
+    "description": "The object in SPFeatureReceiverProperties.Feature.Parent (e.g. used in a SPFeatureReceiver) should not be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPFeatureReceiverPropertiesFeatureParent"
+  },
+  {
+    "id": "SPC110241",
+    "message": "Do not dispose SPSite.RootWeb",
+    "description": "An earlier version of the documentation indicated that the calling application should dispose of the SPSite.RootWeb property just before disposing of the SPSite object that is using it. This is no longer the official guidance. The dispose cleanup is handled automatically by the SharePoint framework.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPSiteRootWeb"
+  },
+  {
+    "id": "SPC110242",
+    "message": "Do not dispose SPWeb.ParentWeb",
+    "description": "An earlier version of the documentation recommended that the calling application should dispose of the SPWeb.ParentWeb. This is no longer the official guidance. The dispose cleanup is handled automatically by the SharePoint framework.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPWebParentWeb"
+  },
+  {
+    "id": "SPC110243",
+    "message": "Do not dispose SPList.ParentWeb",
+    "description": "An earlier version of the documentation recommended that the calling application should dispose of the SPWeb.ParentWeb. This is no longer the official guidance. The dispose cleanup is handled automatically by the SharePoint framework.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPListParentWeb"
+  },
+  {
+    "id": "SPC110244",
+    "message": "Do not dispose SPSite returned by SPControl.GetContextSite",
+    "description": "If SPSite is obtained from the SharePoint context objects (GetContextSite method), the calling application should not call the Dispose method on the object.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPSiteCreatedBySPControlGetContextSite"
+  },
+  {
+    "id": "SPC110245",
+    "message": "Do not dispose SPWeb returned by SPControl.GetContextWeb",
+    "description": "If SPWeb is obtained from the SharePoint context objects (GetContextWeb method), the calling application should not call the Dispose method on the object.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPWebCreatedBySPControlGetContextWeb"
+  },
+  {
+    "id": "SPC110246",
+    "message": "Do not dispose SPSite returned by SPContext.Current.Site",
+    "description": "SPContext objects are managed by the SharePoint framework and should not be explicitly disposed in your code. This is true also for the SPSite objects returned by SPContext.Site and SPContext.Current.Site",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPSiteCreatedBySPContext"
+  },
+  {
+    "id": "SPC110247",
+    "message": "Do not dispose SPWeb returned by SPContext.Current.Web",
+    "description": "SPContext objects are managed by the SharePoint framework and should not be explicitly disposed in your code. This is true also for the SPWeb objects returned by SPContext.Web and SPContext.Current.Web",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DoNotDisposeSPWebCreatedBySPContext"
+  },
+  {
+    "id": "SPC110261",
+    "message": "Close PublishingWeb created by PublishingWeb.GetPublishingWebs[] index operator",
+    "description": "The GetPublishingWebs method of the PublishingWeb class returns a PublishingWebCollection object. You must call the Close method on each enumerated innerPubWeb object. When you are calling only the GetPublishingWeb method, you are not required to call Close.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "ClosePublishingWebCreatedByPublishingWebGetPublishingWebsIndex"
+  },
+  {
+    "id": "SPC110262",
+    "message": "Close PublishingWeb created by PublishingWeb.GetVariation",
+    "description": "The Microsoft.SharePoint.Publishing.PublishingWeb.GetVariation method returns a PublishingWeb object that must be closed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "ClosePublishingWebCreatedByPublishingWebGetVariation"
+  },
+  {
+    "id": "SPC110263",
+    "message": "Close PublishingWeb created by PublishingWebCollection.Add",
+    "description": "PublishingWebCollection.Add() method requires you to call Close on the returned PublishingWeb object.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "ClosePublishingWebCreatedByPublishingWebCollectionAdd"
+  },
+  {
+    "id": "SPC110281",
+    "message": "Dispose SPSite created with UserProfiles.PersonalSite",
+    "description": "The Microsoft.Office.Server.UserProfiles.PersonalSite returns an SPSite object that must be disposed.",
+    "category": "Memory Disposal",
+    "severity": "CriticalWarning",
+    "type": "DisposeSPSiteCreatedByUserProfilesPersonalSite"
+  },
+  {
+    "id": "SPC126901",
+    "message": "Do not inherit ASPX page from SharePoint assemblies older than Version 12",
+    "description": "ASPX pages should not inherit from previous or later version of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2007 Compatibility",
+    "severity": "Error",
+    "type": "DoNotInheritASPXPageFromSharePointVersion12"
+  },
+  {
+    "id": "SPC126902",
+    "message": "Reference SharePoint 12 assemblies",
+    "description": "ASPX files should not reference previous or later versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2007 Compatibility",
+    "severity": "Error",
+    "type": "ASPXPageShouldReferenceSharePointVersion12"
+  },
+  {
+    "id": "SPC140202",
+    "message": "Do not call deprecated methods or properties",
+    "description": "Assembly should not call deprecated methods or properties.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Error",
+    "type": "DoNotCallSP2010DeprecatedMethods"
+  },
+  {
+    "id": "SPC140203",
+    "message": "Do not implement deprecated interfaces",
+    "description": "Assembly should not implement deprecated interfaces.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Error",
+    "type": "DoNotImplementSP2010DeprecatedInterfaces"
+  },
+  {
+    "id": "SPC140204",
+    "message": "Do not inherit from deprecated type",
+    "description": "Assembly should not inherit from deprecated type.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Error",
+    "type": "DoNotInheritFromSP2010DeprecatedTypes"
+  },
+  {
+    "id": "SPC140205",
+    "message": "Do not reference deprecated types",
+    "description": "Assembly should not reference deprecated types.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Error",
+    "type": "DoNotUseSP2010DeprecatedTypes"
+  },
+  {
+    "id": "SPC146901",
+    "message": "Inherit from SharePoint 14 assemblies",
+    "description": "ASPX pages should not inherit from previous or later version of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Warning",
+    "type": "ASPXPageShouldInheritFromSharePointVersion14"
+  },
+  {
+    "id": "SPC146902",
+    "message": "Reference SharePoint 14 assemblies",
+    "description": "ASPX files should not reference previous or later versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2010 Compatibility",
+    "severity": "Error",
+    "type": "ASPXPageShouldReferenceSharePointVersion14"
+  },
+  {
+    "id": "SPC150101",
+    "message": "Do not define CAS Policies",
+    "description": "The assemblies in a farm solution in SharePoint 2010 could be deployed with Custom Access Security (CAS) policies. Such policies are ignored in SharePoint 2013; all assemblies in farm solutions in SharePoint 2013 run with full trust.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "DoNotDeployCASPolicies"
+  },
+  {
+    "id": "SPC150102",
+    "message": "Declare attribute SharePointProductVersion\u003d\u002715.0\u0027 in Solution",
+    "description": "The attribute \u0027SharePointProductVersion\u0027 with value \u002715.0\u0027 must be declared if files in 15 hive should be loaded. If not declared SharePoint assumes version \u002714.0\u0027.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DeclareSharePointVersionInSolution"
+  },
+  {
+    "id": "SPC150202",
+    "message": "Do not call deprecated methods or properties",
+    "description": "Assembly should not call deprecated methods or properties.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotCallSP2013DeprecatedMethods"
+  },
+  {
+    "id": "SPC150203",
+    "message": "Do not implement deprecated interfaces",
+    "description": "Assembly should not implement deprecated interfaces.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotImplementSP2013DeprecatedInterfaces"
+  },
+  {
+    "id": "SPC150204",
+    "message": "Do not inherit from deprecated type",
+    "description": "Assembly should not inherit from deprecated type.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotInheritFromSP2013DeprecatedTypes"
+  },
+  {
+    "id": "SPC150205",
+    "message": "Do not reference deprecated types",
+    "description": "Assembly should not reference deprecated types.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseSP2013DeprecatedTypes"
+  },
+  {
+    "id": "SPC150206",
+    "message": "Do not call CustomizeCss and RevertCss from Microsoft.SharePoint.SoapServer.Webs",
+    "description": "Do not call CustomizeCss and RevertCss from namespace Microsoft.SharePoint.SoapServer.Webs. The methods are included in SharePoint 2013, but will be removed from the next major release of SharePoint.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotUseDeprecatedMethodsFromSoapServerWebs"
+  },
+  {
+    "id": "SPC150207",
+    "message": "Build assembly for .NET Framework 4.5",
+    "description": "The Assembly should be build for target Framework version 4.5.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Error",
+    "type": "BuildAssemblyForFramework45"
+  },
+  {
+    "id": "SPC150208",
+    "message": "Reference 15 hive in strings within code",
+    "description": "References in strings in the code to hive folder \u0027/_controltemplates\u0027, \u0027/_layouts\u0027 and \u0027/_layouts/images/\u0027 must be changed accordingly to point to the 15 hive (e.g. by changing to \u0027/_controltemplates/15/\u0027).",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "ReplaceReferencesToOlderHivesInCode"
+  },
+  {
+    "id": "SPC155501",
+    "message": "Reference 15 hive in attribute \u0027Image\u0027 in ListTemplate",
+    "description": "A ListTemplate can reference an image (like an icon) in attribute \u0027Image\u0027. Ensure that the URL points to the 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInImageInListTemplate"
+  },
+  {
+    "id": "SPC155701",
+    "message": "Reference 15 hive in all images in CustomAction",
+    "description": "A CustomAction can reference several images (like icons). Ensure that the URLs for these images points to the 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInURLsInCustomAction"
+  },
+  {
+    "id": "SPC155702",
+    "message": "Reference 15 hive in attribute \u0027UrlAction\u0027 in CustomAction",
+    "description": "A CustomAction can reference a page in attribute \u0027UrlAction\u0027. Ensure that the URL points to the 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInURLActionInCustomAction"
+  },
+  {
+    "id": "SPC155703",
+    "message": "Reference 15 hive in attribute \u0027ScriptSrc\u0027 in CustomAction",
+    "description": "A CustomAction can reference a script (e.g. .js) in attribute \u0027ScriptSrc\u0027. Ensure that the URL points to the 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInScriptSrcInCustomAction"
+  },
+  {
+    "id": "SPC156101",
+    "message": "Reference 15 hive in attribute \u0027ControlSrc\u0027 in DelegateControl",
+    "description": "A DelegateControl can reference a control template in attribute \u0027ControlSrc\u0027. Ensure that the URL points to the 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInControlSrcInControl"
+  },
+  {
+    "id": "SPC156802",
+    "message": "Register SharePoint 15 Assemblies in ASCX Control",
+    "description": "ASCX Control should not register previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "ASCXControlShouldRegisterSharePointVersion15"
+  },
+  {
+    "id": "SPC156803",
+    "message": "Reference SharePoint 15 Assemblies in ASCX Control",
+    "description": "ASCX Controls should not reference previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "ASCXControlShouldReferenceSharePointVersion15"
+  },
+  {
+    "id": "SPC156901",
+    "message": "Inherit ASPX Page from SharePoint 15 Assemblies",
+    "description": "ASPX Pages should not inherit from previous or later version of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "ASPXPageShouldInheritFromSharePointVersion15"
+  },
+  {
+    "id": "SPC156902",
+    "message": "Register SharePoint 15 Assemblies in ASPX Page",
+    "description": "ASPX Pages should not register previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "ASPXPageShouldRegisterSharePointVersion15"
+  },
+  {
+    "id": "SPC156903",
+    "message": "Reference SharePoint 15 Assemblies in ASPX Page",
+    "description": "ASPX Pages should not reference previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "ASPXPageShouldReferenceSharePointVersion15"
+  },
+  {
+    "id": "SPC157001",
+    "message": "Do not define TemplateAssociation to template \u0027Document Workspace\u0027",
+    "description": "The site template for \u0027Document Workspace\u0027 (STS#2) is not available in SP 2013.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotAssociateFeatureToDocumentWorkspace"
+  },
+  {
+    "id": "SPC157002",
+    "message": "Do not define TemplateAssociation to templates for \u0027Meeting Workspace\u0027",
+    "description": "The site templates for \u0027Meeting Workspace\u0027 (MPS#*) is not available in SP 2013. This includes the Basic Meeting Workspace, Blank Meeting Workspace, Decision Meeting Workspace, Social Meeting Workspace, and Multipage Meeting Workspace.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotAssociateFeatureToMeetingWorkspaces"
+  },
+  {
+    "id": "SPC157003",
+    "message": "Do not define TemplateAssociation to template \u0027Personalization Site\u0027",
+    "description": "The site template for \u0027Personalization Site\u0027 (SPSMSITE#0) is not available in SP 2013.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotAssociateFeatureToPersonalizationSite"
+  },
+  {
+    "id": "SPC157004",
+    "message": "Do not define TemplateAssociation to templates for \u0027Group Work\u0027",
+    "description": "The site templates for \u0027Group Work\u0027 (SGS) is not available in SP 2013.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "DoNotAssociateFeatureToGroupWorkTemplates"
+  },
+  {
+    "id": "SPC157302",
+    "message": "Register SharePoint 15 Assemblies in Master Page",
+    "description": "Master Pages should not register previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "MasterPageShouldRegisterSharePointVersion15"
+  },
+  {
+    "id": "SPC157303",
+    "message": "Reference SharePoint 15 Assemblies in Master Page",
+    "description": "Master Pages should not reference previous versions of Microsoft.SharePoint assemblies.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "CriticalWarning",
+    "type": "MasterPageShouldReferenceSharePointVersion15"
+  },
+  {
+    "id": "SPC159901",
+    "message": "Reference 15 hive within all Pages (.aspx)",
+    "description": "Paths in Pages to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInPages"
+  },
+  {
+    "id": "SPC159902",
+    "message": "Reference 15 hive within all Masterpages (.master)",
+    "description": "Paths in Masterpages to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInMasterPages"
+  },
+  {
+    "id": "SPC159903",
+    "message": "Reference 15 hive within all Scripts (.js)",
+    "description": "Paths in Scripts to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInScripts"
+  },
+  {
+    "id": "SPC159904",
+    "message": "Reference 15 hive within all Styles (.css)",
+    "description": "Paths in Styles to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInStyles"
+  },
+  {
+    "id": "SPC159905",
+    "message": "Reference 15 hive within all Controls (.ascx)",
+    "description": "Paths in Controls to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInControls"
+  },
+  {
+    "id": "SPC159906",
+    "message": "Reference 15 hive within all XSLT files (.xslt)",
+    "description": "Paths in XSLT files to \u0027/_controltemplates/\u0027, \u0027/_layouts/\u0027 and \u0027/_layouts/images/\u0027 should point to 15 hive.",
+    "category": "SharePoint 2013 Compatibility",
+    "severity": "Warning",
+    "type": "Reference15HiveInXSLT"
+  }
+]
